@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-04-08 | **Market context:** US-Israel/Iran war (Feb 28 – ceasefire Apr 8, 2026)
+**Last updated:** 2026-04-09 | **Market context:** US-Israel/Iran war (Feb 28 – ceasefire Apr 8, 2026; fragile)
 
 ---
 
@@ -22,7 +22,7 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Avg win | $72.60 | — |
 | Avg loss | -$41.07 | -$53.82 |
 | Profit factor | 0.59 | 0.00 |
-| Open / pending | DAL #2 (buy stop placed) | None |
+| Open / pending | None | None |
 
 ---
 
@@ -68,7 +68,7 @@ gantt
     PANW — Scratch       :crit, done, 2026-03-17, 2026-03-18
     DAL — LOSS           :crit, done, 2026-03-25, 2026-03-30
     PFE — LOSS           :crit, done, 2026-04-01, 2026-04-07
-    DAL #2 — Pending     :active,  2026-04-08, 2026-04-10
+    DAL #2 — No fill     :         2026-04-08, 2026-04-09
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :         2026-04-06, 2026-04-08
@@ -84,9 +84,9 @@ gantt
 | 2 | PANW | 2026-03-17 | 2026-03-18 | 1 | 6 | $168.50 | $167.45 | **-$6.30** | — | ❌ Scratch |
 | 3 | DAL | 2026-03-25 | 2026-03-30 | 5 | 14 | $67.53 | $63.48 | **-$56.70** | 1:0.89 | ❌ Loss |
 | 4 | PFE | 2026-04-01 | 2026-04-07 | 6 | 35 | $28.27 | $26.55 | **-$60.20** | 1:0.86 | ❌ Loss |
-| 5 | DAL | 2026-04-08 | — | — | 13 | $74.25† | — | TBD | 1:1.15 | ⏳ Pending |
+| 5 | DAL | 2026-04-08 | 2026-04-08 | — | 13 | $74.25† | — | $0 | 1:1.15 | ⛔ No fill |
 
-†Buy stop placed; fill not confirmed as of session end.
+†Day-only buy stop at $74.25. High was $74.19 — missed by 6 cents. DAL then collapsed to $68.08 (100% sell pressure, 20.7M vol). Order expired. Saved ~$80.
 
 ### Claude — Cumulative P/L by Trade
 
@@ -115,7 +115,7 @@ gantt
 | 1 | LUV | 2026-04-01 | 2026-04-02 | 1 | 26 | $37.99 | $35.92 | **-$53.82** | 1:1.26 | ❌ Loss |
 | — | AAL | 2026-04-06 | — | — | 90 | $11.10† | — | — | 1:1.87 | ⛔ No fill |
 
-†Buy stop placed 4/6, never triggered. Buy limit $11.30 placed and cancelled 4/8 when AAL gapped to $12.07.
+†Buy stop placed 4/6, never triggered. Buy limit $11.30 placed and cancelled 4/8 when AAL gapped to $12.07. April 8 bar: 96% sell on 100.3M volume — distribution signal confirmed, no further entry attempted.
 
 ### DeepSeek — Cumulative P/L by Trade
 
@@ -156,6 +156,7 @@ Trades considered but not taken, and what happened instead:
 | 3/24 | VLO/MPC/PSX | RSI 70+, showing distribution | Mixed |
 | 3/24 | Any | Iran situation binary | Market whipsawed |
 | 3/31 | AM | Buy stop $23.35 didn't fill (day order) | AM continued to deteriorate |
+| 4/8 | DAL | Day-only stop $74.25; high was $74.19 (6¢ short) | DAL collapsed to $68.08 with 100% sell pressure — avoided ~$80 loss |
 
 ---
 
