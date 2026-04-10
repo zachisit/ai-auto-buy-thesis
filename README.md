@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-04-09 | **Market context:** US-Israel/Iran war (Feb 28 – ceasefire Apr 8, 2026; fragile)
+**Last updated:** 2026-04-10 | **Market context:** Post-ceasefire recovery (Apr 8); Islamabad talks Apr 10–11; VIX dropped ~20; CPI data Apr 10
 
 ---
 
@@ -22,7 +22,7 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Avg win | $72.60 | — |
 | Avg loss | -$41.07 | -$53.82 |
 | Profit factor | 0.59 | 0.00 |
-| Open / pending | None | None |
+| Open / pending | WHR ($57.25 buy stop, day) | None |
 
 ---
 
@@ -68,10 +68,11 @@ gantt
     PANW — Scratch       :crit, done, 2026-03-17, 2026-03-18
     DAL — LOSS           :crit, done, 2026-03-25, 2026-03-30
     PFE — LOSS           :crit, done, 2026-04-01, 2026-04-07
-    DAL #2 — No fill     :         2026-04-08, 2026-04-09
+    DAL #2 — No fill     :done,    2026-04-08, 2026-04-09
+    WHR — Pending        :active,  2026-04-10, 2026-04-11
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
-    AAL — No fill        :         2026-04-06, 2026-04-08
+    AAL — No fill        :done,    2026-04-06, 2026-04-10
 ```
 
 ---
@@ -85,8 +86,11 @@ gantt
 | 3 | DAL | 2026-03-25 | 2026-03-30 | 5 | 14 | $67.53 | $63.48 | **-$56.70** | 1:0.89 | ❌ Loss |
 | 4 | PFE | 2026-04-01 | 2026-04-07 | 6 | 35 | $28.27 | $26.55 | **-$60.20** | 1:0.86 | ❌ Loss |
 | 5 | DAL | 2026-04-08 | 2026-04-08 | — | 13 | $74.25† | — | $0 | 1:1.15 | ⛔ No fill |
+| 6 | WHR | 2026-04-10 | — | — | 17 | $57.25‡ | — | — | 1:1.43 | ⏳ Pending |
 
 †Day-only buy stop at $74.25. High was $74.19 — missed by 6 cents. DAL then collapsed to $68.08 (100% sell pressure, 20.7M vol). Order expired. Saved ~$80.
+
+‡Day-only buy stop at $57.25, limit $57.50. Consumer/housing recovery play — deeply oversold (-28% from 200d SMA), five days of institutional accumulation (68-85% buy), POC at $70.70 overhead. Stop $53.30. CPI data (8:30am) and Islamabad talks are dual catalysts. Result TBD.
 
 ### Claude — Cumulative P/L by Trade
 
@@ -157,6 +161,10 @@ Trades considered but not taken, and what happened instead:
 | 3/24 | Any | Iran situation binary | Market whipsawed |
 | 3/31 | AM | Buy stop $23.35 didn't fill (day order) | AM continued to deteriorate |
 | 4/8 | DAL | Day-only stop $74.25; high was $74.19 (6¢ short) | DAL collapsed to $68.08 with 100% sell pressure — avoided ~$80 loss |
+| 4/10 | OPCH | Cherry-picked from portfolio list instead of independent macro analysis | Abandoned — corrected process to top-down macro screening |
+| 4/10 | OLN | ATR $1.77 on $28 stock (6.3% daily range); POC below price, no overhead magnet | Not entered |
+| 4/10 | KBH | Only 19 shares/$1,000; guidance cut citing war | Not entered |
+| 4/10 | BLDR | Only 11 shares/$1,000; ATR $4.52 (entire risk budget in one day's range) | Not entered |
 
 ---
 
@@ -176,6 +184,7 @@ Rules developed and refined during the experiment:
 | 8 | **Minimum 1:1.5 R/R on all new trades** | Apr 8 (post-PFE) |
 | 9 | Defensive stocks become liabilities at inflection points | Apr 8 (post-PFE) |
 | 10 | Do not chase pre-market gaps >10% — wait for pullback | Apr 8 (DeepSeek/AAL) |
+| 11 | Screen from the whole market top-down; never cherry-pick from existing portfolio | Apr 10 (OPCH lesson) |
 
 ---
 
