@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-04-13 | **Market context:** Islamabad talks collapsed after 21h (no deal); Trump naval blockade of Iranian ports announced Apr 13; ceasefire technically in effect until ~Apr 22; VIX rising
+**Last updated:** 2026-04-15 | **Market context:** Naval blockade absorbed better than expected — S&P closed green; VIX 21.58 (well below war peak 31+); Goldman trimmed Brent to $90; multiple strategists calling market bottom; Lebanon-Israel talks at State Dept; WHR coiling (VSA 3rd straight HOLD, tightening range + Bag Holding); DeepSeek in cash
 
 ---
 
@@ -13,16 +13,16 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Metric | Claude | DeepSeek |
 |---|---|---|
 | Experiment start | 2026-03-13 | 2026-04-01 |
-| Trades closed | 4 | 1 |
-| Wins / Losses | 1 / 3 | 0 / 1 |
+| Trades closed | 4 | 2 |
+| Wins / Losses | 1 / 3 | 0 / 2 |
 | Win rate | 25% | 0% |
-| **Net P/L** | **-$50.60** | **-$53.82** |
+| **Net P/L** | **-$50.60** | **-$79.22** |
 | Best trade | DVN +$72.60 | — |
 | Worst trade | PFE -$60.20 | LUV -$53.82 |
 | Avg win | $72.60 | — |
-| Avg loss | -$41.07 | -$53.82 |
+| Avg loss | -$41.07 | -$39.61 |
 | Profit factor | 0.59 | 0.00 |
-| Open / pending | WHR ($57.25 entry, open) | DVN ($48.25 entry, open) |
+| Open / pending | WHR ($57.25 entry, open) | — |
 
 ---
 
@@ -51,8 +51,8 @@ pie title Claude — Trade Outcomes (4 closed)
 ```
 
 ```mermaid
-pie title DeepSeek — Trade Outcomes (1 closed)
-    "Losses" : 1
+pie title DeepSeek — Trade Outcomes (2 closed)
+    "Losses" : 2
 ```
 
 ---
@@ -69,11 +69,11 @@ gantt
     DAL — LOSS           :crit, done, 2026-03-25, 2026-03-30
     PFE — LOSS           :crit, done, 2026-04-01, 2026-04-07
     DAL #2 — No fill     :done,    2026-04-08, 2026-04-09
-    WHR — Open           :active,  2026-04-10, 2026-04-14
+    WHR — Open           :active,  2026-04-10, 2026-04-15
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :done,    2026-04-06, 2026-04-10
-    DVN — Open           :active,  2026-04-13, 2026-04-14
+    DVN — LOSS           :crit, done, 2026-04-13, 2026-04-14
 ```
 
 ---
@@ -91,7 +91,7 @@ gantt
 
 †Day-only buy stop at $74.25. High was $74.19 — missed by 6 cents. DAL then collapsed to $68.08 (100% sell pressure, 20.7M vol). Order expired. Saved ~$80.
 
-‡Buy limit filled at $57.25. Consumer/housing recovery play — deeply oversold (-28% from 200d SMA), five days of institutional accumulation (68-85% buy), POC at $70.70 overhead. Stop $53.30. VSA: Bag Holding background strength + No Supply (most bullish combination seen in experiment). Premarket 4/13: $56.01 (-$21.08 unrealized). Holding on VSA HOLD signal despite Islamabad collapse and Trump naval blockade.
+‡Buy limit filled at $57.25. Consumer/housing recovery play — deeply oversold (-28% from 200d SMA), five days of institutional accumulation (68-85% buy), POC at $70.70 overhead. Stop $53.30. VSA: Bag Holding background strength + No Supply (most bullish combination seen in experiment). Premarket 4/13: $56.01 (-$21.08 unrealized). Premarket 4/14: $56.35 (-$15.30 unrealized). VSA upgraded trend from Consolidation → Markup on 4/14; background strength intact; holding through active naval blockade. Premarket 4/15: $56.35 (-$15.30 unrealized). Three consecutive sessions of clean HOLD — tightening range ($1.33 vs ATR $2.53), buy pressure returned to 65% on 4/13 despite 7% oil spike on blockade. Coiling pattern (compressed range + institutional support) typically resolves upward. Day 4; hold/exit decision by Thu 4/17.
 
 ### Claude — Cumulative P/L by Trade
 
@@ -119,7 +119,7 @@ gantt
 |---|--------|-------|------|------|--------|---------|--------|-----|-----|--------|
 | 1 | LUV | 2026-04-01 | 2026-04-02 | 1 | 26 | $37.99 | $35.92 | **-$53.82** | 1:1.26 | ❌ Loss |
 | — | AAL | 2026-04-06 | — | — | 90 | $11.10† | — | — | 1:1.87 | ⛔ No fill |
-| 2 | DVN | 2026-04-13 | — | — | 20 | $48.25 | — | — | 1:1.57 | ⏳ Open |
+| 2 | DVN | 2026-04-13 | 2026-04-14 | 1 | 20 | $48.25 | $46.98 | **-$25.40** | 1:1.57 | ❌ Loss |
 
 †Buy stop placed 4/6, never triggered. Buy limit $11.30 placed and cancelled 4/8 when AAL gapped to $12.07. April 8 bar: 96% sell on 100.3M volume — distribution signal confirmed, no further entry attempted.
 
@@ -127,13 +127,15 @@ gantt
 
 | After | Ticker | Trade P/L | Running Total |
 |-------|--------|-----------|---------------|
-| Trade 1 | LUV | -$53.82 | **-$53.82** |
+| Trade 1 | LUV | -$53.82 | -$53.82 |
+| Trade 2 | DVN | -$25.40 | **-$79.22** |
 
 ### DeepSeek — Exit Reasons
 
 | Trade | Exit Trigger |
 |-------|-------------|
 | LUV | Stop triggered at $35.92 — oil surged 8%+ on Trump Iran speech, crushed airlines at open |
+| DVN | Closed at market open — April 13 bar showed 75% sell pressure breaking prior low; pre-market weakness to $46.98 confirmed thesis failure; exited to preserve capital |
 
 ---
 
@@ -168,6 +170,9 @@ Trades considered but not taken, and what happened instead:
 | 4/10 | KBH | Only 19 shares/$1,000; guidance cut citing war | Not entered |
 | 4/10 | BLDR | Only 11 shares/$1,000; ATR $4.52 (entire risk budget in one day's range) | Not entered |
 | 4/13 | All new entries | Islamabad talks failed after 21h; Trump naval blockade of Iranian ports (10am EST); IRGC called it ceasefire violation — binary headline risk, no edge | Avoided — cash preserved; WHR held on VSA HOLD |
+| 4/14 | All new entries | Active US naval blockade; IRGC on maximum combat alert; Iran threatening Persian Gulf ports; US destroyers at the Strait — potential military incident = instant risk-off | Avoided — WHR held (VSA upgraded to Markup); no new capital deployed |
+| 4/15 | All new entries (Claude) | Active naval blockade ongoing; risk of Strait confrontation; but market absorbing well — holding cash pending further stabilization | Avoided — WHR held (VSA 3rd straight HOLD, coiling); no new capital |
+| 4/15 | AAL, DVN, DAL (DeepSeek) | Damaged patterns post-distribution; no VSA spring/test/bottom reversal setup on any candidate | Stayed in cash |
 
 ---
 
