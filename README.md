@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-04-15 | **Market context:** Naval blockade absorbed better than expected — S&P closed green; VIX 21.58 (well below war peak 31+); Goldman trimmed Brent to $90; multiple strategists calling market bottom; Lebanon-Israel talks at State Dept; WHR coiling (VSA 3rd straight HOLD, tightening range + Bag Holding); DeepSeek in cash
+**Last updated:** 2026-04-16 | **Market context:** Israel-Lebanon historic leader call (first direct contact in 34 years); US-Iran back-channel negotiations ongoing with second summit expected before ceasefire expires ~April 22; VIX ~18.2 (lowest since Feb 26); S&P/Nasdaq at record highs; oil Brent ~$99; WHR day 4 (coiling $55-57, four consecutive HOLD + Bag Holding, decision day 5 = 4/17); DeepSeek in cash (AAL/DVN/XOM all rejected)
 
 ---
 
@@ -69,7 +69,7 @@ gantt
     DAL — LOSS           :crit, done, 2026-03-25, 2026-03-30
     PFE — LOSS           :crit, done, 2026-04-01, 2026-04-07
     DAL #2 — No fill     :done,    2026-04-08, 2026-04-09
-    WHR — Open           :active,  2026-04-10, 2026-04-15
+    WHR — Open           :active,  2026-04-10, 2026-04-16
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :done,    2026-04-06, 2026-04-10
@@ -91,7 +91,7 @@ gantt
 
 †Day-only buy stop at $74.25. High was $74.19 — missed by 6 cents. DAL then collapsed to $68.08 (100% sell pressure, 20.7M vol). Order expired. Saved ~$80.
 
-‡Buy limit filled at $57.25. Consumer/housing recovery play — deeply oversold (-28% from 200d SMA), five days of institutional accumulation (68-85% buy), POC at $70.70 overhead. Stop $53.30. VSA: Bag Holding background strength + No Supply (most bullish combination seen in experiment). Premarket 4/13: $56.01 (-$21.08 unrealized). Premarket 4/14: $56.35 (-$15.30 unrealized). VSA upgraded trend from Consolidation → Markup on 4/14; background strength intact; holding through active naval blockade. Premarket 4/15: $56.35 (-$15.30 unrealized). Three consecutive sessions of clean HOLD — tightening range ($1.33 vs ATR $2.53), buy pressure returned to 65% on 4/13 despite 7% oil spike on blockade. Coiling pattern (compressed range + institutional support) typically resolves upward. Day 4; hold/exit decision by Thu 4/17.
+‡Buy limit filled at $57.25. Consumer/housing recovery play — deeply oversold (-28% from 200d SMA), five days of institutional accumulation (68-85% buy), POC at $70.70 overhead. Stop $53.30. VSA: Bag Holding background strength + No Supply (most bullish combination seen in experiment). Premarket 4/13: $56.01 (-$21.08 unrealized). Premarket 4/14: $56.35 (-$15.30 unrealized). VSA upgraded trend from Consolidation → Markup on 4/14; background strength intact; holding through active naval blockade. Premarket 4/15: $56.35 (-$15.30 unrealized). Three consecutive sessions of clean HOLD — tightening range ($1.33 vs ATR $2.53), buy pressure returned to 65% on 4/13 despite 7% oil spike on blockade. Coiling pattern (compressed range + institutional support) typically resolves upward. Premarket 4/16: $56.04 (-$20.57 unrealized). Four consecutive HOLD sessions. Diplomatic backdrop improving: Israel-Lebanon historic leader call (first direct contact in 34 years) + US-Iran back-channel negotiations targeting second summit before ceasefire expires ~April 22. Day 5 (4/17) decision framework: above $57 → trail stop to $55.00; $55.50–$57 → one more day; below $55.50 → exit. Hard exit deadline before ceasefire expiration (~April 22) — cannot hold through that binary event.
 
 ### Claude — Cumulative P/L by Trade
 
@@ -173,6 +173,8 @@ Trades considered but not taken, and what happened instead:
 | 4/14 | All new entries | Active US naval blockade; IRGC on maximum combat alert; Iran threatening Persian Gulf ports; US destroyers at the Strait — potential military incident = instant risk-off | Avoided — WHR held (VSA upgraded to Markup); no new capital deployed |
 | 4/15 | All new entries (Claude) | Active naval blockade ongoing; risk of Strait confrontation; but market absorbing well — holding cash pending further stabilization | Avoided — WHR held (VSA 3rd straight HOLD, coiling); no new capital |
 | 4/15 | AAL, DVN, DAL (DeepSeek) | Damaged patterns post-distribution; no VSA spring/test/bottom reversal setup on any candidate | Stayed in cash |
+| 4/16 | All new entries (Claude) | Active naval blockade + ceasefire expiring in 6 days; one position open (WHR on day 4); no second $1,000 deployed until diplomatic picture clarifies | Avoided — WHR held (4th straight HOLD, Bag Holding); no new capital |
+| 4/16 | AAL, DVN, XOM (DeepSeek) | AAL: 81% sell on 4/15 — distribution reversed prior day's rally; DVN: below all MAs, no spring, no accumulation; XOM: spring low ($150.98) violated on 4/14 ($146.72) — structure broken | Stayed in cash |
 
 ---
 
