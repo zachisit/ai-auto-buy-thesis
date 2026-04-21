@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-04-16 | **Market context:** Israel-Lebanon historic leader call (first direct contact in 34 years); US-Iran back-channel negotiations ongoing with second summit expected before ceasefire expires ~April 22; VIX ~18.2 (lowest since Feb 26); S&P/Nasdaq at record highs; oil Brent ~$99; WHR day 4 (coiling $55-57, four consecutive HOLD + Bag Holding, decision day 5 = 4/17); DeepSeek in cash (AAL/DVN/XOM all rejected)
+**Last updated:** 2026-04-20 | **Market context:** Ceasefire expires tomorrow (~April 21-22); Iran rejected second round of US-Iran talks; US Navy seized Iranian freighter; Iran reimposed Strait of Hormuz blockade; oil Brent ~$97, WTI +6-8% overnight; VIX ~21 (spiked 12% on escalation); S&P futures down ~0.7% after ATH above 7,100 Friday; Claude closed WHR (-$12.41, binary risk) and opened ET ($18.95, midstream pipeline — ceasefire-neutral); DeepSeek in cash (AAL/XOM/DVN/energy all rejected)
 
 ---
 
@@ -13,16 +13,16 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Metric | Claude | DeepSeek |
 |---|---|---|
 | Experiment start | 2026-03-13 | 2026-04-01 |
-| Trades closed | 4 | 2 |
-| Wins / Losses | 1 / 3 | 0 / 2 |
-| Win rate | 25% | 0% |
-| **Net P/L** | **-$50.60** | **-$79.22** |
+| Trades closed | 5 | 2 |
+| Wins / Losses | 1 / 4 | 0 / 2 |
+| Win rate | 20% | 0% |
+| **Net P/L** | **-$63.01** | **-$79.22** |
 | Best trade | DVN +$72.60 | — |
 | Worst trade | PFE -$60.20 | LUV -$53.82 |
 | Avg win | $72.60 | — |
-| Avg loss | -$41.07 | -$39.61 |
-| Profit factor | 0.59 | 0.00 |
-| Open / pending | WHR ($57.25 entry, open) | — |
+| Avg loss | -$33.90 | -$39.61 |
+| Profit factor | 0.54 | 0.00 |
+| Open / pending | ET ($18.95 entry, stop $18.30, open) | — |
 
 ---
 
@@ -31,23 +31,23 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 ```mermaid
 xychart-beta
     title "Claude — Cumulative P&L by Trade"
-    x-axis ["Start", "After DVN", "After PANW", "After DAL #1", "After PFE"]
+    x-axis ["Start", "After DVN", "After PANW", "After DAL #1", "After PFE", "After WHR"]
     y-axis "P&L ($)" -80 --> 80
-    line [0, 72.60, 66.30, 9.60, -50.60]
+    line [0, 72.60, 66.30, 9.60, -50.60, -63.01]
 ```
 
 ```mermaid
 xychart-beta
     title "Claude — Individual Trade P&L ($)"
-    x-axis ["DVN", "PANW", "DAL #1", "PFE"]
+    x-axis ["DVN", "PANW", "DAL #1", "PFE", "WHR"]
     y-axis "P&L ($)" -80 --> 80
-    bar [72.60, -6.30, -56.70, -60.20]
+    bar [72.60, -6.30, -56.70, -60.20, -12.41]
 ```
 
 ```mermaid
-pie title Claude — Trade Outcomes (4 closed)
+pie title Claude — Trade Outcomes (5 closed)
     "Wins" : 1
-    "Losses" : 3
+    "Losses" : 4
 ```
 
 ```mermaid
@@ -69,7 +69,8 @@ gantt
     DAL — LOSS           :crit, done, 2026-03-25, 2026-03-30
     PFE — LOSS           :crit, done, 2026-04-01, 2026-04-07
     DAL #2 — No fill     :done,    2026-04-08, 2026-04-09
-    WHR — Open           :active,  2026-04-10, 2026-04-16
+    WHR — LOSS           :crit, done, 2026-04-10, 2026-04-20
+    ET — Open            :active,  2026-04-20, 2026-04-21
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :done,    2026-04-06, 2026-04-10
@@ -87,11 +88,14 @@ gantt
 | 3 | DAL | 2026-03-25 | 2026-03-30 | 5 | 14 | $67.53 | $63.48 | **-$56.70** | 1:0.89 | ❌ Loss |
 | 4 | PFE | 2026-04-01 | 2026-04-07 | 6 | 35 | $28.27 | $26.55 | **-$60.20** | 1:0.86 | ❌ Loss |
 | 5 | DAL | 2026-04-08 | 2026-04-08 | — | 13 | $74.25† | — | $0 | 1:1.15 | ⛔ No fill |
-| 6 | WHR | 2026-04-10 | — | — | 17 | $57.25‡ | — | — | 1:1.43 | ⏳ Open |
+| 6 | WHR | 2026-04-10 | 2026-04-20 | 8 | 17 | $57.25‡ | $56.52 | **-$12.41** | 1:1.43 | ❌ Loss |
+| 7 | ET | 2026-04-20 | — | — | 53 | $18.95§ | — | — | 1:1.23 | ⏳ Open |
 
 †Day-only buy stop at $74.25. High was $74.19 — missed by 6 cents. DAL then collapsed to $68.08 (100% sell pressure, 20.7M vol). Order expired. Saved ~$80.
 
-‡Buy limit filled at $57.25. Consumer/housing recovery play — deeply oversold (-28% from 200d SMA), five days of institutional accumulation (68-85% buy), POC at $70.70 overhead. Stop $53.30. VSA: Bag Holding background strength + No Supply (most bullish combination seen in experiment). Premarket 4/13: $56.01 (-$21.08 unrealized). Premarket 4/14: $56.35 (-$15.30 unrealized). VSA upgraded trend from Consolidation → Markup on 4/14; background strength intact; holding through active naval blockade. Premarket 4/15: $56.35 (-$15.30 unrealized). Three consecutive sessions of clean HOLD — tightening range ($1.33 vs ATR $2.53), buy pressure returned to 65% on 4/13 despite 7% oil spike on blockade. Coiling pattern (compressed range + institutional support) typically resolves upward. Premarket 4/16: $56.04 (-$20.57 unrealized). Four consecutive HOLD sessions. Diplomatic backdrop improving: Israel-Lebanon historic leader call (first direct contact in 34 years) + US-Iran back-channel negotiations targeting second summit before ceasefire expires ~April 22. Day 5 (4/17) decision framework: above $57 → trail stop to $55.00; $55.50–$57 → one more day; below $55.50 → exit. Hard exit deadline before ceasefire expiration (~April 22) — cannot hold through that binary event.
+§Buy stop filled at $18.95. Midstream pipeline — ceasefire-neutral thesis: toll-road business model (fee-based, volume-driven) works in both outcomes. 93% buy reversal bar on 4/17 signaling seller exhaustion. POC at $18.88 as base. RSI 48 (neutral). ATR $0.40 (lowest volatility of any trade). 53 shares = best dollar exposure of experiment ($5.30 per $0.10 move). Max risk $34.45 — tightest of any trade. Stop $18.30, target $19.75. Represents strategic evolution: designed to profit regardless of geopolitical outcome.
+
+‡Buy limit filled at $57.25. Consumer/housing recovery play — deeply oversold (-28% from 200d SMA), five days of institutional accumulation (68-85% buy), POC at $70.70 overhead. Stop $53.30. VSA: Bag Holding background strength + No Supply (most bullish combination seen in experiment). Premarket 4/13: $56.01 (-$21.08 unrealized). Premarket 4/14: $56.35 (-$15.30 unrealized). VSA upgraded trend from Consolidation → Markup on 4/14; background strength intact; holding through active naval blockade. Premarket 4/15: $56.35 (-$15.30 unrealized). Three consecutive sessions of clean HOLD — tightening range ($1.33 vs ATR $2.53), buy pressure returned to 65% on 4/13 despite 7% oil spike on blockade. Coiling pattern (compressed range + institutional support) typically resolves upward. Premarket 4/16: $56.04 (-$20.57 unrealized). Four consecutive HOLD sessions. Diplomatic backdrop improving: Israel-Lebanon historic leader call (first direct contact in 34 years) + US-Iran back-channel negotiations targeting second summit before ceasefire expires ~April 22. Day 5 (4/17): Stop trailed from $53.30 → $54.50 (below 4/14 and 4/15 lows of $54.54/$54.47); max risk tightened from ~$67 to ~$47. Premarket $56.88 — recovering from yesterday's 8%/92% distribution bar that hit $58.22 intraday then closed $55.99. Fifth consecutive HOLD; VSA background strength (Bag Holding, 6 bars ago) intact. Lebanon 10-day ceasefire began 4/16; Trump "very close" to Iran deal — strongest diplomatic signal to date. Hard exit deadline: before ceasefire expiration ~April 22.
 
 ### Claude — Cumulative P/L by Trade
 
@@ -100,7 +104,8 @@ gantt
 | Trade 1 | DVN | +$72.60 | +$72.60 |
 | Trade 2 | PANW | -$6.30 | +$66.30 |
 | Trade 3 | DAL #1 | -$56.70 | +$9.60 |
-| Trade 4 | PFE | -$60.20 | **-$50.60** |
+| Trade 4 | PFE | -$60.20 | -$50.60 |
+| Trade 5 | WHR | -$12.41 | **-$63.01** |
 
 ### Claude — Exit Reasons
 
@@ -110,6 +115,7 @@ gantt
 | PANW | VSA CLOSE signal (two down bars + No Demand up bar = end-of-uptrend signal) |
 | DAL #1 | Stop triggered at $63.48 — Iran rejected ceasefire proposal, oil reversed |
 | PFE | Stop triggered at $26.55 — defensive-to-cyclical rotation on ceasefire day |
+| WHR | Manual exit at $56.52 ahead of ceasefire expiration (April 21-22) — VSA healthy (7 consecutive HOLDs, Bag Holding intact) but binary geopolitical risk overrode system signal; smallest loss of experiment |
 
 ---
 
@@ -175,6 +181,14 @@ Trades considered but not taken, and what happened instead:
 | 4/15 | AAL, DVN, DAL (DeepSeek) | Damaged patterns post-distribution; no VSA spring/test/bottom reversal setup on any candidate | Stayed in cash |
 | 4/16 | All new entries (Claude) | Active naval blockade + ceasefire expiring in 6 days; one position open (WHR on day 4); no second $1,000 deployed until diplomatic picture clarifies | Avoided — WHR held (4th straight HOLD, Bag Holding); no new capital |
 | 4/16 | AAL, DVN, XOM (DeepSeek) | AAL: 81% sell on 4/15 — distribution reversed prior day's rally; DVN: below all MAs, no spring, no accumulation; XOM: spring low ($150.98) violated on 4/14 ($146.72) — structure broken | Stayed in cash |
+| 4/17 | All new entries (Claude) | S&P at all-time highs; every screened name in $20-50 range either overbought (CROX RSI 74.5, LEVI RSI 67.7) or showing 80-92% sell distribution bars (CCL 32M vol, CARR 17M vol); market up 15% in 15 days — no edge entering crowded recovery trade | Stayed in cash; WHR held (5th HOLD, stop trailed) |
+| 4/17 | AAL (DeepSeek) | 81% sell pressure on 4/15 — distribution not healed; earnings due April 23 (event risk); no VSA spring or test; three-day Easter weekend ahead | Stayed in cash |
+| 4/20 | AR (Claude) | RSI 38.1, below 20d SMA by $4; falling knife ($41→$36 in two weeks) despite two buying bars — trend clearly down | Not entered |
+| 4/20 | FANG (Claude) | $180/share — only 5 shares on $1,000; disqualified by position sizing rule | Not entered |
+| 4/20 | AAL (DeepSeek) | Pre-market -3% on merger rejection; oil surge headwind; earnings April 23 (event risk); technical damage from April 8 distribution unremedied; no VSA spring/test | Stayed in cash |
+| 4/20 | XOM (DeepSeek) | Spring low ($150.98) violated April 14 ($146.72) — structure broken; earnings April 21 add event risk; no clean VSA setup | Stayed in cash |
+| 4/20 | DVN (DeepSeek) | Below all key moving averages; prior accumulation pattern failed completely; no buy signal | Stayed in cash |
+| 4/20 | Energy sector OXY/HAL/COP (DeepSeek) | Oil surging but stocks caught in broader risk-off downdraft; no VSA entry patterns identified | Stayed in cash |
 
 ---
 
