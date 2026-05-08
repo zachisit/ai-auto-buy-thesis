@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-05-07 | **Market context:** WTI ~$91.73 (US-Iran 14-point MoU framework; oil crashed from $114 to $91 in 3 days; energy worst sector -4.2% on 5/6); VIX ~15-16 (lowest since before war); S&P record 7,365.12; Fed held 3.50-3.75%; Claude HESM non-fill abandoned (saved from energy selloff), F buy stop $12.40 day-only pending (stop $11.45, target $14.00); cumulative -$108.70; 8 closed trades, 2W/6L, 25%; DeepSeek DVN-002 stopped out at $48.61 (+$22.20, first win, stop tightened above entry locked min gain); cash; 3 closed trades, 1W/2L, 33%, -$57.02
+**Last updated:** 2026-05-08 | **Market context:** WTI ~$93.60, Brent ~$99.70 (below $100 for first time since late March); Iran MoU framework progressing (talks potentially next week in Islamabad); VIX ~15-16; S&P ~7,365 record, flat day; April jobs report strong (+115K vs +62K expected); Claude F buy stop $12.40 FINAL day-only attempt (stop $11.45, target $14.00) — 9 consecutive trading days in cash, abandon if no fill today; cumulative -$108.70; 8 closed trades, 2W/6L, 25%; DeepSeek cash — AAL rejected (no VSA spring/test despite multi-day rally); cumulative -$57.02; 3 closed trades, 1W/2L, 33%
 
 ---
 
@@ -22,7 +22,7 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Avg win | $59.36 | $22.20 |
 | Avg loss | -$37.90 | -$39.61 |
 | Profit factor | 0.52 | 0.28 |
-| Open / pending | F buy stop $12.40 day-only (5/7; stop $11.45, target $14.00) | None (cash) |
+| Open / pending | F buy stop $12.40 FINAL day-only attempt (5/8; stop $11.45, target $14.00) — abandon if no fill | None (cash) |
 
 ---
 
@@ -77,7 +77,7 @@ gantt
     LYFT — LOSS          :crit, done, 2026-04-28, 2026-04-29
     AM — No fill (×4)    :done,    2026-05-01, 2026-05-06
     HESM — No fill       :done,    2026-05-06, 2026-05-07
-    F — Pending          :active,  2026-05-07, 2026-05-08
+    F — Pending          :active,  2026-05-07, 2026-05-09
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :done,    2026-04-06, 2026-04-10
@@ -317,6 +317,7 @@ Trades considered but not taken, and what happened instead:
 | 5/7 | XOM (DeepSeek) | Choppy; 49% buy — balanced/neutral pressure; no spring | Stayed in cash |
 | 5/7 | CVX (DeepSeek) | No clear spring or accumulation setup | Stayed in cash |
 | 5/7 | SHOP (DeepSeek) | Heavy selling 5/5–5/6 (85% and 78% sell bars); downtrend intact, no spring yet | Stayed in cash |
+| 5/8 | AAL (DeepSeek) | Rallied $11.80→$13.18 over several days but no VSA spring or test; inconsistent buy pressure (58% on 5/6 → 64% on 5/7); chasing a multi-day move without a clear risk/reward trigger | Stayed in cash |
 
 ---
 
