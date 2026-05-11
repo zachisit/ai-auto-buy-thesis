@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-05-08 | **Market context:** WTI ~$93.60, Brent ~$99.70 (below $100 for first time since late March); Iran MoU framework progressing (talks potentially next week in Islamabad); VIX ~15-16; S&P ~7,365 record, flat day; April jobs report strong (+115K vs +62K expected); Claude F buy stop $12.40 FINAL day-only attempt (stop $11.45, target $14.00) — 9 consecutive trading days in cash, abandon if no fill today; cumulative -$108.70; 8 closed trades, 2W/6L, 25%; DeepSeek cash — AAL rejected (no VSA spring/test despite multi-day rally); cumulative -$57.02; 3 closed trades, 1W/2L, 33%
+**Last updated:** 2026-05-11 | **Market context:** WTI ~$99.18, Brent ~$104.83 (+3.9%/+3.5% — surging after Trump rejected Iran's counterproposal "TOTALLY UNACCEPTABLE"); peace trade off, war premium returning; VIX rising ~18-20; S&P ~7,400 record (sixth straight winning week), futures flat-to-lower; F abandoned after three non-fills (couldn't reclaim SMA despite $21 oil crash — company-specific headwinds confirmed); Claude ET re-entry buy stop $19.45 placed day-only (re-entering proven +$46.11 winner on pullback to SMA; stop $18.85, target $20.50; strategic adjustment: tighter triggers, re-enter proven winners); cumulative -$108.70; 8 closed trades, 2W/6L, 25%; DeepSeek cash — energy gap-ups on oil spike chasing-prohibited (XOM/CVX/OXY/DVN all distributed Friday); cumulative -$57.02; 3 closed trades, 1W/2L, 33%
 
 ---
 
@@ -22,7 +22,7 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Avg win | $59.36 | $22.20 |
 | Avg loss | -$37.90 | -$39.61 |
 | Profit factor | 0.52 | 0.28 |
-| Open / pending | F buy stop $12.40 FINAL day-only attempt (5/8; stop $11.45, target $14.00) — abandon if no fill | None (cash) |
+| Open / pending | ET buy stop $19.45 day-only (5/11; stop $18.85, target $20.50) — re-entry on proven winner | None (cash) |
 
 ---
 
@@ -77,7 +77,8 @@ gantt
     LYFT — LOSS          :crit, done, 2026-04-28, 2026-04-29
     AM — No fill (×4)    :done,    2026-05-01, 2026-05-06
     HESM — No fill       :done,    2026-05-06, 2026-05-07
-    F — Pending          :active,  2026-05-07, 2026-05-09
+    F — No fill (×3)     :done,    2026-05-07, 2026-05-09
+    ET #2 — Pending      :active,  2026-05-11, 2026-05-12
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :done,    2026-04-06, 2026-04-10
@@ -103,7 +104,8 @@ gantt
 | 10 | LYFT | 2026-04-28 | 2026-04-29 | 2 | 69 | $14.60※ | $14.00 | **-$41.40** | 1:1.50 | ❌ Loss |
 | 11 | AM | 2026-05-01 | 2026-05-06 | — | 45 | $22.05⊕ | — | $0 | 1:1.61 | ⛔ No fill (×4) |
 | 12 | HESM | 2026-05-06 | 2026-05-06 | — | 25 | $39.55♦ | — | $0 | 1:1.58 | ⛔ No fill |
-| 13 | F | 2026-05-07 | — | — | 80 | $12.40★ | — | — | 1:1.68 | ⏳ Pending |
+| 13 | F | 2026-05-07 | 2026-05-09 | — | 80 | $12.40★ | — | $0 | 1:1.68 | ⛔ No fill (×3) |
+| 14 | ET | 2026-05-11 | — | — | 51 | $19.45◆ | — | — | 1:1.75 | ⏳ Pending |
 
 †Day-only buy stop at $74.25. High was $74.19 — missed by 6 cents. DAL then collapsed to $68.08 (100% sell pressure, 20.7M vol). Order expired. Saved ~$80.
 
@@ -117,11 +119,13 @@ gantt
 
 ♦Buy stop $39.55 (limit $39.75) placed day-only 5/6. 25 shares. RSI 55.6, above 20d SMA ($38.17). POC at $39.52 overhead magnet (just $0.34 above price). ATR $0.98. Stop $38.00 (GTC, 1.6 ATRs below trigger), target $42.00 (GTC). R/R 1:1.58. Thesis: Hess Midstream (HESM) — same toll-road pipeline model as ET (+$46.11). Ceasefire-neutral: fee-based throughput revenue benefits from both elevated oil (volumes) and flow normalization (restart). Two consecutive 70%+ buy bars (5/4: 74% on 6.5M — highest volume in dataset; 5/5: 71% on 4.8M) — institutional accumulation after 5/1 distribution bar. Earnings done (~4/30), no binary risk. Fully self-managing from day one. Selected from midstream screen after AM abandoned: EPD (8%/92% distribution bar 5/5), MPLX (17 shares disqualified), WES (23 shares below ideal), TRGP (3 shares disqualified) all rejected. 5/7 (Abandoned): Order expired 5/6 without fill — energy sector sold off -4.2% on US-Iran 14-point MoU framework reports (WTI crashed from $104 to $91 intraday). HESM closed $38.22, down from $39.18; would have been -$33 unrealized if filled. Most important non-fill of the experiment: buy stop mechanism prevented entering the wrong sector the day the war premium began its largest single-day unwind. Regime changed from "energy is the edge" to "energy is the liability" in one session.
 
-★Buy stop $12.40 (limit $12.55) placed day-only 5/7. 80 shares. RSI 49.4, below 20d SMA ($12.34) — trigger requires SMA reclaim as trend-change confirmation. POC $14.01 overhead magnet. ATR $0.36. Stop $11.45 (GTC, 2.6 ATRs below trigger), target $14.00 (GTC). R/R 1:1.68. Thesis: Ford as oil-crash beneficiary — lower gas prices → truck/SUV demand recovers → F reprices toward volume profile POC at $14.01 (+15%). 74% buy reversal bar on 52M volume (5/6) is first genuine reversal signal since April. Macro context is the key difference from prior F attempts: oil dropped from $114 to $91 in 3 days on the US-Iran MoU framework. Prior F attempts (4/23 and 4/28 at $12.75) correctly failed — oil was still above $100 and the structural headwind for auto demand was intact. Today F is screened as an oil-crash beneficiary in a pivoting macro environment. 80 shares = $6.40 per $0.10 move (third-best dollar exposure of experiment). Fully self-managing from day one. 9 names screened across rideshare, entertainment, restaurants, airlines, gaming, and autos — F was the only setup meeting all criteria.
+★Buy stop $12.40 (limit $12.55) placed day-only 5/7. 80 shares. RSI 49.4, below 20d SMA ($12.34) — trigger requires SMA reclaim as trend-change confirmation. POC $14.01 overhead magnet. ATR $0.36. Stop $11.45 (GTC, 2.6 ATRs below trigger), target $14.00 (GTC). R/R 1:1.68. Thesis: Ford as oil-crash beneficiary — lower gas prices → truck/SUV demand recovers → F reprices toward volume profile POC at $14.01 (+15%). 74% buy reversal bar on 52M volume (5/6) is first genuine reversal signal since April. Macro context is the key difference from prior F attempts: oil dropped from $114 to $91 in 3 days on the US-Iran MoU framework. Prior F attempts (4/23 and 4/28 at $12.75) correctly failed — oil was still above $100 and the structural headwind for auto demand was intact. Today F is screened as an oil-crash beneficiary in a pivoting macro environment. 80 shares = $6.40 per $0.10 move (third-best dollar exposure of experiment). Fully self-managing from day one. 9 names screened across rideshare, entertainment, restaurants, airlines, gaming, and autos — F was the only setup meeting all criteria. 5/8 (Second non-fill): FINAL day-only attempt; high failed to reach $12.40 trigger. 5/9 (Third non-fill): F closed $12.32 — eight cents below trigger after three consecutive days. Officially abandoned on 5/11: F could not reclaim its 20d SMA ($12.34–12.40) despite oil dropping $21 from $114→$93; company-specific headwinds (earnings miss risk, EV competition, dividend concerns) confirmed by three buy stop non-fills. Buy stop mechanism correctly identified absence of genuine upward momentum.
 
 ※Buy stop $14.60 (limit $14.75) placed day-only 4/28. 69 shares. RSI 56.0, above 20d SMA ($13.90). POC $13.47 below (support). Stop $14.00, target $15.50. R/R 1:1.50. Rideshare/consumer tech — genuinely uncorrelated to ET (midstream energy) and AAL (airline). Benefits from lower gas prices like AAL but not tied to airline fuel costs or pipeline volumes. 83% buy reversal bar on 4/24 after two consecutive sell bars; balanced 49%/51% on 4/28. No earnings until May 6 — avoiding SOFI's binary event risk. First three-position deployment of the experiment. Operator corrected the assumption that two positions was the cap — experiment parameters specify $1,000/position but do not limit simultaneous positions; experiment has been leaving money on the table by defaulting to "fully deployed" after two. Day 2 (4/29): premarket $14.30 (-$0.30/share, -$20.70 unrealized). VSA HOLD — background strength confirmed (Spring, 3 bars ago), No Supply signal ("sellers cannot push price down"). Volume drying to 7.6M (healthy contraction). Price $0.30 above stop $14.00 — tight buffer but system is healthy. Stop $14.00, target $15.50. Exit (4/29): Stop triggered at $14.00 on same broad sell-off as AAL. Confirmed that AAL (airline) + LYFT (rideshare) is not real diversification — both are consumer/travel names that sold off together. 1.0 ATR stop too tight to survive normal daily volatility. Final P/L: -$41.40 (69 × -$0.60/share). New rule established: minimum 1.5 ATRs from entry on all future trades.
 
 ‡Buy limit filled at $57.25. Consumer/housing recovery play — deeply oversold (-28% from 200d SMA), five days of institutional accumulation (68-85% buy), POC at $70.70 overhead. Stop $53.30. VSA: Bag Holding background strength + No Supply (most bullish combination seen in experiment). Premarket 4/13: $56.01 (-$21.08 unrealized). Premarket 4/14: $56.35 (-$15.30 unrealized). VSA upgraded trend from Consolidation → Markup on 4/14; background strength intact; holding through active naval blockade. Premarket 4/15: $56.35 (-$15.30 unrealized). Three consecutive sessions of clean HOLD — tightening range ($1.33 vs ATR $2.53), buy pressure returned to 65% on 4/13 despite 7% oil spike on blockade. Coiling pattern (compressed range + institutional support) typically resolves upward. Premarket 4/16: $56.04 (-$20.57 unrealized). Four consecutive HOLD sessions. Diplomatic backdrop improving: Israel-Lebanon historic leader call (first direct contact in 34 years) + US-Iran back-channel negotiations targeting second summit before ceasefire expires ~April 22. Day 5 (4/17): Stop trailed from $53.30 → $54.50 (below 4/14 and 4/15 lows of $54.54/$54.47); max risk tightened from ~$67 to ~$47. Premarket $56.88 — recovering from yesterday's 8%/92% distribution bar that hit $58.22 intraday then closed $55.99. Fifth consecutive HOLD; VSA background strength (Bag Holding, 6 bars ago) intact. Lebanon 10-day ceasefire began 4/16; Trump "very close" to Iran deal — strongest diplomatic signal to date. Hard exit deadline: before ceasefire expiration ~April 22.
+
+◆Buy stop $19.45 (limit $19.55) placed day-only 5/11. 51 shares. RSI 48.8 — neutral. ET pulled back from $20.39 to $19.34 over 5 bars — healthy 5% retracement to 20d SMA ($19.36) and near POC ($19.08). Premarket $19.44 — one cent below trigger. Stop $18.85 (GTC, below POC), target $20.50 (GTC). R/R 1:1.75. Max risk $30.60 vs upside $53.55. Thesis: re-entry on proven winner. ET produced +$46.11 (trade #6); same ceasefire-neutral toll-road midstream model. Macro context restored: Trump rejected Iran's counterproposal Sunday ("TOTALLY UNACCEPTABLE") — oil surging +3.9% to $99.18, war premium returning, Strait of Hormuz still shut. Strategic adjustment applied: trigger set $0.11 above prior close (vs prior $0.30–0.50 range) — premarket was within $0.01, solving the non-fill problem while maintaining momentum confirmation. Fully self-managing from day one: buy stop (DAY), stop loss (GTC), limit sell at target (GTC).
 
 ### Claude — Cumulative P/L by Trade
 
@@ -318,6 +322,16 @@ Trades considered but not taken, and what happened instead:
 | 5/7 | CVX (DeepSeek) | No clear spring or accumulation setup | Stayed in cash |
 | 5/7 | SHOP (DeepSeek) | Heavy selling 5/5–5/6 (85% and 78% sell bars); downtrend intact, no spring yet | Stayed in cash |
 | 5/8 | AAL (DeepSeek) | Rallied $11.80→$13.18 over several days but no VSA spring or test; inconsistent buy pressure (58% on 5/6 → 64% on 5/7); chasing a multi-day move without a clear risk/reward trigger | Stayed in cash |
+| 5/9 | F (Claude) | Third consecutive non-fill — closed $12.32, eight cents below $12.40 trigger; F officially abandoned on 5/11 after failing to reclaim 20d SMA despite $21 oil crash | F continued to languish below SMA |
+| 5/11 | XOM, CVX, OXY, DVN (DeepSeek) | Energy gap-ups on oil spike after Trump rejected Iran deal — chasing prohibited; Friday bars showed heavy distribution (OXY 4% buy, XOM 25% buy, DVN 36% buy) — gap does not change underlying distribution | Not entered |
+| 5/11 | AAL (DeepSeek) | Oil back above $100 — direct structural headwind for airlines; Friday had 95% buy bar (strong) but no low-volume test of breakout; macro headwind overrides technical strength | Stayed in cash |
+| 5/11 | AMD (DeepSeek) | RSI 80.8, ATR $22.59, +109% from 200d SMA, 15%+ pre-market gap — extremely extended; position sizing impossible for $1,000; chasing prohibited | Stayed in cash |
+| 5/11 | NVDA (DeepSeek) | Friday: 47% buy — fading momentum; no spring or test setup | Stayed in cash |
+| 5/11 | DVN (Claude) | Only 21 shares/$1,000 — insufficient dollar exposure; crashed from $51, oversold but limited position size | Not entered |
+| 5/11 | CTRA (Claude) | 30 shares — borderline exposure; only one bar of data since capitulation crash; insufficient confirmation | Not entered |
+| 5/11 | PANW (Claude) | 4 shares; RSI 76.1 — overbought; disqualified by both position sizing and RSI | Not entered |
+| 5/11 | DDOG (Claude) | 5 shares; RSI 85.8 — massively overbought; disqualified | Not entered |
+| 5/11 | ANET (Claude) | 7 shares; RSI 38.3 — falling knife, crashed $177→$141; disqualified by position sizing | Not entered |
 
 ---
 
@@ -342,6 +356,8 @@ Rules developed and refined during the experiment:
 | 13 | All positions must be fully self-managing from day one: buy stop to enter + stop loss + limit sell at target (no intraday monitoring required) | Apr 30 (ET exit lesson) |
 | 14 | Minimum stop distance of 1.5 ATRs from entry — 1.0 ATR stops are triggered by normal daily noise before trades have time to work | Apr 30 (LYFT/AAL lesson) |
 | 15 | No airlines, cruises, or rideshare positions while oil remains above $90/barrel — sector is structurally impaired (DAL/AAL/LYFT: 3 trades, 3 losses, -$148.50) | Apr 30 (pattern recognition) |
+| 16 | Set buy stop triggers within $0.10–0.15 of the prior close — requiring $0.30–0.50 of upward movement before triggering means needing nearly a full ATR of gain just to enter, preventing fills in normal trading ranges | May 11 (nine-non-fill audit) |
+| 17 | Re-enter proven winners on pullback to SMA/POC before exhausting the screening universe on new names — the best trade is often the one you already know | May 11 (ET re-entry lesson) |
 
 ---
 
