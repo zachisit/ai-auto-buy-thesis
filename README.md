@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-05-11 | **Market context:** WTI ~$99.18, Brent ~$104.83 (+3.9%/+3.5% — surging after Trump rejected Iran's counterproposal "TOTALLY UNACCEPTABLE"); peace trade off, war premium returning; VIX rising ~18-20; S&P ~7,400 record (sixth straight winning week), futures flat-to-lower; F abandoned after three non-fills (couldn't reclaim SMA despite $21 oil crash — company-specific headwinds confirmed); Claude ET re-entry buy stop $19.45 placed day-only (re-entering proven +$46.11 winner on pullback to SMA; stop $18.85, target $20.50; strategic adjustment: tighter triggers, re-enter proven winners); cumulative -$108.70; 8 closed trades, 2W/6L, 25%; DeepSeek cash — energy gap-ups on oil spike chasing-prohibited (XOM/CVX/OXY/DVN all distributed Friday); cumulative -$57.02; 3 closed trades, 1W/2L, 33%
+**Last updated:** 2026-05-12 | **Market context:** WTI ~$99, Brent ~$104; CPI inflation data today (oil-driven inflation expected elevated); Trump-Xi summit confirmed 5/13-15 in Beijing (Iran, trade, Taiwan on agenda); VIX ~18; S&P 7,412.84 / Nasdaq 26,274.13 — record highs; Claude ET day 2 (+$11.22 unrealized, premarket $19.67; day 1 produced classic shakeout-to-$19.14 then 80% buy close at $19.61 — reclaimed SMA); no second position — entire momentum universe ($100-800/share semis/cybersecurity) untradeable at $1,000 position size; cumulative -$108.70; 8 closed trades, 2W/6L, 25%; DeepSeek cash — XOM/CVX/OXY 5/11 demand bars unchased (news-driven gap, no preceding spring/test), AAL 84% sell (oil headwind); cumulative -$57.02; 3 closed trades, 1W/2L, 33%
 
 ---
 
@@ -22,7 +22,7 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Avg win | $59.36 | $22.20 |
 | Avg loss | -$37.90 | -$39.61 |
 | Profit factor | 0.52 | 0.28 |
-| Open / pending | ET buy stop $19.45 day-only (5/11; stop $18.85, target $20.50) — re-entry on proven winner | None (cash) |
+| Open / pending | ET (entry $19.45 on 5/11; day 2, +$11.22 unrealized; stop $18.85, target $20.50) | None (cash) |
 
 ---
 
@@ -78,7 +78,7 @@ gantt
     AM — No fill (×4)    :done,    2026-05-01, 2026-05-06
     HESM — No fill       :done,    2026-05-06, 2026-05-07
     F — No fill (×3)     :done,    2026-05-07, 2026-05-09
-    ET #2 — Pending      :active,  2026-05-11, 2026-05-12
+    ET #2 — Pending      :active,  2026-05-11, 2026-05-13
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :done,    2026-04-06, 2026-04-10
@@ -125,7 +125,7 @@ gantt
 
 ‡Buy limit filled at $57.25. Consumer/housing recovery play — deeply oversold (-28% from 200d SMA), five days of institutional accumulation (68-85% buy), POC at $70.70 overhead. Stop $53.30. VSA: Bag Holding background strength + No Supply (most bullish combination seen in experiment). Premarket 4/13: $56.01 (-$21.08 unrealized). Premarket 4/14: $56.35 (-$15.30 unrealized). VSA upgraded trend from Consolidation → Markup on 4/14; background strength intact; holding through active naval blockade. Premarket 4/15: $56.35 (-$15.30 unrealized). Three consecutive sessions of clean HOLD — tightening range ($1.33 vs ATR $2.53), buy pressure returned to 65% on 4/13 despite 7% oil spike on blockade. Coiling pattern (compressed range + institutional support) typically resolves upward. Premarket 4/16: $56.04 (-$20.57 unrealized). Four consecutive HOLD sessions. Diplomatic backdrop improving: Israel-Lebanon historic leader call (first direct contact in 34 years) + US-Iran back-channel negotiations targeting second summit before ceasefire expires ~April 22. Day 5 (4/17): Stop trailed from $53.30 → $54.50 (below 4/14 and 4/15 lows of $54.54/$54.47); max risk tightened from ~$67 to ~$47. Premarket $56.88 — recovering from yesterday's 8%/92% distribution bar that hit $58.22 intraday then closed $55.99. Fifth consecutive HOLD; VSA background strength (Bag Holding, 6 bars ago) intact. Lebanon 10-day ceasefire began 4/16; Trump "very close" to Iran deal — strongest diplomatic signal to date. Hard exit deadline: before ceasefire expiration ~April 22.
 
-◆Buy stop $19.45 (limit $19.55) placed day-only 5/11. 51 shares. RSI 48.8 — neutral. ET pulled back from $20.39 to $19.34 over 5 bars — healthy 5% retracement to 20d SMA ($19.36) and near POC ($19.08). Premarket $19.44 — one cent below trigger. Stop $18.85 (GTC, below POC), target $20.50 (GTC). R/R 1:1.75. Max risk $30.60 vs upside $53.55. Thesis: re-entry on proven winner. ET produced +$46.11 (trade #6); same ceasefire-neutral toll-road midstream model. Macro context restored: Trump rejected Iran's counterproposal Sunday ("TOTALLY UNACCEPTABLE") — oil surging +3.9% to $99.18, war premium returning, Strait of Hormuz still shut. Strategic adjustment applied: trigger set $0.11 above prior close (vs prior $0.30–0.50 range) — premarket was within $0.01, solving the non-fill problem while maintaining momentum confirmation. Fully self-managing from day one: buy stop (DAY), stop loss (GTC), limit sell at target (GTC).
+◆Buy stop $19.45 (limit $19.55) placed day-only 5/11. 51 shares. RSI 48.8 — neutral. ET pulled back from $20.39 to $19.34 over 5 bars — healthy 5% retracement to 20d SMA ($19.36) and near POC ($19.08). Premarket $19.44 — one cent below trigger. Stop $18.85 (GTC, below POC), target $20.50 (GTC). R/R 1:1.75. Max risk $30.60 vs upside $53.55. Thesis: re-entry on proven winner. ET produced +$46.11 (trade #6); same ceasefire-neutral toll-road midstream model. Macro context restored: Trump rejected Iran's counterproposal Sunday ("TOTALLY UNACCEPTABLE") — oil surging +3.9% to $99.18, war premium returning, Strait of Hormuz still shut. Strategic adjustment applied: trigger set $0.11 above prior close (vs prior $0.30–0.50 range) — premarket was within $0.01, solving the non-fill problem while maintaining momentum confirmation. Fully self-managing from day one: buy stop (DAY), stop loss (GTC), limit sell at target (GTC). Day 2 (5/12): premarket $19.67 (+$0.22/share, +$11.22 unrealized). Day 1 bar: opened $19.36, dipped to $19.14 (below 20d SMA — shakeout), closed $19.61 with 80% buy on 10.3M volume — classic shakeout-and-reclaim pattern. RSI 53.3 building momentum. CPI data today (expected elevated on oil); Trump-Xi summit 5/13-15 (Iran, trade, Taiwan). No second position added — entire strong-momentum universe (semis, cybersecurity) priced $100-800/share, untradeable at $1,000 position size. Stop $18.85, target $20.50.
 
 ### Claude — Cumulative P/L by Trade
 
@@ -332,6 +332,15 @@ Trades considered but not taken, and what happened instead:
 | 5/11 | PANW (Claude) | 4 shares; RSI 76.1 — overbought; disqualified by both position sizing and RSI | Not entered |
 | 5/11 | DDOG (Claude) | 5 shares; RSI 85.8 — massively overbought; disqualified | Not entered |
 | 5/11 | ANET (Claude) | 7 shares; RSI 38.3 — falling knife, crashed $177→$141; disqualified by position sizing | Not entered |
+| 5/12 | MRVL (Claude) | 5 shares/$1,000 — disqualified by position sizing; RSI 69.3, 87% above 200d SMA; parabolic semi run | Not entered |
+| 5/12 | ON (Claude) | 9 shares/$1,000 — below ideal exposure; RSI 75 overbought; 100% buy bar = too extended to enter | Not entered |
+| 5/12 | QCOM (Claude) | 4 shares/$1,000 — disqualified; RSI 88.4 parabolic; $145→$237 in two weeks | Not entered |
+| 5/12 | MU (Claude) | 1 share/$1,000 — disqualified; RSI 85.8; $487→$795 (+63%) in three weeks; 170% above 200d SMA | Not entered |
+| 5/12 | XOM (DeepSeek) | 5/11 bar 99% buy but news-driven gap on oil spike; no preceding spring or low-volume test; chasing prohibited | Stayed in cash |
+| 5/12 | CVX (DeepSeek) | 5/11 bar 79% buy; news-driven gap, no spring or test | Stayed in cash |
+| 5/12 | OXY (DeepSeek) | 5/11 bar 78% buy; prior 5/8 bar was 96% sell — not a clean reversal pattern | Stayed in cash |
+| 5/12 | DVN (DeepSeek) | 5/11 bar 67% buy; below 20d SMA; damaged structure from 5/6 collapse; no spring | Stayed in cash |
+| 5/12 | AAL (DeepSeek) | 5/11 bar 84% sell — heavy distribution; oil above $99 structural headwind remains | Stayed in cash |
 
 ---
 
