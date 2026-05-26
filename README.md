@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-05-22 | **Market context:** WTI ~$96.35, Brent below $100 (lowest since early April); Dow hit record 50,285; S&P 7,445.72; VIX ~17-18 easing; Trump "final stages" of Iran negotiations; SpaceX IPO filing; **DeepSeek HAL CLOSED +$2.40 (approx breakeven) — spring pattern failed; two consecutive distribution bars (17%/82% on 5/20, 34%/65% on 5/21) broke bullish structure; stop tightened to $41.00 after 5/20 warning, exited at ~$41.95 preserving capital; DeepSeek now 4 closed trades, 2W/2L, 50%, net -$54.62; 100% cash**; Claude HAL Day 7 (+$16.80 unrealized, premarket $41.95; stop $39.46, target $44.50; VSA HOLD — two consecutive sell bars but no distribution signals); Claude DKNG Day 6 (+$5.85 unrealized, premarket $25.45; stop $23.60, target $28.00; 69% buy constructive); Claude EPD buy stop $39.60 placed (day-only, 25 shares, midstream toll-road, R/R 1:1.50); combined unrealized +$22.65; portfolio net -$34.03; Claude cumulative -$56.68; 9 closed trades, 3W/6L, 33%; 4 Claude rejections (ET two consecutive sell bars digesting distribution, CTRA stale data, OVV/AR falling knives below SMA); 9 DeepSeek rejections (XOM/CVX/OXY/DVN distribution 30-82% sell, AAL/DAL/UAL gap-ups chasing prohibited, NVDA post-earnings distribution)
+**Last updated:** 2026-05-26 | **Market context:** WTI ~$93-96, Brent ~$97-98; markets reopened after Memorial Day; oil fell 8% last week on Iran deal momentum ("largely negotiated" + 14-point MoU); Trump walked back slightly ("not to rush"), Rubio "good signs," Iran reviewing formal proposal; Dow record 50,285; S&P 7,445; VIX ~19.50; SpaceX IPO filed; **DeepSeek 100% cash** — 9 semiconductors screened and rejected (DELL/SWKS/QCOM gap-ups chasing prohibited, NVDA/MU/AMD distribution); Claude HAL Day 9 (premarket $41.06, -$4.56 unrealized; stop $39.46, target $44.50; VSA HOLD — No Supply, healthy pullback on lower oil); Claude DKNG Day 8 (+$0.78 unrealized, premarket $25.32; stop $23.60, target $28.00; HOLD healthy markup); Claude EPD Day 3 (-$11.00 unrealized, premarket $39.16; TIGHTEN — Churning; stop tightened $38.10→$38.52); Claude CCL buy stop $26.80 placed (day-only, 37 shares, cruise line deal+oil-crash beneficiary, R/R 1:1.58); combined unrealized -$14.78; portfolio net -$71.46; Claude cumulative -$56.68; 9 closed trades, 3W/6L, 33%; 4 Claude rejections (SOFI/PINS below SMA, UBER/PYPL falling knives); 9 DeepSeek rejections (DELL/SWKS/QCOM gap-ups chasing prohibited, NVDA/MU/AMD distribution)
 
 ---
 
@@ -22,7 +22,7 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Avg win | $56.91 | $12.30 |
 | Avg loss | -$37.90 | -$39.61 |
 | Profit factor | 0.75 | 0.31 |
-| Open / pending | HAL (entry $41.25 on 5/14; day 7, +$16.80 unrealized; stop $39.46, target $44.50; premarket $41.95; VSA HOLD — two consecutive sell bars but no distribution signals) / DKNG (entry $25.30 on 5/15; day 6, +$5.85 unrealized; stop $23.60, target $28.00; premarket $25.45; 69% buy constructive) / EPD (buy stop $39.60 day-only placed 5/22; 25 shares, stop $38.10 GTC, target $41.85 GTC, R/R 1:1.50). **Combined unrealized: +$22.65** | None — 100% cash |
+| Open / pending | HAL (entry $41.25 on 5/14; day 9, -$4.56 unrealized; stop $39.46, target $44.50; premarket $41.06; VSA HOLD — No Supply, healthy pullback) / DKNG (entry $25.30 on 5/15; day 8, +$0.78 unrealized; stop $23.60, target $28.00; premarket $25.32; HOLD healthy markup) / EPD (entry $39.60 on 5/22; day 3, -$11.00 unrealized; stop $38.52 GTC tightened, target $41.85 GTC; TIGHTEN — Churning) / CCL (buy stop $26.80 day-only placed 5/26; 37 shares, stop $25.25 GTC, target $29.25 GTC, R/R 1:1.58). **Combined unrealized (open): -$14.78** | None — 100% cash |
 
 ---
 
@@ -51,8 +51,8 @@ pie title Claude — Trade Outcomes (9 closed)
 ```
 
 ```mermaid
-pie title DeepSeek — Trade Outcomes (3 closed)
-    "Wins" : 1
+pie title DeepSeek — Trade Outcomes (4 closed)
+    "Wins" : 2
     "Losses" : 2
 ```
 
@@ -79,8 +79,10 @@ gantt
     HESM — No fill       :done,    2026-05-06, 2026-05-07
     F — No fill (×3)     :done,    2026-05-07, 2026-05-09
     ET #2 — WIN          :done,    2026-05-11, 2026-05-20
-    HAL — Open           :active,  2026-05-14, 2026-05-22
-    DKNG — Open          :active,  2026-05-15, 2026-05-22
+    HAL — Open           :active,  2026-05-14, 2026-05-26
+    DKNG — Open          :active,  2026-05-15, 2026-05-26
+    EPD — Open           :active,  2026-05-22, 2026-05-26
+    CCL — Pending        :active,  2026-05-26, 2026-05-27
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :done,    2026-04-06, 2026-04-10
@@ -111,7 +113,8 @@ gantt
 | 14 | ET | 2026-05-11 | 2026-05-20 | 8 | 51 | $19.45◆ | $20.47 | **+$52.02** | 1:1.70 | ✅ Win |
 | 15 | HAL | 2026-05-14 | — | — | 24 | $41.25▲ | — | — | 1:1.51 | ⏳ Open |
 | 16 | DKNG | 2026-05-15 | — | — | 39 | $25.30⊙ | — | — | 1:1.59 | ⏳ Open |
-| 17 | EPD | 2026-05-22 | — | — | 25 | $39.60◇ | — | — | 1:1.50 | ⌛ Pending |
+| 17 | EPD | 2026-05-22 | — | — | 25 | $39.60◇ | — | — | 1:1.50 | ⏳ Open |
+| 18 | CCL | 2026-05-26 | — | — | 37 | $26.80◈ | — | — | 1:1.58 | ⌛ Pending |
 
 †Day-only buy stop at $74.25. High was $74.19 — missed by 6 cents. DAL then collapsed to $68.08 (100% sell pressure, 20.7M vol). Order expired. Saved ~$80.
 
@@ -137,7 +140,9 @@ gantt
 
 ⊙Buy stop $25.30 (limit $25.45) placed day-only 5/15. 39 shares. RSI 60.1 — ideal sweet spot. Above 20d SMA ($23.73) by $1.57. POC $25.15 — sitting exactly on volume base (trigger $0.15 above POC). ATR $1.15. Stop $23.60 (GTC, 1.5 ATRs below trigger), target $28.00 (GTC). R/R 1:1.59. Thesis: DraftKings (DKNG) sports betting — zero oil correlation. Revenue driven by US sports wagering calendar (NFL/NBA/MLB), not commodity prices. RSI 60, above SMA by $1.57, sitting on POC, two consecutive 75%+ buy bars (75%, 81%), 95% institutional buy on 5/7 (21.6M volume). First experiment trade with genuine oil-independence — DAL/AAL/LYFT/WHR all failed because oil correlation overrode the setup; DKNG tests whether the non-energy losing streak was sector selection error, not a fundamental inability to trade non-energy names. Portfolio context with ET + HAL: two energy sub-sectors (midstream pipeline, oilfield services) + one completely uncorrelated name. Premarket $24.90 at order placement — $0.40 below trigger. Buy stop triggered on 5/15 at $25.30 (high was $25.94 — buyers pushed DKNG nearly $1 above trigger before broad sell-off reversed it). Day 2 (5/18): premarket $24.96 (-$0.34/share, -$13.26 unrealized). Entry day (5/15) bar: 29%/70% sell on 13.0M — caught in S&P -1.24% broad sell-off. POC shifted to $25.52 (just above price, acting as overhead magnet). Above 20d SMA ($23.84). RSI 62.9. Zero-oil-correlation thesis faces its first test: DKNG selling off with the market on Iran fear day suggests higher market correlation than expected; recovery toward entry while energy stays bid would confirm the thesis. Stop $23.60 (1.5 ATRs from current price), target $28.00. Day 3 (5/19): premarket $25.61 (+$0.31/share, +$12.09 unrealized). Monday (5/18) bar: $25.00 open, high $25.97, closed $25.78 with **85% buy on 8.2M volume** — recovered from entry-day weakness. RSI 68.7 (approaching overbought but strong momentum). Above 20d SMA ($23.98). **Zero-oil-correlation thesis confirmed** — while oil/Iran dominated Monday headlines (Trump's "clock is ticking" → called off attack → oil volatile), DKNG rallied independently. First non-energy position in the experiment to show positive returns while geopolitical environment remains unstable. Testing the most important hypothesis: non-energy record was 0W/6L (-$227.41) — every loss in oil-correlated sector; DKNG isolates non-energy from oil correlation. Stop $23.60, target $28.00. Day 4 (5/20): premarket $25.67 (+$0.37/share, +$14.43 unrealized). Tuesday (5/19) bar: closed $25.54 with **11%/88% sell on 8.2M volume** — pulled back from $25.78. Premarket recovering to $25.67 (above prior close). RSI 68.9 approaching overbought. Above 20d SMA ($24.12). POC at $25.52 just below price — acting as support. Market down three straight days; DKNG holding above entry while the broader market sells off continues to validate zero-oil-correlation thesis. NVIDIA earnings tonight: strong result = growth/tech sentiment boost, potential DKNG catalyst. Stop $23.60, target $28.00. Day 5 (5/21): premarket $24.95 (-$0.35/share, -$13.65 unrealized). Wednesday (5/20) bar: closed $25.01 with **40%/59% sell on 8.6M volume**. NVIDIA beat EPS but forecast disappointed — market digesting whether growth/tech sentiment broadly weakens or stabilizes. RSI 62.6. Above 20d SMA ($24.24). Zero-oil-correlation thesis unchanged: DKNG's revenue is driven by US sports wagering calendar, not tech earnings. Stop at $23.60 is $1.35 below current price (1.2 ATRs buffer). NVIDIA's post-earnings market reaction today is the key catalyst. Stop $23.60, target $28.00. Day 6 (5/22): premarket $25.45 (+$0.15/share, +$5.85 unrealized). Thursday (5/21) bar: closed $25.40 with **69% buy on 10.1M volume** — constructive recovery after prior day's sell. VSA HOLD — healthy markup, no weakness signals. RSI 67.8. Above 20d SMA ($24.40). Dow hit record 50,285; S&P 7,445. Market recovering from three-day losing streak; NVIDIA reaction digested. Stop $23.60, target $28.00.
 
-◇Buy stop $39.60 (limit $39.75) placed day-only 5/22. 25 shares. RSI 63.0 — above 20d SMA ($38.54) by $0.93. POC $38.22 support. ATR $0.76. Stop $38.10 (GTC, below SMA), target $41.85 (GTC). R/R 1:1.50. Thesis: Enterprise Products Partners (EPD) — midstream pipeline, 50,000+ miles of infrastructure; same toll-road fee-based throughput model as ET (3W/0L, +$170.73). 92% buy bar on 11.1M volume (5/14) = institutional accumulation; consolidating $39.10-$40.10 since. Lowest daily volatility risk of any experiment position ($19/day on 25 shares). Oil at $96 is a consideration but EPD's throughput revenue is less sensitive to oil price direction than E&P names — collects fees on volume, not price. Broker issue: initial order at $39.60 was too close to premarket ($39.62) for primary broker; switched to alternate broker.
+◇Buy stop $39.60 (limit $39.75) placed day-only 5/22. 25 shares. RSI 63.0 — above 20d SMA ($38.54) by $0.93. POC $38.22 support. ATR $0.76. Stop $38.10 (GTC, below SMA), target $41.85 (GTC). R/R 1:1.50. Thesis: Enterprise Products Partners (EPD) — midstream pipeline, 50,000+ miles of infrastructure; same toll-road fee-based throughput model as ET (3W/0L, +$170.73). 92% buy bar on 11.1M volume (5/14) = institutional accumulation; consolidating $39.10-$40.10 since. Lowest daily volatility risk of any experiment position ($19/day on 25 shares). Oil at $96 is a consideration but EPD's throughput revenue is less sensitive to oil price direction than E&P names — collects fees on volume, not price. Broker issue: initial order at $39.60 was too close to premarket ($39.62) for primary broker; switched to alternate broker. Buy stop filled 5/22 at $39.60. Day 3 (5/26): premarket $39.16 (-$0.44/share, -$11.00 unrealized). VSA Churning — tight range, mixed pressure, volume not expanding on up bars. Background strength (Absorption Volume, 6 bars ago) intact but current action weakening. Stop tightened $38.10→$38.52 GTC per system. If second consecutive TIGHTEN or CLOSE signal next session, exit immediately.
+
+◈Buy stop $26.80 (limit $26.95) placed day-only 5/26. 37 shares. RSI 49.8 — neutral. Above 20d SMA. POC support below. ATR ~$1.00. Stop $25.25 (GTC, below Friday close $25.98 and above POC), target $29.25 (GTC). R/R 1:1.58. Thesis: Carnival Corporation (CCL) — cruise line; direct beneficiary of Iran deal momentum ("largely negotiated," 14-point MoU) and oil price decline ($110→$96, −8% last week). 89% buy on 49.2M volume (5/20) = massive institutional accumulation at 2× normal volume; two consecutive buy bars (89%, 81%). First explicit "oil crash beneficiary" position in experiment — opposite directional thesis to HAL/EPD. Portfolio hedge: HAL (oilfield services, benefits from elevated oil) + EPD (midstream toll-road, works either way) + DKNG (zero oil correlation) + CCL (benefits from lower oil/deal completion) = most diversified portfolio of the experiment. Previously rejected travel names (DAL/AAL/LYFT) during active war escalation with oil $100–112; current environment fundamentally different — oil falling, both sides at table with written framework, Rubio "good signs," Iran reviewing formal proposal. Buy stop raised from $26.10 to $26.80 because premarket gapped to $26.73 on weekend deal headlines.
 
 ### Claude — Cumulative P/L by Trade
 
@@ -462,6 +467,19 @@ Trades considered but not taken, and what happened instead:
 | 5/22 | DAL (DeepSeek) | May 21: 98% buy but gap-up from $74.12 to $75.65 on oil pullback — chasing prohibited; no test | Not entered |
 | 5/22 | UAL (DeepSeek) | May 21: 87% buy but gap-up — no test; chasing prohibited | Not entered |
 | 5/22 | NVDA (DeepSeek) | May 21: 16%/83% sell — post-earnings distribution; no spring | Not entered |
+| 5/26 | SOFI (Claude) | Below SMA ($16.12); still basing after crash, no confirmed uptrend | Not entered |
+| 5/26 | PINS (Claude) | Below SMA ($20.09); post-earnings gap fully retraced, selling pressure | Not entered |
+| 5/26 | UBER (Claude) | RSI 40; below SMA; 14%/86% sell — falling knife | Not entered |
+| 5/26 | PYPL (Claude) | RSI 36; below SMA — falling knife despite 98% buy on 5/20 | Not entered |
+| 5/26 | DELL (DeepSeek) | RSI 76.5; ATR $15; +17% gap on earnings — extremely extended; chasing prohibited | Not entered |
+| 5/26 | MU (DeepSeek) | 12%/88% sell — heavy distribution after run-up | Not entered |
+| 5/26 | INTC (DeepSeek) | 37%/63% sell — mixed, no spring, extended | Not entered |
+| 5/26 | MRVL (DeepSeek) | RSI 71.2; extended; no low-volume test | Not entered |
+| 5/26 | AMD (DeepSeek) | 29%/71% sell — distribution; RSI 72.6, extended | Not entered |
+| 5/26 | NVDA (DeepSeek) | 9%/91% sell — heavy distribution | Not entered |
+| 5/26 | QCOM (DeepSeek) | 83% buy but +11.6% gap-up on news — chasing prohibited; no VSA spring | Not entered |
+| 5/26 | WDC (DeepSeek) | 50%/50% sell — choppy, no spring | Not entered |
+| 5/26 | SWKS (DeepSeek) | 100% buy but +12% gap-up on huge volume — chasing prohibited | Not entered |
 
 ---
 
