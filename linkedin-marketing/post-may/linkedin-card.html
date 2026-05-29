@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Trading Experiment — Week 11</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    background: #0a1628;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    color: #dde8f8;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 44px 16px;
+    border-bottom: 1px solid #152035;
+  }
+  .experiment-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #4a7099;
+  }
+  .live-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6b92b8;
+  }
+  .live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 8px #22c55e88;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 44px 28px;
+    gap: 24px;
+  }
+
+  .content-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 36px;
+  }
+
+  /* ── LEFT ── */
+  .left {
+    width: 360px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .headline {
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.22;
+    color: #e8f2ff;
+    letter-spacing: -0.5px;
+  }
+  .headline .accent {
+    color: #6b92b8;
+    font-weight: 400;
+  }
+  .subline {
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    color: #3d6080;
+    line-height: 1.55;
+    margin-top: 10px;
+  }
+
+  .models {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .model-card {
+    background: #0d1e38;
+    border: 1px solid #1a3050;
+    border-radius: 10px;
+    padding: 14px 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .model-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+  .model-card.claude::before  { background: #6366f1; }
+  .model-card.deepseek::before { background: #06b6d4; }
+
+  .model-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .model-name {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .claude .model-name  { color: #818cf8; }
+  .deepseek .model-name { color: #22d3ee; }
+
+  .model-pnl {
+    font-size: 25px;
+    font-weight: 700;
+    color: #ef4444;
+    letter-spacing: -0.8px;
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  }
+
+  .model-stats {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+  .stat-label {
+    font-size: 8.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #4a6a8a;
+  }
+  .stat-value {
+    font-size: 12.5px;
+    color: #8ab0cc;
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  }
+  .stat-value.green  { color: #22c55e; }
+  .stat-value.red    { color: #ef4444; }
+  .stat-value.amber  { color: #f59e0b; }
+
+  .open-positions {
+    margin-top: 9px;
+    padding-top: 9px;
+    border-top: 1px solid #162840;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .open-label {
+    font-size: 8.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #3d5870;
+  }
+  .open-tag {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  }
+  .ticker  { color: #9ab8d0; font-weight: 600; }
+  .pnl-pos { color: #22c55e; }
+  .pnl-neg { color: #ef4444; }
+  .badge-deal {
+    font-size: 7.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #1e2a08;
+    color: #f59e0b;
+    border: 1px solid #3a4a10;
+    border-radius: 3px;
+    padding: 1px 5px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 1px;
+    align-self: stretch;
+    background: #152035;
+    flex-shrink: 0;
+  }
+
+  /* ── RIGHT ── */
+  .right {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .chart-title {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4a6a8a;
+  }
+  .chart-legend {
+    display: flex;
+    gap: 18px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: #4a7099;
+  }
+  .legend-line {
+    width: 16px;
+    height: 2px;
+    border-radius: 1px;
+  }
+  .legend-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+  }
+
+  .chart-area { height: 238px; }
+  .chart-area svg { width: 100%; height: 100%; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    border: 1px solid #2a3a18;
+    border-left: 3px solid #f59e0b;
+    background: #0d1a0d;
+    border-radius: 6px;
+    padding: 11px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .callout-eyebrow {
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f59e0b;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+  .callout-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .callout-line {
+    font-size: 11.5px;
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    color: #5a8060;
+    line-height: 1.4;
+  }
+  .callout-line strong { color: #c0dcc0; }
+
+  /* ── BOTTOM BAR ── */
+  .bottom-bar {
+    padding: 16px 0 0;
+    border-top: 1px solid #152035;
+    display: flex;
+    gap: 36px;
+    align-items: center;
+  }
+  .meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .meta-label {
+    font-size: 8.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #3d6080;
+  }
+  .meta-value {
+    font-size: 11.5px;
+    color: #6a90b0;
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  }
+  .meta-divider { width: 1px; height: 28px; background: #152035; }
+
+  .progress-wrap { flex: 1; display: flex; flex-direction: column; gap: 7px; }
+  .progress-row  { display: flex; align-items: center; gap: 10px; }
+  .progress-model {
+    font-size: 8.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    width: 72px;
+    color: #4a7099;
+  }
+  .progress-track {
+    flex: 1;
+    height: 4px;
+    background: #152035;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-fill         { height: 100%; border-radius: 2px; }
+  .progress-fill.claude  { background: #6366f1; width: 55%; } /* 11/20 */
+  .progress-fill.deepseek { background: #06b6d4; width: 20%; } /* 4/20 */
+  .progress-count {
+    font-size: 10px;
+    color: #4a6a8a;
+    width: 44px;
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="experiment-title">AI Auto-Buy Thesis &nbsp;/&nbsp; Week 11</div>
+    <div class="live-badge">
+      <div class="live-dot"></div>
+      Live experiment
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div class="content-row">
+
+      <!-- ── LEFT ── -->
+      <div class="left">
+        <div>
+          <div class="headline">
+            3 wins in energy.<br>
+            6 losses outside it.<br>
+            <span class="accent">Then oil reversed.</span>
+          </div>
+          <div class="subline">
+            Two models. Real money. Zero human judgment.<br>
+            Oil went $60 → $120 → $87 during this experiment.
+          </div>
+        </div>
+
+        <div class="models">
+
+          <div class="model-card claude">
+            <div class="model-header">
+              <div class="model-name">Claude</div>
+              <div class="model-pnl">−$109.84</div>
+            </div>
+            <div class="model-stats">
+              <div class="stat">
+                <div class="stat-label">Record</div>
+                <div class="stat-value">3W &nbsp;/&nbsp; 8L</div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">Win rate</div>
+                <div class="stat-value">27%</div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">Energy P&amp;L</div>
+                <div class="stat-value green">+$117.57</div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">Other sectors</div>
+                <div class="stat-value red">−$227.41</div>
+              </div>
+            </div>
+            <div class="open-positions">
+              <div class="open-label">Open</div>
+              <div class="open-tag">
+                <span class="ticker">DKNG</span>
+                <span class="pnl-neg">−$23.40</span>
+              </div>
+              <div class="open-tag">
+                <span class="ticker">NCLH</span>
+                <span class="pnl-pos">+$10.80</span>
+                <span class="badge-deal">deal play</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="model-card deepseek">
+            <div class="model-header">
+              <div class="model-name">DeepSeek</div>
+              <div class="model-pnl">−$54.62</div>
+            </div>
+            <div class="model-stats">
+              <div class="stat">
+                <div class="stat-label">Record</div>
+                <div class="stat-value">2W &nbsp;/&nbsp; 2L</div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">Win rate</div>
+                <div class="stat-value amber">50%</div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">Best trade</div>
+                <div class="stat-value green">+$22.20</div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">Status</div>
+                <div class="stat-value">100% cash</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /.left -->
+
+      <div class="divider"></div>
+
+      <!-- ── RIGHT ── -->
+      <div class="right">
+
+        <div class="chart-header">
+          <div class="chart-title">Claude — Cumulative P&amp;L · 11 closed trades</div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <div class="legend-line" style="background:#6366f1;"></div>
+              closed trades
+            </div>
+            <div class="legend-item">
+              <div class="legend-dot"></div>
+              open (unrealized)
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-area">
+          <!--
+            Y range: -130 to +85 (span=215). ViewBox height=238.
+            scale = 238/215 = 1.1070 px/$
+            zero_y  = 85 × 1.1070 = 94.1 → 94
+
+            Data (cumulative P&L after each closed trade):
+              Start     0.00  → y=94
+              DVN     +72.60  → y = 94 − 72.60×1.107 = 94 − 80.4 = 13.6  ≈ 14
+              PANW    +66.30  → y = 94 − 66.30×1.107 = 94 − 73.4 = 20.6  ≈ 21
+              DAL      +9.60  → y = 94 − 9.60×1.107  = 94 − 10.6 = 83.4  ≈ 83
+              PFE     -50.60  → y = 94 + 50.60×1.107 = 94 + 56.0 = 150.0 ≈ 150
+              WHR     -63.01  → y = 94 + 63.01×1.107 = 94 + 69.7 = 163.7 ≈ 164
+              ET      -16.90  → y = 94 + 16.90×1.107 = 94 + 18.7 = 112.7 ≈ 113
+              AAL     -67.30  → y = 94 + 67.30×1.107 = 94 + 74.5 = 168.5 ≈ 169
+              LYFT   -108.70  → y = 94 +108.70×1.107 = 94 +120.3 = 214.3 ≈ 214
+              ET#2    -56.68  → y = 94 + 56.68×1.107 = 94 + 62.8 = 156.8 ≈ 157
+              EPD     -83.68  → y = 94 + 83.68×1.107 = 94 + 92.6 = 186.6 ≈ 187
+              HAL    -109.84  → y = 94 +109.84×1.107 = 94 +121.6 = 215.6 ≈ 216
+            Current -122.44  → y = 94 +122.44×1.107 = 94 +135.5 = 229.5 ≈ 230  (dotted)
+
+            X: 12 closed points at x = 0, 60, 120, 180, 240, 300, 360, 420, 480, 540, 600, 660
+            Current open point at x=700 (dotted line from x=660 to x=700)
+
+            Grid lines (approx dollar levels):
+              +75 → y = 94 − 83.0 = 11
+                0 → y = 94
+              −75 → y = 94 + 83.0 = 177
+             −110 → y = 94 +121.8 = 216
+          -->
+          <svg viewBox="0 0 700 238" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#6366f1" stop-opacity="0.13"/>
+                <stop offset="100%" stop-color="#6366f1" stop-opacity="0.01"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Grid lines -->
+            <line x1="0" y1="11"  x2="700" y2="11"  stroke="#152035" stroke-width="1"/>
+            <line x1="0" y1="94"  x2="700" y2="94"  stroke="#3d7ab8" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.65"/>
+            <line x1="0" y1="177" x2="700" y2="177" stroke="#152035" stroke-width="1"/>
+            <line x1="0" y1="216" x2="700" y2="216" stroke="#152035" stroke-width="1"/>
+
+            <!-- Y labels -->
+            <text x="5" y="10"  fill="#4a7099" font-size="9" font-family="monospace">+$75</text>
+            <text x="5" y="91"  fill="#5a9ad8" font-size="9" font-family="monospace" font-weight="bold">$0</text>
+            <text x="5" y="174" fill="#4a7099" font-size="9" font-family="monospace">−$75</text>
+            <text x="5" y="213" fill="#4a7099" font-size="9" font-family="monospace">−$110</text>
+
+            <!-- Fill area under the line -->
+            <path d="
+              M 0,94
+              L 60,14  L 120,21  L 180,83
+              L 240,150 L 300,164 L 360,113
+              L 420,169 L 480,214
+              L 540,157 L 600,187 L 660,216
+              L 660,238 L 0,238 Z
+            " fill="url(#fillGrad)"/>
+
+            <!-- P&L line (closed trades) -->
+            <polyline
+              points="0,94 60,14 120,21 180,83 240,150 300,164 360,113 420,169 480,214 540,157 600,187 660,216"
+              fill="none"
+              stroke="#6366f1"
+              stroke-width="2.5"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+            />
+
+            <!-- Dotted continuation: last closed → current open -->
+            <line x1="660" y1="216" x2="700" y2="230"
+              stroke="#22c55e" stroke-width="2" stroke-dasharray="5,4"/>
+
+            <!-- Data point circles -->
+            <circle cx="0"   cy="94"  r="3.5" fill="#0a1628" stroke="#6366f1" stroke-width="2"/>
+            <circle cx="60"  cy="14"  r="3.5" fill="#0a1628" stroke="#6366f1" stroke-width="2"/>
+            <circle cx="120" cy="21"  r="3.5" fill="#0a1628" stroke="#6366f1" stroke-width="2"/>
+            <circle cx="180" cy="83"  r="3.5" fill="#0a1628" stroke="#6366f1" stroke-width="2"/>
+            <circle cx="240" cy="150" r="3.5" fill="#0a1628" stroke="#6366f1" stroke-width="2"/>
+            <circle cx="300" cy="164" r="3.5" fill="#0a1628" stroke="#6366f1" stroke-width="2"/>
+            <circle cx="360" cy="113" r="3.5" fill="#0a1628" stroke="#6366f1" stroke-width="2"/>
+            <circle cx="420" cy="169" r="3.5" fill="#0a1628" stroke="#6366f1" stroke-width="2"/>
+            <circle cx="480" cy="214" r="3.5" fill="#0a1628" stroke="#6366f1" stroke-width="2"/>
+            <circle cx="540" cy="157" r="3.5" fill="#0a1628" stroke="#6366f1" stroke-width="2"/>
+            <circle cx="600" cy="187" r="3.5" fill="#0a1628" stroke="#6366f1" stroke-width="2"/>
+            <circle cx="660" cy="216" r="3.5" fill="#0a1628" stroke="#6366f1" stroke-width="2"/>
+
+            <!-- Current open dot (green) -->
+            <circle cx="700" cy="230" r="5" fill="#22c55e" stroke="#0a1628" stroke-width="2"/>
+
+            <!-- Annotations -->
+            <!-- DVN peak label -->
+            <text x="65" y="28" fill="#818cf8" font-size="9.5" font-family="monospace">DVN +$72</text>
+
+            <!-- ET#2 recovery label -->
+            <text x="545" y="150" fill="#818cf8" font-size="9" font-family="monospace">ET#2 +$52</text>
+
+            <!-- Current total label -->
+            <text x="695" y="224" fill="#22c55e" font-size="9.5" font-family="monospace" text-anchor="end">now</text>
+          </svg>
+        </div>
+
+        <!-- DEAL CALLOUT -->
+        <div class="callout">
+          <div class="callout-eyebrow">Latest</div>
+          <div class="callout-lines">
+            <div class="callout-line">
+              <strong>NCLH entered $18.25</strong> on May 28 — cruise line as oil-crash &amp; deal beneficiary
+            </div>
+            <div class="callout-line">
+              US-Iran <strong>tentative 60-day ceasefire + Strait reopening</strong> announced May 29 · WTI fell to <strong>$87.66</strong>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.right -->
+
+    </div><!-- /.content-row -->
+
+    <!-- BOTTOM BAR -->
+    <div class="bottom-bar">
+      <div class="meta-item">
+        <div class="meta-label">Capital / position</div>
+        <div class="meta-value">$1,000</div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-value">Long only &nbsp;·&nbsp; 1–5 day holds</div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <div class="meta-label">Oil this experiment</div>
+        <div class="meta-value">$60 → $120 → $87 / bbl (Brent)</div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="progress-wrap">
+        <div class="progress-row">
+          <div class="progress-model">Claude</div>
+          <div class="progress-track"><div class="progress-fill claude"></div></div>
+          <div class="progress-count">11 / 20</div>
+        </div>
+        <div class="progress-row">
+          <div class="progress-model">DeepSeek</div>
+          <div class="progress-track"><div class="progress-fill deepseek"></div></div>
+          <div class="progress-count">4 / 20</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.main -->
+
+</body>
+</html>
