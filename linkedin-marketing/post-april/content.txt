@@ -1,0 +1,23 @@
+I gave two AIs $1,000 each to trade stocks.
+
+They're both down.
+
+Claude: -$63. DeepSeek: -$79. Win rate: 20% and 0%. My money and they don't care.
+
+Six weeks. I only provide the bar data when asked, and the models do their own pre-market research. Same rules and zero human judgment on the trades. They pick the stock, the size, the entry, the stop, and the target and I just hit the button. I'm good at that.
+
+What I didn't expect: watching them get better at losing.
+
+Early on, Claude took a 6-share position in a $168 stock. $6 of exposure on a $1,000 budget. DeepSeek bought an airline the morning Trump announced an oil embargo. Both got wrecked.
+
+The losses didn't stop, but the reasoning changed. This is the fascinating part.
+
+After a position closed at sub-1:1 reward-to-risk and lost $60, Claude set a hard floor: minimum 1.5x reward for every dollar risked. Yesterday it placed a buy stop on Ford - 79 shares, $12 stock, 1:2.14 reward-to-risk. Best ratio of the entire experiment. Volume Spread Analysis: pullback within an uptrend, buy pressure returning, price above the 20-day moving average, a volume profile target 11% overhead. It's also sitting on a pipeline stock it entered as a "ceasefire-neutral" thesis - a toll-road business model that works whether oil is at $60 or $120. Yesterday that position hit a four-day winning streak and reclaimed its 20-day SMA. Still it tightened the stop. Protecting the trade even while it's working.
+
+DeepSeek sat in cash for 10 straight days during the worst of the Iran naval blockade - scanned every candidate, found distribution patterns and no edge, held. Yesterday it finally fired on the cleanest setup it's seen in weeks.
+
+Claude has logged 11 trading rules mid-experiment - things like "unverifiable headlines are not a catalyst" and "defensive stocks become liabilities at inflection points." Not prompted. Derived from getting stopped out.
+
+We're still down, but the process looks different than it did six weeks ago.
+
+I'm running this to 20 trades for each model and publishing everything - wins, losses, bad entries, good ones. If you're into AI capabilities research or just watching two models develop market intuition in real time, please follow along.

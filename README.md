@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-05-28 | **Market context:** WTI $89-94 (volatile — US strikes on Iranian boats/mines near Strait, ceasefire technically holds; CNN warns pre-war prices unlikely before 2027; IEA "red zone" warning by July); CCL +19% from lows, DAL +21% — deal beneficiaries surging as oil falls; energy crushed (ET/HAL/EPD all lost in May); VIX ~20; **Claude HAL stopped out 5/27 at $40.16 (-$26.16)** — VSA TIGHTEN tightened stop $39.46→$40.42, gap-down filled $40.16 (saved $13.44 vs $38.78 intraday low); energy record 3W/2L (+$117.57 net); DKNG Day 10 — **Spring reversal** (sellers tested $23.78, within $0.18 of $23.60 stop, failed, buyers reclaimed $25.07; 83% buy; VSA HOLD; -$8.97 unrealized); NCLH buy stop $18.25 placed day-only (54 shares, deal-beneficiary cruise, R/R 1:1.72 — zero-energy portfolio for first time since DVN); Claude cumulative: 11 closed, 3W/8L, 27%, **-$109.84**; portfolio net -$118.81; **DeepSeek 100% cash** — 16 candidates screened (airlines distributing after rally, energy in downtrends, semis extended/distributing); no spring patterns found; net -$54.62
+**Last updated:** 2026-05-29 | **Market context:** WTI crashed to $87.66 (one-month low — tentative US-Iran 60-day ceasefire extension + Strait reopening framework announced; steepest weekly oil drop since war started; Trump not yet signed, Iran not confirmed; TACO risk remains); S&P 7,519/Nasdaq 26,656 at records; VIX ~18; **NCLH confirmed entry $18.25 (5/28 fill) — Day 2, +$10.80 unrealized** (oil crash directly bullish for cruise thesis; $21.00 GTC limit sell handles exit automatically); DKNG Day 11 — Spring reversal holding (-$23.40 unrealized; broad deal-news risk-on could rescue the setup; stop $23.60 GTC); no new positions (gap morning on major news = chasing prohibited; month-end rebalancing risk); Claude cumulative: 11 closed, 3W/8L, 27%, **-$109.84**; combined unrealized -$12.60; portfolio net **-$122.44**; **DeepSeek 100% cash** — 10 candidates screened (AAL/DAL/UAL extended after rally no spring, energy in downtrends, semis extended/distributing, BBY earnings gap unchased); no spring patterns; net -$54.62
 
 ---
 
@@ -22,7 +22,7 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Avg win | $56.91 | $12.30 |
 | Avg loss | -$35.07 | -$39.61 |
 | Profit factor | 0.61 | 0.31 |
-| Open / pending | DKNG (entry $25.30 on 5/15; day 10, -$8.97 unrealized; stop $23.60, target $28.00; VSA HOLD — Spring reversal 5/27, sellers tested $23.78 within $0.18 of stop, buyers reclaimed $25.07) / NCLH buy stop $18.25 day-only (54 shares, R/R 1:1.72, deal-beneficiary cruise, premarket $17.60 — below trigger). HAL stopped out 5/27 at $40.16 (-$26.16). EPD stopped out 5/26 at $38.52 (-$27.00). **Combined unrealized (open): -$8.97. Portfolio net (closed + open): -$118.81** | None — 100% cash |
+| Open / pending | DKNG (entry $25.30 on 5/15; day 11, -$23.40 unrealized; stop $23.60, target $28.00; VSA HOLD — Spring reversal 5/27, deal news potential catalyst) / NCLH (entry $18.25 on 5/28; day 2, +$10.80 unrealized; stop $16.65, target $21.00; deal-beneficiary cruise — oil crashed to $87.66 on tentative US-Iran framework). **Combined unrealized (open): -$12.60. Portfolio net (closed + open): -$122.44** | None — 100% cash |
 
 ---
 
@@ -80,10 +80,10 @@ gantt
     F — No fill (×3)     :done,    2026-05-07, 2026-05-09
     ET #2 — WIN          :done,    2026-05-11, 2026-05-20
     HAL — LOSS           :crit, done, 2026-05-14, 2026-05-28
-    DKNG — Open          :active,  2026-05-15, 2026-05-28
+    DKNG — Open          :active,  2026-05-15, 2026-05-29
     EPD — LOSS           :crit, done, 2026-05-22, 2026-05-26
     CCL — No fill        :done,    2026-05-26, 2026-05-27
-    NCLH — Pending       :active,  2026-05-28, 2026-05-29
+    NCLH — Open          :active,  2026-05-28, 2026-05-29
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :done,    2026-04-06, 2026-04-10
@@ -116,7 +116,7 @@ gantt
 | 16 | DKNG | 2026-05-15 | — | — | 39 | $25.30⊙ | — | — | 1:1.59 | ⏳ Open |
 | 17 | EPD | 2026-05-22 | 2026-05-26 | 3 | 25 | $39.60◇ | $38.52 | **-$27.00** | 1:1.50 | ❌ Loss |
 | 18 | CCL | 2026-05-26 | 2026-05-26 | — | 37 | $26.80◈ | — | $0 | 1:1.58 | ⛔ No fill (operator error) |
-| 19 | NCLH | 2026-05-28 | — | — | 54 | $18.25◉ | — | — | 1:1.72 | ⏳ Pending |
+| 19 | NCLH | 2026-05-28 | — | — | 54 | $18.25◉ | — | — | 1:1.72 | ⏳ Open |
 
 †Day-only buy stop at $74.25. High was $74.19 — missed by 6 cents. DAL then collapsed to $68.08 (100% sell pressure, 20.7M vol). Order expired. Saved ~$80.
 
@@ -508,6 +508,16 @@ Trades considered but not taken, and what happened instead:
 | 5/28 | DVN (DeepSeek) | May 27: 41% buy — downtrend intact, no spring | Stayed in cash |
 | 5/28 | MU, MRVL, SWKS (DeepSeek) | MU RSI 76 ATR $56 extended; MRVL 11%/89% sell extreme distribution; SWKS 8%/92% sell distribution — entire semis complex either overbought or distributing | Stayed in cash |
 | 5/28 | INTC, SNOW, DELL (DeepSeek) | INTC extended, no spring; SNOW 36%/64% sell; DELL 50%/50% extended — no setups | Stayed in cash |
+| 5/29 | AAL (DeepSeek) | 36%/64% sell on 5/28 — continued distribution after rally; no spring | Stayed in cash |
+| 5/29 | DAL (DeepSeek) | 81% buy but RSI 74 — extremely extended; no spring; chasing prohibited | Stayed in cash |
+| 5/29 | UAL (DeepSeek) | 87% buy but extended like DAL — no spring; chasing prohibited | Stayed in cash |
+| 5/29 | XOM (DeepSeek) | 3%/97% sell on 5/28 — heavy distribution; downtrend intact | Stayed in cash |
+| 5/29 | CVX (DeepSeek) | 30%/70% sell — distribution; no spring | Stayed in cash |
+| 5/29 | DVN (DeepSeek) | 27%/73% sell — continuing downtrend; no spring | Stayed in cash |
+| 5/29 | MU (DeepSeek) | 42% buy but RSI 76, ATR $56 — extremely extended; no spring | Stayed in cash |
+| 5/29 | DELL (DeepSeek) | 34%/66% sell — distribution after huge run; extended | Stayed in cash |
+| 5/29 | SWKS (DeepSeek) | 84% buy but volume lower than prior selling day — no spring conviction | Stayed in cash |
+| 5/29 | BBY (DeepSeek) | Earnings gap $64→$74 on 5/28 — chasing prohibited; no VSA test | Stayed in cash |
 
 ---
 
