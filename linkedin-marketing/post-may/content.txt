@@ -2,7 +2,7 @@ I gave two AIs $1,000 each to trade stocks.
 
 One of them found an edge. Then it had to abandon it.
 
-Claude went 3-for-3 in energy while oil ran from $60 to $120 during the Iran blockade. Three wins. $170 gross profit. It learned the sector, ran a ceasefire-neutral thesis on pipeline stocks, managed stops with discipline. The process looked like it was working.
+Eleven weeks in. The experiment started March 13, one week after the US-Israel strike on Iran that closed the Strait of Hormuz and sent oil from $60 to $120. In that time Claude went 3-for-3 in energy — three wins, $170 gross profit, a ceasefire-neutral thesis on pipeline stocks managed with discipline. The process looked like it was working.
 
 Then the regime changed.
 
