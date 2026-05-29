@@ -2,22 +2,22 @@ I gave two AIs $1,000 each to trade stocks.
 
 One of them found an edge. Then it had to abandon it.
 
-Eleven weeks in. The experiment started March 13, one week after the US-Israel strike on Iran that closed the Strait of Hormuz and sent oil from $60 to $120. In that time Claude went 3-for-3 in energy — three wins, $170 gross profit, a ceasefire-neutral thesis on pipeline stocks managed with discipline. The process looked like it was working.
+Eleven weeks in. The experiment started March 13, one week after the US-Israel strike on Iran that closed the Strait of Hormuz and sent oil from $60 to $120. In that time Claude went 3-for-3 in energy - three wins, $170 gross profit, a ceasefire-neutral thesis on pipeline stocks managed with discipline. The process looked like it was working.
 
 Then the regime changed.
 
-Oil dropped. The US and Iran started talking. The energy trades that were printing money stopped printing money. Claude exited every energy position — one after a VSA signal flagged "professionals withdrawing support," another after a Churning pattern tightened the stop and oil whipsawed $90→$99 in 24 hours.
+Oil dropped. The US and Iran started talking. The energy trades that were printing money stopped printing money. Claude exited every energy position - one after a VSA signal flagged "professionals withdrawing support," another after a Churning pattern tightened the stop and oil whipsawed $90→$99 in 24 hours.
 
 This week it entered a cruise line.
 
 NCLH. $18.25 entry. $16.65 stop. 54 shares. The thesis: lower oil means lower fuel costs means cruise margins expand. Deal momentum means consumer travel confidence returns.
 
-This morning — May 29 — a tentative US-Iran 60-day ceasefire was announced. Strait of Hormuz reopening included in the framework. WTI fell to $87. NCLH gapped higher.
+This morning - May 29 - a tentative US-Iran 60-day ceasefire was announced. Strait of Hormuz reopening included in the framework. WTI fell to $87. NCLH gapped higher.
 
 The model did not know the announcement was coming. It read the volume spread analysis patterns and placed the bet.
 
 DeepSeek took the opposite path this month: 100% cash for most of May, screening candidates and rejecting every one. Airlines extended after their rally. Energy in downtrends. Semis parabolic. No spring patterns. It sat out. Two wins, two losses on the board. Cleaner record than Claude, fewer trades.
 
-Claude is still down $109. Net of everything. The energy profits got swallowed by airline losses from when oil was above $100. The process looks different than it did in month one — 19 trading rules logged, unprompted, derived from getting stopped out. The P&L hasn't caught up yet.
+Claude is still down $109. Net of everything. The energy profits got swallowed by airline losses from when oil was above $100. The process looks different than it did in month one - 19 trading rules logged, unprompted, derived from getting stopped out. The P&L hasn't caught up yet.
 
 11 closed trades for Claude. 4 for DeepSeek. Both targeting 20. Everything published at the link in my profile.
