@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-06-01 | **Market context:** Oil bouncing — WTI back above $90, Brent above $92 (Thursday's tentative US-Iran ceasefire deal NOT confirmed over the weekend; Trump hasn't signed, Iran hasn't confirmed; VP Vance: "a couple of language points" remain; deal stalling means supply disruption continues); S&P 7,519/Nasdaq 26,656 at records; VIX ~18-20; PCE inflation highest in ~3 years (market shrugged); broad Friday distribution in growth/tech (SNAP 7%/92% sell on 102M, PINS 4%/95% on 66.6M); **DKNG STOPPED OUT 5/29 at $23.59 — experiment's worst single trade, -$66.69** (Spring reversal failed; held 12 days vs 1-5 target); **NCLH Day 3 — VSA HOLD (Test + No Supply, "sellers cannot push price down"), premarket $18.14, -$5.94 unrealized** (stop $16.65 GTC, $21.00 GTC limit sell); no new positions (5 screened — SOFI gap-chase RSI 69.6, SNAP/PINS Friday distribution, NET too expensive, RBLX 21 shares — zero qualifying); **non-energy record now 0W/7L, -$294.10** (structural finding); Claude cumulative: 12 closed, 3W/9L, 25%, **-$176.53**; portfolio net **-$182.47**; **DeepSeek 100% cash** — 10 candidates screened (AAL/DAL/UAL extreme distribution May 29 92-98% sell, energy XOM/CVX/DVN weak bounces no spring, MU/DELL extended RSI 70+, BBY RSI 84 gap); no spring/test; net -$54.62
+**Last updated:** 2026-06-02 | **Market context:** Iran suspended talks Monday + pledged to close Strait — oil spiked; Trump peace signals Tuesday → oil dropping 4% (WTI $91.30, Brent $97.20); S&P 7,519+/Nasdaq 26,656+ at records; VIX ~18-19; **NCLH Day 4 — VSA HOLD (Test + No Supply confirmed), premarket $18.08, -$9.18 unrealized** (stop $16.65 GTC, $21.00 GTC limit sell); NCLH absorbed Monday's Iran suspension sell-off (dipped $17.79, recovered $18.06) — No Supply thesis in action: sellers tried to push it down on a headline, failed; no new positions (10 screened today — CLF/SOFI/CHPT overbought RSI 70+, ET downtrend below SMA, HOOD/ROKU/RBLX insufficient shares, OPEN penny-stock adjacent, ZIM too early); **non-energy record now 0W/7L, -$294.10** (structural finding); Claude cumulative: 12 closed, 3W/9L, 25%, **-$176.53**; portfolio net **-$185.71**; **DeepSeek 100% cash** — 11 candidates screened (XOM/CVX/DVN/OXY/HAL below SMAs no spring, AAL/DAL/UAL extended + oil headwind, NVDA/MU/DELL parabolic AI run chasing prohibited); no spring/test; net -$54.62
 
 ---
 
@@ -22,7 +22,7 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Avg win | $56.91 | $12.30 |
 | Avg loss | -$38.58 | -$39.61 |
 | Profit factor | 0.49 | 0.31 |
-| Open / pending | NCLH (entry $18.25 on 5/28; day 3, -$5.94 unrealized; stop $16.65, target $21.00; deal-beneficiary cruise — VSA HOLD, Test + No Supply, institutional support intact despite deal uncertainty). **Portfolio net (closed + open): -$182.47** | None — 100% cash |
+| Open / pending | NCLH (entry $18.25 on 5/28; day 4, -$9.18 unrealized; stop $16.65, target $21.00; deal-beneficiary cruise — VSA HOLD, Test + No Supply, absorbed Monday's Iran suspension sell-off without breaking). **Portfolio net (closed + open): -$185.71** | None — 100% cash |
 
 ---
 
@@ -83,7 +83,7 @@ gantt
     DKNG — LOSS          :crit, done, 2026-05-15, 2026-05-29
     EPD — LOSS           :crit, done, 2026-05-22, 2026-05-26
     CCL — No fill        :done,    2026-05-26, 2026-05-27
-    NCLH — Open          :active,  2026-05-28, 2026-06-01
+    NCLH — Open          :active,  2026-05-28, 2026-06-02
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :done,    2026-04-06, 2026-04-10
@@ -146,7 +146,7 @@ gantt
 
 ◈Buy stop $26.80 (limit $26.95) intended day-only 5/26. 37 shares. RSI 49.8 — neutral. Above 20d SMA. POC support below. ATR ~$1.00. Stop $25.25 (GTC), target $29.25 (GTC). R/R 1:1.58. Thesis: Carnival Corporation (CCL) — cruise line; direct beneficiary of Iran deal momentum and oil price decline. 89% buy on 49.2M volume (5/20) = massive institutional accumulation; two consecutive buy bars (89%, 81%). Previously rejected travel names (DAL/AAL/LYFT) during active war escalation; environment appeared to be shifting — oil falling, both sides at table with written framework. **Order never placed: operator error (oversight).** CCL's high on 5/26 was $27.09 — the buy stop would have filled at $26.80; CCL closed $26.71 (−$0.09/share unrealized at close). The missed entry may have been fortunate: the broad sell-off that hit HAL/DKNG/EPD on 5/26 also hit the market generally. CCL remains a candidate if oil continues declining and positions stabilize.
 
-◉Buy stop $18.25 (limit $18.40) placed day-only 5/28. 54 shares. RSI 56.0 — ideal sweet spot. Above 20d SMA ($16.76) by $1.39. Two consecutive buy bars (86%, 57%). ATR ~$1.00. Stop $16.65 (GTC, below 200d SMA area), target $21.00 (GTC). R/R 1:1.72. Thesis: Norwegian Cruise Line (NCLH) — deal beneficiary; lower oil = lower fuel costs + consumer travel confidence. -15% from 200d SMA = recovery room without being parabolic (CCL +19%, DAL +21% from lows = chasing prohibited; NCLH has not made that move). First experiment travel/cruise entry when oil is below $90/barrel (Rule 15 threshold) with a 14-point written framework — qualitatively different from DAL (-$56.70, March, oil above $100), AAL (-$50.40, April, oil $106), LYFT (-$41.40, April, correlated sell-off). Fully self-managing from day one. Premarket $17.60 — $0.65 below trigger; requires deal-momentum recovery to fill. Selected from deal-beneficiary screen after ET (below SMA, two 0%/100% sell bars, downtrend), CCL (up 19%, chasing), DAL (RSI 73, 12 shares, overbought), UAL (8 shares, RSI 70, overbought), RCL (3 shares, disqualified), JBLU (penny stock territory, ~$5.40) all rejected. Day 3 (6/01): premarket $18.14 (-$0.11/share, -$5.94 unrealized). Friday (5/29) bar: $18.34 close, 39%/60% sell on 19.5M — mild pullback. RSI 60.0. Above 20d SMA ($16.79) by $1.35. POC $17.20 below as support. ATR $0.75. VSA HOLD — background strength (Test, 4 bars ago) + No Supply signal ("down bar on low volume with narrow spread; sellers cannot push price down; healthy pullback"). The No Supply read during deal uncertainty is the most bullish possible signal: with the deal stalling and oil bouncing, sellers should be pressing cruise lines lower — institutional demand absorbing the selling instead means professional money is holding NCLH despite the headline risk. Stop confirmed $16.65 GTC (VSA system suggested $17.57 but the structural $16.65 GTC order stays). NCLH is the active test of whether a non-energy trade can work during de-escalation rather than escalation, isolating the setup from the 0W/7L oil-correlated losing record. Stop $16.65, target $21.00.
+◉Buy stop $18.25 (limit $18.40) placed day-only 5/28. 54 shares. RSI 56.0 — ideal sweet spot. Above 20d SMA ($16.76) by $1.39. Two consecutive buy bars (86%, 57%). ATR ~$1.00. Stop $16.65 (GTC, below 200d SMA area), target $21.00 (GTC). R/R 1:1.72. Thesis: Norwegian Cruise Line (NCLH) — deal beneficiary; lower oil = lower fuel costs + consumer travel confidence. -15% from 200d SMA = recovery room without being parabolic (CCL +19%, DAL +21% from lows = chasing prohibited; NCLH has not made that move). First experiment travel/cruise entry when oil is below $90/barrel (Rule 15 threshold) with a 14-point written framework — qualitatively different from DAL (-$56.70, March, oil above $100), AAL (-$50.40, April, oil $106), LYFT (-$41.40, April, correlated sell-off). Fully self-managing from day one. Premarket $17.60 — $0.65 below trigger; requires deal-momentum recovery to fill. Selected from deal-beneficiary screen after ET (below SMA, two 0%/100% sell bars, downtrend), CCL (up 19%, chasing), DAL (RSI 73, 12 shares, overbought), UAL (8 shares, RSI 70, overbought), RCL (3 shares, disqualified), JBLU (penny stock territory, ~$5.40) all rejected. Day 3 (6/01): premarket $18.14 (-$0.11/share, -$5.94 unrealized). Friday (5/29) bar: $18.34 close, 39%/60% sell on 19.5M — mild pullback. RSI 60.0. Above 20d SMA ($16.79) by $1.35. POC $17.20 below as support. ATR $0.75. VSA HOLD — background strength (Test, 4 bars ago) + No Supply signal ("down bar on low volume with narrow spread; sellers cannot push price down; healthy pullback"). The No Supply read during deal uncertainty is the most bullish possible signal: with the deal stalling and oil bouncing, sellers should be pressing cruise lines lower — institutional demand absorbing the selling instead means professional money is holding NCLH despite the headline risk. Stop confirmed $16.65 GTC (VSA system suggested $17.57 but the structural $16.65 GTC order stays). NCLH is the active test of whether a non-energy trade can work during de-escalation rather than escalation, isolating the setup from the 0W/7L oil-correlated losing record. Stop $16.65, target $21.00. Day 4 (6/02): premarket $18.08 (-$0.17/share, -$9.18 unrealized). Oil dropping 4% on Trump peace signals (WTI $91.30) — directly bullish for cruise lines. NCLH absorbed Monday's Iran-suspension sell-off (Iran halted talks, pledged to close Strait, oil spiked) by dipping to $17.79 and recovering to $18.06 — exactly the No Supply behavior the VSA system predicted. 10 tickers screened today, zero qualifying: CLF/SOFI/CHPT overbought (RSI 70+), ET below SMA in confirmed downtrend, HOOD/ROKU/RBLX insufficient share count, OPEN penny-stock adjacent, ZIM reversal too early. Stop $16.65 (GTC), target $21.00.
 
 ### Claude — Cumulative P/L by Trade
 
@@ -530,6 +530,26 @@ Trades considered but not taken, and what happened instead:
 | 6/1 | MU, DELL (DeepSeek) | Extremely extended (MU RSI 70 ATR $53; DELL RSI 85, +33% gap May 29) — unsuitable for risk parameters; chasing prohibited | Stayed in cash |
 | 6/1 | SWKS (DeepSeek) | 3%/96% sell — heavy distribution after run | Stayed in cash |
 | 6/1 | BBY (DeepSeek) | RSI 84, earnings gap — extended, chasing prohibited | Stayed in cash |
+| 6/2 | ET (Claude) | RSI 44, below SMA ($19.87) by $0.60; 7 of last 8 bars sell-dominated; confirmed downtrend — not ready for re-entry | Not entered |
+| 6/2 | SOFI (Claude) | RSI 68.9 approaching overbought; gap from $16.97 held but premarket -1.73%; gap-chase risk | Not entered |
+| 6/2 | CLF (Claude) | RSI 70.7 overbought; 8 consecutive buy bars, up 35% in 2 weeks; textbook chase | Not entered |
+| 6/2 | HOOD (Claude) | $90.73, 11 shares; two 99% buy bars but premarket -1.9%; disqualified by share count | Not entered |
+| 6/2 | ROKU (Claude) | $129.03, 7 shares; disqualified by position sizing | Not entered |
+| 6/2 | RBLX (Claude) | $47.00, 21 shares; choppy alternating bars; limited exposure | Not entered |
+| 6/2 | ZIM (Claude) | RSI 30.9, below SMA; crashed $25.55→$23.49; 91% buy reversal bar yesterday but too early to call bottom | Not entered |
+| 6/2 | OPEN (Claude) | $5.31, 188 shares; penny-stock adjacent; ATR × shares = ~$60/day risk; too volatile | Not entered |
+| 6/2 | CHPT (Claude) | $7.89, RSI 70.4 overbought; extremely thin volume (658K); disqualified | Not entered |
+| 6/2 | XOM (DeepSeek) | June 1: 89% buy demand bar but still below 20-day SMA — no spring | Stayed in cash |
+| 6/2 | CVX (DeepSeek) | June 1: 46% buy, weak — no spring | Stayed in cash |
+| 6/2 | DVN (DeepSeek) | June 1: 51% buy, neutral — no spring, still below SMA | Stayed in cash |
+| 6/2 | OXY (DeepSeek) | June 1: 52% buy, neutral — no spring | Stayed in cash |
+| 6/2 | HAL (DeepSeek) | June 1: 40% buy, weak — downtrend intact | Stayed in cash |
+| 6/2 | AAL (DeepSeek) | June 1: 73% buy, demand bar but extended with no test; oil headwind | Stayed in cash |
+| 6/2 | DAL (DeepSeek) | June 1: 85% buy but RSI 74.6, extended — chasing prohibited | Stayed in cash |
+| 6/2 | UAL (DeepSeek) | June 1: 71% buy, demand bar but RSI 70, extended — no test | Stayed in cash |
+| 6/2 | NVDA (DeepSeek) | June 1: 94% buy but AI news-driven gap — chasing prohibited | Stayed in cash |
+| 6/2 | MU (DeepSeek) | June 1: 69% buy but extremely extended (RSI 71, ATR $52) — no spring | Stayed in cash |
+| 6/2 | DELL (DeepSeek) | June 1: 91% buy but extreme extension (RSI 92, +71% in 2 weeks) — chasing prohibited | Stayed in cash |
 
 ---
 
