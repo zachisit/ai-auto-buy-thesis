@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-06-10 | **Market context:** Trump deal window Day 1 — oil WTI ~$89-90, VIX ~16-18; CPI Thursday, Warsh Fed June 17; **AAL Day 3** hit $14.38 high on 149.98M volume (highest in dataset) before pulling back to $13.80 premarket; 61% buy, RSI 59.3, POC shifted to $13.60 (our entry), $0.62 from $15.00 target; Claude: 13 closed, 4W/9L, 30.8%, **-$163.03** (portfolio net -$148.43 incl. unrealized); no second position (NCLH RSI 76.2, CCL insufficient exposure, JBLU penny stock, F no conviction); **DeepSeek HAL buy stop expired unfilled** — 6/9 bar showed 36%/64% sell distribution, high only $40.67 (never reached $41.85 trigger); DeepSeek back in cash; net -$54.62; Warsh Fed June 17 (one week)
+**Last updated:** 2026-06-15 | **Market context:** IRAN DEAL COMPLETE — Trump Truth Social: "The Deal with the Islamic Republic of Iran is now complete"; formal signing ceremony June 19 in Switzerland; Strait of Hormuz reopening upon signing; oil crashed WTI $80.95 (-4.6%), Brent $83.82 (-4%), lowest since before the war; CPI 4.2% three-year high, PPI 6.5%; Warsh Fed June 17 (Tuesday); **AAL #2 CLOSED +$98.55** (experiment's largest win, surpassing DVN +$72.60): entered 6/8 $13.60, GTC limit sell $14.95 triggered 6/12 (high $15.02), 73 shares, 5 days — first trade to complete within 1-5 day target since ET #1; 91% institutional buy on 6/5 during broad sell-off correctly front-ran the deal catalyst; **NCLH #2 open** filled 6/12 at $19.44 (51 shares, stop $17.85 GTC, target $22.00 GTC), premarket 6/15 $20.23 (+$40.29 unrealized, Day 2) — deal confirmed, running toward target; no new positions (all deal beneficiaries gapping — chasing prohibited); Claude: 14 closed, 5W/9L, 35.7%, **-$64.48** (portfolio net **-$24.19** incl. unrealized); DeepSeek 100% cash, no qualifying setups (airlines/semis all gapping — chasing prohibited; energy in distribution, no springs); net -$54.62
 
 ---
 
@@ -13,16 +13,16 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Metric | Claude | DeepSeek |
 |---|---|---|
 | Experiment start | 2026-03-13 | 2026-04-01 |
-| Trades closed | 13 | 4 |
-| Wins / Losses | 4 / 9 | 2 / 2 |
-| Win rate | 30.8% | 50% |
-| **Net P/L** | **-$163.03** | **-$54.62** |
-| Best trade | DVN +$72.60 | DVN +$22.20 |
+| Trades closed | 14 | 4 |
+| Wins / Losses | 5 / 9 | 2 / 2 |
+| Win rate | 35.7% | 50% |
+| **Net P/L** | **-$64.48** | **-$54.62** |
+| Best trade | AAL #2 +$98.55 | DVN +$22.20 |
 | Worst trade | DKNG -$66.69 | LUV -$53.82 |
-| Avg win | $46.06 | $12.30 |
+| Avg win | $56.56 | $12.30 |
 | Avg loss | -$38.58 | -$39.61 |
-| Profit factor | 0.53 | 0.31 |
-| Open / pending | AAL open from 6/8 at $13.60 (73 shares, stop $12.70 GTC, target $15.00 GTC, R/R 1:1.56, +$14.60 unrealized premarket 6/10). **Portfolio net: -$148.43** | No open positions — HAL buy stop $41.85 expired 6/9 unfilled (high only $40.67). **Portfolio net: -$54.62** |
+| Profit factor | 0.81 | 0.31 |
+| Open / pending | NCLH #2 open from 6/12 at $19.44 (51 shares, stop **$17.85 GTC**, target **$22.00 GTC**, R/R 1:1.68, +**$40.29** unrealized premarket 6/15). **Portfolio net: -$24.19** | No open positions. **Portfolio net: -$54.62** |
 
 ---
 
@@ -31,22 +31,22 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 ```mermaid
 xychart-beta
     title "Claude — Cumulative P&L by Trade"
-    x-axis ["Start", "After DVN", "After PANW", "After DAL #1", "After PFE", "After WHR", "After ET", "After AAL", "After LYFT", "After ET #2", "After EPD", "After HAL", "After DKNG", "After NCLH"]
-    y-axis "P&L ($)" -200 --> 80
-    line [0, 72.60, 66.30, 9.60, -50.60, -63.01, -16.90, -67.30, -108.70, -56.68, -83.68, -109.84, -176.53, -163.03]
+    x-axis ["Start", "After DVN", "After PANW", "After DAL #1", "After PFE", "After WHR", "After ET", "After AAL", "After LYFT", "After ET #2", "After EPD", "After HAL", "After DKNG", "After NCLH", "After AAL #2"]
+    y-axis "P&L ($)" -200 --> 110
+    line [0, 72.60, 66.30, 9.60, -50.60, -63.01, -16.90, -67.30, -108.70, -56.68, -83.68, -109.84, -176.53, -163.03, -64.48]
 ```
 
 ```mermaid
 xychart-beta
     title "Claude — Individual Trade P&L ($)"
-    x-axis ["DVN", "PANW", "DAL #1", "PFE", "WHR", "ET", "AAL", "LYFT", "ET #2", "EPD", "HAL", "DKNG", "NCLH"]
-    y-axis "P&L ($)" -80 --> 80
-    bar [72.60, -6.30, -56.70, -60.20, -12.41, 46.11, -50.40, -41.40, 52.02, -27.00, -26.16, -66.69, 13.50]
+    x-axis ["DVN", "PANW", "DAL #1", "PFE", "WHR", "ET", "AAL", "LYFT", "ET #2", "EPD", "HAL", "DKNG", "NCLH", "AAL #2"]
+    y-axis "P&L ($)" -80 --> 110
+    bar [72.60, -6.30, -56.70, -60.20, -12.41, 46.11, -50.40, -41.40, 52.02, -27.00, -26.16, -66.69, 13.50, 98.55]
 ```
 
 ```mermaid
-pie title Claude — Trade Outcomes (13 closed)
-    "Wins" : 4
+pie title Claude — Trade Outcomes (14 closed)
+    "Wins" : 5
     "Losses" : 9
 ```
 
@@ -84,7 +84,8 @@ gantt
     EPD — LOSS           :crit, done, 2026-05-22, 2026-05-26
     CCL — No fill        :done,    2026-05-26, 2026-05-27
     NCLH — WIN           :done,    2026-05-28, 2026-06-05
-    AAL #2 — Open        :active,  2026-06-08, 2026-06-10
+    AAL #2 — WIN         :done,    2026-06-08, 2026-06-12
+    NCLH #2 — Open       :active,  2026-06-12, 2026-06-15
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :done,    2026-04-06, 2026-04-10
@@ -120,7 +121,8 @@ gantt
 | 18 | CCL | 2026-05-26 | 2026-05-26 | — | 37 | $26.80◈ | — | $0 | 1:1.58 | ⛔ No fill (operator error) |
 | 19 | NCLH | 2026-05-28 | 2026-06-05 | 8 | 54 | $18.25◉ | $18.50 | **+$13.50** | 1:1.72 | ✅ Win |
 | 20 | VALE | 2026-06-03 | 2026-06-03 | — | 59 | $16.85∇ | — | $0 | 1:1.69 | ⛔ No fill (buy stop save) |
-| 21 | AAL | 2026-06-08 | — | — | 73 | $13.60△ | — | — | 1:1.56 | ⏳ Open |
+| 21 | AAL | 2026-06-08 | 2026-06-12 | 5 | 73 | $13.60△ | $14.95 | **+$98.55** | 1:1.56 | ✅ Win |
+| 22 | NCLH | 2026-06-12 | — | — | 51 | $19.44✦ | — | — | 1:1.68 | ⏳ Open |
 
 †Day-only buy stop at $74.25. High was $74.19 — missed by 6 cents. DAL then collapsed to $68.08 (100% sell pressure, 20.7M vol). Order expired. Saved ~$80.
 
@@ -152,9 +154,11 @@ gantt
 
 ◉Buy stop $18.25 (limit $18.40) placed day-only 5/28. 54 shares. RSI 56.0 — ideal sweet spot. Above 20d SMA ($16.76) by $1.39. Two consecutive buy bars (86%, 57%). ATR ~$1.00. Stop $16.65 (GTC, below 200d SMA area), target $21.00 (GTC). R/R 1:1.72. Thesis: Norwegian Cruise Line (NCLH) — deal beneficiary; lower oil = lower fuel costs + consumer travel confidence. -15% from 200d SMA = recovery room without being parabolic (CCL +19%, DAL +21% from lows = chasing prohibited; NCLH has not made that move). First experiment travel/cruise entry when oil is below $90/barrel (Rule 15 threshold) with a 14-point written framework — qualitatively different from DAL (-$56.70, March, oil above $100), AAL (-$50.40, April, oil $106), LYFT (-$41.40, April, correlated sell-off). Fully self-managing from day one. Premarket $17.60 — $0.65 below trigger; requires deal-momentum recovery to fill. Selected from deal-beneficiary screen after ET (below SMA, two 0%/100% sell bars, downtrend), CCL (up 19%, chasing), DAL (RSI 73, 12 shares, overbought), UAL (8 shares, RSI 70, overbought), RCL (3 shares, disqualified), JBLU (penny stock territory, ~$5.40) all rejected. Day 3 (6/01): premarket $18.14 (-$0.11/share, -$5.94 unrealized). Friday (5/29) bar: $18.34 close, 39%/60% sell on 19.5M — mild pullback. RSI 60.0. Above 20d SMA ($16.79) by $1.35. POC $17.20 below as support. ATR $0.75. VSA HOLD — background strength (Test, 4 bars ago) + No Supply signal ("down bar on low volume with narrow spread; sellers cannot push price down; healthy pullback"). The No Supply read during deal uncertainty is the most bullish possible signal: with the deal stalling and oil bouncing, sellers should be pressing cruise lines lower — institutional demand absorbing the selling instead means professional money is holding NCLH despite the headline risk. Stop confirmed $16.65 GTC (VSA system suggested $17.57 but the structural $16.65 GTC order stays). NCLH is the active test of whether a non-energy trade can work during de-escalation rather than escalation, isolating the setup from the 0W/7L oil-correlated losing record. Stop $16.65, target $21.00. Day 4 (6/02): premarket $18.08 (-$0.17/share, -$9.18 unrealized). Oil dropping 4% on Trump peace signals (WTI $91.30) — directly bullish for cruise lines. NCLH absorbed Monday's Iran-suspension sell-off (Iran halted talks, pledged to close Strait, oil spiked) by dipping to $17.79 and recovering to $18.06 — exactly the No Supply behavior the VSA system predicted. 10 tickers screened today, zero qualifying: CLF/SOFI/CHPT overbought (RSI 70+), ET below SMA in confirmed downtrend, HOOD/ROKU/RBLX insufficient share count, OPEN penny-stock adjacent, ZIM reversal too early. Stop $16.65 (GTC), target $21.00. Day 6 (6/03): premarket $18.10 (-$0.15/share, -$8.10 unrealized). RSI 69.1. Bar data: $18.13 close (6/2). VSA HOLD — Test (2 bars ago) + healthy markup; 80% buy on 6/2. Consolidating $17.79–$18.64 — essentially flat on entry. VALE buy stop $16.85 placed (day-only) as first materials trade; 25+ tickers screened across two sessions, VALE the only qualifying name. Rule 20 triggered: day 6 of 1-5 day target — if no meaningful progress toward $21.00 by day 10, close regardless of VSA health. Stop $16.65 (GTC), target $21.00. Day 7 (6/04): premarket $18.58 (+$0.33/share, +$17.82 unrealized) — highest since entry. RSI 55.4. Bar data: $18.15 close (6/3), 17%/83% sell on 25.3M — weak close but premarket surging. VSA HOLD — Test (3 bars ago), healthy markup, no weakness signals. House approved resolution limiting Trump's ability to continue Iran military operations — forces diplomatic path; most structurally bullish catalyst since the 14-point MoU framework (previous deal progress was dependent on Trump's whims; Congress limiting war authority changes the dynamic). Oil easing to $95.17 directly benefits cruise lines. VALE buy stop save #8+ (saved $46.61). No second position — airlines (AAL/ALK) in active distribution. Target $21.00 is $2.42 away. Stop $16.65 (GTC), target $21.00. Day 8 (6/05): premarket $19.06 (+$0.81/share, +$43.74 unrealized) — most profitable non-energy position in experiment history (all prior non-energy trades lost money). Bar data: gapped up from $18.15 to open $19.20, high $19.48, closed $19.13 (6/4) with 56%/43% buy on 26.9M. RSI 75.1 — overbought. Above 20d SMA ($16.93) by $2.20. VSA HOLD — Test (4 bars ago), healthy markup, no weakness. **Stop trailed $16.65→$18.50 GTC** — NCLH surged from $18.15 to $19.13 on the House war-powers vote; unrealized profit reached +$47.52, and with RSI at 75 protecting profits became critical. The $18.50 stop locks in a minimum +$13.50 (54 × $0.25) regardless of any reversal; the $21.00 limit sell GTC remains for upside capture. Rationale explicitly cites the DKNG failure (held +$12 unrealized → -$66.69 loss) and the ET #2 target saga (five near-misses): when a position is significantly profitable, trail the stop aggressively — unrealized gains are not profits until captured. Oil at $92 (lowest sustained level since the war), House forcing diplomacy, Trump open to meeting Iran's leader. Jobs data today (Friday). If NCLH hits $21.00 target: +$148.50 realized, cumulative becomes -$28.03 (near breakeven). **ET re-entry #3 is the next planned trade** — RSI 34.7 deeply oversold, two of three bars 78-82% buy, but $0.17 below SMA ($19.79); awaiting SMA reclaim before placing buy stop (est. $19.85 trigger, $19.10 stop, $20.45 limit sell, 51 shares). Stop $18.50 (GTC), target $21.00. Exit (6/05): GTC stop $18.50 triggered — NCLH hit intraday low $18.50 during Friday's broad sell-off (semis crushed: AVGO -15%, NVDA -4.7%, MU -13.3%; sector rotation out of risk assets) before recovering to close $18.75. 54 shares × $0.25 = **+$13.50** realized. 8 trading sessions. **The experiment's first non-energy win (non-energy record: 0W/7L → 1W/7L).** The stop trail from $16.65 → $18.50 preserved profit when RSI reached 75 — without the trail, Iran's FM said "no significant progress" the same Friday and a deal collapse could have turned +$47 unrealized into a substantial loss (original $16.65 stop risked -$86+). The frustrating timing (stock closed $18.75 after our $18.50 exit) is outweighed by the systematic protection the trail provided. Macro thesis proved correct throughout: oil $110→$92, 14-point MoU framework, House limiting Trump's war powers all benefited cruise lines as designed.
 
-△Buy stop $13.60 (limit $13.75) placed day-only 6/8. 73 shares. RSI 61.8 — ideal sweet spot. Above 20d SMA ($13.45) by $0.15. POC $11.11 far below as support. ATR ~$0.60. Stop $12.70 (GTC, 1.5 ATRs below trigger), target $15.00 (GTC, May peak area $14.85-$15.40). R/R 1:1.56. Thesis: American Airlines — on Friday 6/5, while every sector sold off (NVDA -4.7%, MU -13.3%, MRVL -16.8%, HAL -5.0%, OXY -3.0%), AAL closed UP with **91% buy pressure on 106.1M volume** (2× normal). Institutions were deliberately buying AAL while selling everything else — targeted accumulation against the market current. Macro support: oil at $92-94 (lowest sustained level since war escalation) reduces fuel costs; House limiting Trump's war powers forces diplomatic path; 14-point MoU framework intact. Key distinction from April AAL trade (-$50.40): oil was $106 Brent and rising then; now $94 and falling. NCLH just proved deal-beneficiary thesis works (+$13.50). The 91% relative-strength bar during a market-wide sell-off is the single most compelling institutional signal of the experiment. Premarket 6/8: $13.48 — $0.12 below trigger; requires follow-through conviction to fill. Fully self-managing from day one. Day 1 (6/8): Filled at $13.60. Monday bar: 48%/51% balanced on 109M volume (before Trump statement). RSI 62.2. Above SMA ($13.47). Day 2 (6/9): Premarket $13.79 (+$0.19, +$13.87 unrealized). Trump's "two or three days" deal statement overnight — most specific deal timeline of experiment. The 91% institutional buy on Friday was front-running this catalyst. Stop $12.70, target $15.00. Day 3 (6/10): Premarket $13.80 (+$0.20, +$14.60 unrealized). Yesterday (6/9) hit $14.38 high on 149.98M volume — highest bar in the dataset; opened $13.94, closed $14.09 with 61%/39% buy (measured accumulation, not panic buying). RSI 59.3 — plenty of room before overbought. POC shifted to $13.60 (our entry is now the volume base). $0.62 from $15.00 target. Trump "two or three days" is now Day 1 of the deal window. Polymarket June 15 deal at 9%, June 30 at 18% — market not fully pricing in; upside remains if deal announces. No second position: NCLH RSI 76.2 (overbought), CCL 36 shares (insufficient exposure), JBLU ~$4.92 (penny stock), F flat bar (no conviction). CPI Thursday. Stop $12.70, target $15.00.
+△Buy stop $13.60 (limit $13.75) placed day-only 6/8. 73 shares. RSI 61.8 — ideal sweet spot. Above 20d SMA ($13.45) by $0.15. POC $11.11 far below as support. ATR ~$0.60. Stop $12.70 (GTC, 1.5 ATRs below trigger), target $15.00 (GTC, May peak area $14.85-$15.40). R/R 1:1.56. Thesis: American Airlines — on Friday 6/5, while every sector sold off (NVDA -4.7%, MU -13.3%, MRVL -16.8%, HAL -5.0%, OXY -3.0%), AAL closed UP with **91% buy pressure on 106.1M volume** (2× normal). Institutions were deliberately buying AAL while selling everything else — targeted accumulation against the market current. Macro support: oil at $92-94 (lowest sustained level since war escalation) reduces fuel costs; House limiting Trump's war powers forces diplomatic path; 14-point MoU framework intact. Key distinction from April AAL trade (-$50.40): oil was $106 Brent and rising then; now $94 and falling. NCLH just proved deal-beneficiary thesis works (+$13.50). The 91% relative-strength bar during a market-wide sell-off is the single most compelling institutional signal of the experiment. Premarket 6/8: $13.48 — $0.12 below trigger; requires follow-through conviction to fill. Fully self-managing from day one. Day 1 (6/8): Filled at $13.60. Monday bar: 48%/51% balanced on 109M volume (before Trump statement). RSI 62.2. Above SMA ($13.47). Day 2 (6/9): Premarket $13.79 (+$0.19, +$13.87 unrealized). Trump's "two or three days" deal statement overnight — most specific deal timeline of experiment. The 91% institutional buy on Friday was front-running this catalyst. Stop $12.70, target $15.00. Day 3 (6/10): Premarket $13.80 (+$0.20, +$14.60 unrealized). Yesterday (6/9) hit $14.38 high on 149.98M volume — highest bar in the dataset; opened $13.94, closed $14.09 with 61%/39% buy (measured accumulation, not panic buying). RSI 59.3 — plenty of room before overbought. POC shifted to $13.60 (our entry is now the volume base). $0.62 from $15.00 target. Trump "two or three days" is now Day 1 of the deal window. Polymarket June 15 deal at 9%, June 30 at 18% — market not fully pricing in; upside remains if deal announces. No second position: NCLH RSI 76.2 (overbought), CCL 36 shares (insufficient exposure), JBLU ~$4.92 (penny stock), F flat bar (no conviction). CPI Thursday. Stop $12.70, target $15.00. Day 4 (6/11): Trump called off strikes Thursday and gave "clearest indication" of deal arriving. AAL opened $13.33, dipped to $13.31, then surged to $14.66, closing $14.65. **99%/1% buy on 155.2M volume — the highest volume and strongest buy pressure of ANY bar in the experiment's history.** Coordinated institutional buying across all travel names simultaneously: CCL 98%/30M, NCLH 97%/23M, JBLU 96%/30M, F 90%/47.7M. Bloomberg reported deal could sign Sunday in Switzerland with Iranian state media confirming draft terms. POC shifted to $14.64 — yesterday's close is now the volume base. RSI 61.7. Day 5 (6/12): Premarket $14.87 (+$1.27/share, +**$92.71** unrealized). **Stop trailed $12.70→$14.00 GTC** — locks in minimum +$29.20 profit (73 × $0.40) regardless of outcome; DKNG lesson (held +$12 unrealized → -$66.69) demands aggressive trail when significantly profitable. **Target lowered $15.00→$14.95 GTC** — ET round-number lesson applied proactively; round $15.00 will have clustered sell orders, $14.95 gets ahead of the crowd; sacrifices $3.65 (73 × $0.05) but dramatically increases fill probability. Premarket $14.87 is $0.08 from new target. NCLH buy stop $19.40 placed as second position (see ✦). Combined worst-case: -$49.85. Combined best-case: +$231.15. Stop $14.00, target $14.95. Exit (6/12): GTC limit sell $14.95 triggered and filled. High was $15.02 — both the original $15.00 and adjusted $14.95 targets would have filled, but the proactive round-number adjustment (ET $20.50 lesson) captured the fill on the very first touch. Final P/L: **+$98.55** (73 × $1.35/share). 5 trading sessions — exactly within the 1-5 day target window; the first trade to complete within the original timeframe since ET #1. The experiment's largest single trade win, surpassing DVN (+$72.60). Net AAL across both trades: -$50.40 (April) + $98.55 (June) = **+$48.15**. The changed environment (oil $94 falling vs $106 rising), stronger entry signal (91% institutional buy during a market sell-off vs mixed), and proper risk management (1.5 ATR stop vs 1.0 ATR, proactive target adjustment) made all the difference.
 
 ∇Buy stop $16.85 (limit $17.00) placed day-only 6/3. 59 shares. RSI 45.7 — neutral. Above 20d SMA ($16.48) by $0.34. POC $15.34 strong support. ATR $0.42 — lowest daily volatility risk profile available. Stop $16.20 (GTC, below SMA), target $17.95 (GTC). R/R 1:1.69. Thesis: Vale SA (VALE) — world's largest iron ore producer; revenue driven by global infrastructure spending and Chinese demand; zero dependency on oil prices, Iran headlines, or Strait of Hormuz status. Two consecutive strong buy bars on expanding volume (88% on 16.9M → 77% on 27.2M); the 6/2 bar had the highest volume in the dataset — institutional accumulation confirmed. The 5/29 bar (7%/92% sell) was a shakeout immediately followed by strong buying on 6/1 and 6/2 — same accumulation pattern that preceded DVN, ET, and HAL winning runs. RSI 45.7 = most neutral entry RSI of any recent trade; maximum room to run. China trade truce (Trump-Xi) directly supports VALE — China is their largest customer. Premarket 6/3: $16.68 — $0.17 below trigger; requires upside confirmation to fill. Fully self-managing from day one: buy stop (DAY), stop loss (GTC), limit sell at target (GTC). Selected from 25+ tickers screened across two sessions — materials sector surging but mostly untradeable: CLF (RSI 70.7 overbought, up 35% in two weeks), NUE ($258, 3 shares), STLD ($271, 3 shares), AA ($84, 11 shares, RSI 76), ET (below SMA, 7 of 8 bars sell-dominated), SOFI (RSI 68.9, gap-chase risk), HOOD/RBLX/ROKU (insufficient shares), ZIM (RSI 30.9, below SMA, too early). First experiment trade in materials/mining sector. Outcome: buy stop save #8+ — VALE's high on 6/3 was only $16.43 (never reached the $16.85 trigger), then crashed to close $16.06 on 3%/97% sell on 29.3M volume (highest volume in the dataset). Classic accumulation trap: the two buy bars (88%, 77%) attracted buyers while institutions distributed. Estimated savings: $46.61. Total estimated buy stop savings across the experiment now $250+. The day-only mechanism correctly prevented entry as the setup irreversibly deteriorated.
+
+✦Buy stop $19.40 (limit $19.55) placed day-only 6/12. 51 shares. RSI 57.8 — ideal sweet spot. Above 20d SMA ($17.45) by $1.95. ATR ~$1.00. Stop $17.85 (GTC, 1.55 ATRs below trigger), target $22.00 (GTC). R/R 1:1.68. Thesis: NCLH re-entry on deal conviction. First trade won +$13.50 on a vague deal signal (first non-energy win, non-energy record 0W/7L → 1W/7L). This entry has Bloomberg reporting a specific venue (Switzerland) and date (Sunday) — qualitatively different from "Trump says deal is close." Yesterday's 97%/3% buy on 23.4M confirmed institutions are re-accumulating for the Sunday deal. Key differences from first NCLH trade: deal status upgraded from "mostly agreed, no timeline" to "Bloomberg: Sunday signing in Switzerland"; oil $88-92 (falling) vs $92-96 (uncertain direction); institutional signal stronger (97% on 23.4M vs 79% on 33.5M at entry). CCL screened but rejected: 35 shares at $28.12 limits exposure vs NCLH's 51 shares. JBLU ~$4.98 penny stock. Premarket $19.30 — $0.10 below trigger; requires deal-momentum follow-through to fill. Fully self-managing from day one. Two positions going into a potential Sunday deal signing — both directionally aligned with one outcome; combined worst-case -$49.85 (NCLH stopped) + $29.20 (AAL locked in) = net -$49.85; combined best-case: AAL +$98.55 + NCLH +$132.60 = +$231.15. The asymmetry favors the trade. Buy stop filled 6/12 at $19.44 (between $19.40 trigger and $19.55 limit). Day 2 (6/15): Iran deal confirmed complete — Trump announced on Truth Social. Oil crashed WTI $80.95 (-4.6%). Premarket $20.23 (+$0.79/share, +$40.29 unrealized). Strait reopening Friday June 19 (formal signing). Deal thesis fully confirmed. Stop $17.85 GTC, target $22.00 GTC.
 
 ### Claude — Cumulative P/L by Trade
 
@@ -172,7 +176,8 @@ gantt
 | Trade 10 | EPD | -$27.00 | -$83.68 |
 | Trade 11 | HAL | -$26.16 | -$109.84 |
 | Trade 12 | DKNG | -$66.69 | -$176.53 |
-| Trade 13 | NCLH | +$13.50 | **-$163.03** |
+| Trade 13 | NCLH | +$13.50 | -$163.03 |
+| Trade 14 | AAL #2 | +$98.55 | **-$64.48** |
 
 ### Claude — Exit Reasons
 
@@ -191,6 +196,7 @@ gantt
 | HAL | GTC stop $40.42 triggered 5/27 — opened near stop, dropped through; market order filled at $40.16 (gap slippage $0.26/share); VSA TIGHTEN on 5/27 (two consecutive down bars on rising volume — professionals withdrawing) correctly identified failure; tightening $39.46→$40.42 limited loss vs holding to $38.78 intraday low; 10 trading sessions |
 | DKNG | GTC stop $23.60 triggered 5/29 — intraday low $23.54 breached the stop, filled at $23.59; the 5/27 Spring (83% buy bounce from $23.78) failed, followed by 11%/89% sell on 5/28 and an 80%/19% buy on 5/29 that couldn't reclaim the stop; held 12 days (vs 1-5 target — thesis drift); -$66.69 ≈ max risk ($66.30); zero-oil-correlation thesis insulated DKNG from Iran headlines but not from the broad 5/26 sell-off; experiment's worst single trade; non-energy record now 0W/7L (-$294.10) |
 | NCLH | GTC stop $18.50 triggered 6/5 — trailed stop hit when NCLH reached intraday low $18.50 during Friday's broad sell-off (semis/energy crushed); stock recovered to close $18.75 after exit. Final P/L: +$13.50 (54 × $0.25/share). 8 trading sessions. **First non-energy win (non-energy record: 0W/7L → 1W/7L).** Stop trail from $16.65→$18.50 locked profit when RSI reached 75; original stop at $16.65 would have exposed +$47 unrealized to evaporation if Iran deal collapsed (FM cited "no significant progress" same day) |
+| AAL #2 | GTC limit sell $14.95 triggered 6/12 — proactive round-number adjustment from $15.00 (ET $20.50 lesson applied) captured the fill when the high was $15.02; both targets would have filled, but discipline rewarded; 91% buy on 106.1M during a market sell-off (6/5) front-ran the deal catalyst; 99% buy on 155.2M (6/11) confirmed institutional conviction; oil $92→$80 thesis confirmed as Strait reopens; 5 sessions (within the 1-5 day target); **experiment's largest win (+$98.55)**; net AAL -$50.40 (April, oil $106 rising) + $98.55 (June, oil $94 falling) = **+$48.15** — re-entry on improved conditions in the same name proved the experiment can learn |
 
 ---
 
@@ -613,6 +619,39 @@ Trades considered but not taken, and what happened instead:
 | 6/10 | OXY (DeepSeek) | 65% buy demand bar but below 20d SMA — needs confirmation, not yet a clean setup | Stayed in cash |
 | 6/10 | Tech NVDA/MU/PANW (DeepSeek) | 59-73% buy — extended or no spring; PANW neutral; no valid VSA entry | Stayed in cash |
 | 6/10 | Airlines AAL/DAL/UAL (DeepSeek) | 61-83% buy — demand bars but no spring/test; DAL gapped up (chasing prohibited) | Stayed in cash |
+| 6/11 | ET (Claude) | RSI 39.5, below SMA ($19.69), 8%/92% sell on 6/10 — downtrend deepening; not ready | Not entered |
+| 6/11 | NCLH (Claude) | Gave back entire deal pop from $19.03 to $17.92, 17%/83% sell — falling knife | Not entered |
+| 6/11 | CCL (Claude) | Below SMA ($26.54), 13%/87% sell, dropped $1.74 on 6/10 — falling knife | Not entered |
+| 6/11 | JBLU (Claude) | ~$4.61 — sub-$5 penny stock territory, 4%/96% sell, below SMA — crushed | Not entered |
+| 6/11 | F (Claude) | Below SMA ($14.47), 11%/89% sell — seven of eight bars sell-dominated; no conviction | Not entered |
+| 6/11 | HAL (DeepSeek) | 15%/85% sell on 6/10 — heavy distribution, no spring, pattern damaged; below SMA | Stayed in cash |
+| 6/11 | XOM (DeepSeek) | 36%/64% sell — continued distribution, below 20-day SMA | Stayed in cash |
+| 6/11 | CVX (DeepSeek) | 35%/65% sell — distribution, no spring | Stayed in cash |
+| 6/11 | OXY (DeepSeek) | 25%/75% sell — weak, selling pressure dominant | Stayed in cash |
+| 6/11 | AAL (DeepSeek) | 15%/85% sell on 6/10 — distribution after prior demand bar, no test | Stayed in cash |
+| 6/11 | DAL (DeepSeek) | 1%/99% sell on 6/10 — extreme distribution; clear institutional selling | Stayed in cash |
+| 6/11 | UAL (DeepSeek) | 11%/89% sell — heavy distribution; avoid | Stayed in cash |
+| 6/11 | NVDA (DeepSeek) | 7%/93% sell — heavy selling, downtrend intact | Stayed in cash |
+| 6/11 | MU (DeepSeek) | 12%/88% sell — distribution after recent bounce | Stayed in cash |
+| 6/11 | PANW (DeepSeek) | 72% buy demand bar but extended above 20d SMA with no spring pattern | Stayed in cash |
+| 6/12 | CCL (Claude) | 35 shares at $28.12 — insufficient exposure vs NCLH's 51 shares; NCLH selected as cruise play with superior dollar exposure | NCLH buy stop placed instead |
+| 6/12 | HAL (DeepSeek) | 36%/64% sell on 6/11 — continued distribution; no spring | Stayed in cash |
+| 6/12 | Energy XOM/CVX/OXY (DeepSeek) | XOM 3%/97%, CVX 4%/96%, OXY 0%/100% sell — extreme distribution across entire energy sector | Stayed in cash |
+| 6/12 | Airlines/travel AAL/DAL/UAL/LUV/JBLU (DeepSeek) | All 96-99% buy on 6/11 — news-driven gap on Iran deal headlines; VSA discipline requires low-volume "no supply" pullback after demand bar before entry; entering now = chasing a gap; one demand bar is not a spring | Stayed in cash |
+| 6/12 | BA (DeepSeek) | 99% buy — news-driven gap on Iran deal; no spring preceding the gap | Stayed in cash |
+| 6/12 | NVDA (DeepSeek) | 87% buy but still below 20-day SMA; no spring pattern | Stayed in cash |
+| 6/12 | MU (DeepSeek) | 99% buy, huge gap — extreme extension, ATR $75; chasing prohibited; no VSA spring | Stayed in cash |
+| 6/12 | PANW (DeepSeek) | 98% buy — demand bar but extended; no spring | Stayed in cash |
+| 6/15 | CCL (Claude) | Gapping on deal; 33 shares — insufficient dollar exposure vs NCLH's 51 shares; entering into Monday gap = chasing | Not entered; NCLH captures the deal thesis |
+| 6/15 | DAL (Claude) | 12 shares/$1,000 — disqualified by position sizing rule; gapping up on deal | Not entered |
+| 6/15 | UAL (Claude) | 8 shares/$1,000 — disqualified by position sizing rule; gapping up on deal | Not entered |
+| 6/15 | F (Claude) | Below SMA; not a direct deal beneficiary; gapping marginally without conviction | Not entered |
+| 6/15 | JBLU (Claude) | ~$5.01, penny stock territory; gapping on deal | Not entered |
+| 6/15 | HAL (DeepSeek) | June 12: 34%/65% sell — continued distribution; no spring | Stayed in cash |
+| 6/15 | Energy XOM/CVX/OXY (DeepSeek) | June 12: neutral-weak to moderate demand; XOM/CVX below SMA; OXY 71% buy but below SMA — no springs across energy sector | Stayed in cash |
+| 6/15 | Airlines AAL/DAL/UAL/LUV (DeepSeek) | June 12: All 84-99% buy on June 11 deal surge; airlines extended without low-volume test; entering into Monday gap = chasing; one demand bar is not a spring | Stayed in cash |
+| 6/15 | Semis NVDA/MU/PANW (DeepSeek) | June 12: Mixed to weak (NVDA 48%/51%, MU 40%/59%, PANW 77% demand but extended); NVDA still below 20-day SMA; no springs | Stayed in cash |
+| 6/15 | BA (DeepSeek) | June 12: 99% buy but news-driven gap on deal headlines; no spring preceding; chasing prohibited | Stayed in cash |
 
 ---
 
@@ -647,13 +686,15 @@ Rules developed and refined during the experiment:
 
 ## Market Context
 
-The experiment ran during the **US-Israel war on Iran** (Feb 28 – Apr 8, 2026):
+The experiment ran during the **US-Israel war on Iran** (Feb 28 – Apr 8, 2026) and the subsequent de-escalation through the **full US-Iran peace deal** (June 15, 2026):
 
 - **Strait of Hormuz** effectively closed → oil surged $60 → $100–120/bbl (Brent)
 - **S&P 500** fell from 7,002 ATH to below 6,400; VIX ranged 25–31
 - **Energy (XLE)** was the only positive S&P sector (+12%); all others negative
 - **Ceasefire announced Apr 8** (brokered by Pakistan) → Brent crashed 13%+ overnight
 - **Fed** held at 3.50–3.75%; only 1 cut expected in 2026; PPI came in hot (0.7% vs 0.3%)
+- **CPI 4.2%** (three-year high, oil-driven), PPI 6.5% (highest since Nov 2022) — Warsh Fed June 17
+- **Full US-Iran deal confirmed June 15, 2026** — Trump Truth Social announcement; formal signing ceremony June 19 in Switzerland; Strait of Hormuz reopening upon signing; oil crashed WTI $80.95 (-4.6%), Brent $83.82 (-4%), lowest since before the war; SpaceX IPO June 13
 
 ---
 
