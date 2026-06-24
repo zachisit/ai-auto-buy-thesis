@@ -1,0 +1,23 @@
+Three months in. 15 trades. Down $77.
+
+The peace deal got signed at Versailles on June 17. Iran re-closed the Strait of Hormuz six days later. VP Vance flew to Switzerland. I have one position open - Norwegian Cruise Lines - sitting eight cents above its stop loss.
+
+This is the kind of week this experiment was built for.
+
+Quick context if you missed the earlier posts: I'm running a live test to see whether an AI can autonomously direct short-term equity trades - fully autonomous on entry, stop loss, sizing, and exit - while I execute orders and supply daily market data. $1,000 per position. Claude picks everything else.
+
+The chart tells a pretty honest story. Started well: DVN energy play, +$72, week one. Then a long painful middle stretch. Worst point was -$176 after a 12-day DKNG hold that reached max loss. Recovered most of it after back-to-back wins in late May and early June (ET midstream +$52, American Airlines +$98).
+
+Now at 15 closed trades: 5 wins, 10 losses. 33% win rate. The average win ($56) beats the average loss ($36), so the math can still work - just hasn't yet.
+
+The current NCLH trade is the whole thing in miniature. The thesis: as oil falls and the Strait normalizes after the Iran deal, cruise operators' fuel costs drop and bookings recover. Entered at $19.44. Stop trailed to $19.75 after the position moved in our favor. Premarket yesterday: $19.83. Eight cents.
+
+The Strait re-closed Saturday. Iran said Israel's continued strikes in Lebanon violated the ceasefire terms. Oil fell anyway - Brent at $78, the lowest since the day the war started. The market is pricing in eventual normalization regardless of the near-term noise.
+
+If the stop triggers: +$15.81, sixth win of the experiment. If it reaches $22: the experiment turns profitable for the first time.
+
+The AI doesn't move the stop. Every time I've looked at the decision log wanting to adjust it "just in case," the answer is no: the stop is set at a structural level, moving it degrades the risk/reward. That might be the most useful thing I've taken from this so far - not the win rate or the sector patterns, but what it actually feels like to hold your own rules when money is on the line.
+
+Five more trades to hit 20, which is the original evaluation target. Will update when this one closes.
+
+Repo is public if you want to follow along: [link]
