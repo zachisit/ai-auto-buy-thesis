@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-06-24 | **Market context:** NCLH #2 stopped out 6/23 at $19.25 (gapped through $19.75 stop, **-$9.69** — stock then reversed to close $20.39 with 95% buy, textbook institutional stop-hunt; net NCLH +$3.81 across both trades); Claude placed **CCL buy stop $29.10** (34 shares, same stop-hunt reversal pattern, R/R 1:1.55); DeepSeek placed **HAL conditional buy stop $35.25** (100% buy bar 6/22 + no-supply test 6/23); **Vance in Switzerland** called talks a "good foundation"; Strait cycling open/re-closed; **Brent ~$78**, VIX ~17; Claude: 16 closed, 5W/11L, 31.3%, **-$87.37**; DeepSeek: 4 closed, 2W/2L, **-$54.62**
+**Last updated:** 2026-06-25 | **Market context:** US-Iran agreed on **Switzerland roadmap** (communication lines for Strait, Lebanon deconfliction cell, technical working groups formed; Vance: 16M barrels/day Strait transit — record since before war); AAL surged 97% buy on 207M volume on deal roadmap; CCL Day 2 premarket $29.15 (+$1.70 unrealized); DeepSeek HAL $35.25 buy stop cancelled (high $34.60, 6/24 bar broke spring low — pattern invalidated); MU earnings beat +6% premarket; **Brent ~$78**, VIX ~16; Claude: 16 closed, 5W/11L, 31.3%, **-$87.37** (CCL open +$1.70); DeepSeek: 4 closed, 2W/2L, **-$54.62** (100% cash)
 
 ---
 
@@ -22,7 +22,7 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Avg win | $56.56 | $12.30 |
 | Avg loss | -$33.65 | -$39.61 |
 | Profit factor | 0.76 | 0.31 |
-| Open / pending | No open positions. CCL buy stop $29.10 day-only (34 shares, stop **$26.90 GTC**, target **$32.50 GTC**, R/R 1:1.55). **Portfolio net: -$87.37** | No open positions. HAL buy stop $35.25 conditional day-only (28 shares, stop **$33.50 GTC**, target **$41.00 GTC**, R/R 2.75:1). **Portfolio net: -$54.62** |
+| Open / pending | CCL open (Day 2). Entry $29.10 (34 shares), stop **$26.90 GTC**, target **$32.50 GTC**, R/R 1:1.55. Premarket $29.15 (+$0.05, **+$1.70 unrealized**). **Portfolio net: -$85.67** | No open positions. HAL $35.25 buy stop cancelled 6/25 (high $34.60, 6/24 bar broke spring low — pattern invalidated). 100% cash. **Portfolio net: -$54.62** |
 
 ---
 
@@ -87,7 +87,7 @@ gantt
     AAL #2 — WIN         :done,    2026-06-08, 2026-06-12
     NCLH #2 — LOSS       :crit, done, 2026-06-12, 2026-06-23
     SOFI — LOSS          :crit, done, 2026-06-17, 2026-06-18
-    CCL — Pending        :done,    2026-06-24, 2026-06-25
+    CCL — Pending        :done,    2026-06-24, 2026-06-26
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :done,    2026-04-06, 2026-04-10
@@ -96,7 +96,7 @@ gantt
     HAL — WIN            :done,    2026-05-13, 2026-05-22
     HAL #2 — No fill    :done,    2026-06-09, 2026-06-10
     NVDA — No fill      :done,    2026-06-16, 2026-06-16
-    HAL #3 — Pending    :done,    2026-06-24, 2026-06-25
+    HAL #3 — No fill    :done,    2026-06-24, 2026-06-25
 ```
 
 ---
@@ -225,6 +225,7 @@ gantt
 | 4 | HAL | 2026-05-13 | 2026-05-22 | 8 | 24 | $41.85†† | ~$41.95 | **+$2.40** | 1:1.60 | ✅ Win |
 | — | HAL | 2026-06-09 | — | — | 24 | $41.85‡‡ | — | $0 | 1:1.77 | ⛔ No fill (buy stop save) |
 | — | NVDA | 2026-06-16 | — | — | 4 | $214.50§§ | — | $0 | 1:1.07 | ⛔ No fill (buy stop expired) |
+| — | HAL | 2026-06-24 | — | — | 28 | $35.25¶¶ | — | $0 | 1:2.75 | ⛔ No fill (buy stop save) |
 
 †Buy stop placed 4/6, never triggered. Buy limit $11.30 placed and cancelled 4/8 when AAL gapped to $12.07. April 8 bar: 96% sell on 100.3M volume — distribution signal confirmed, no further entry attempted.
 
@@ -235,6 +236,8 @@ gantt
 ‡‡Buy stop $41.85 (limit $42.10) placed day-only 6/9. 24 shares. Stop $39.50 (GTC, below 6/8 low and demand zone), target $46.00 (GTC). R/R 1:1.77. Risk $56.40. Thesis: HAL printed a 91% buy demand bar on 6/8 on 12.98M volume, closing near the high at $40.50, engulfing the prior day's range and reversing distribution from 6/5. Pre-market $41.50 confirms follow-through. Buy stop at $41.85 (above 6/8 high $40.59) captures breakout. Iran deal optimism pushing oil to $89-90 is a headwind, but VSA pattern (91% buy reversing prior distribution) was the sole qualifying setup from 14 candidates screened across energy, tech, airlines, and cybersecurity — energy majors (XOM/CVX/OXY) in distribution, airlines (AAL/DAL/UAL) distributing, semis extended or distributing. **Outcome (6/10): Buy stop expired unfilled** — 6/9 bar showed 36%/64% sell distribution, high only $40.67 (never reached the $41.85 trigger). The 6/8 demand bar was not followed through; instead HAL showed distribution and remained below its 20d SMA ($40.86). Buy stop mechanism correctly prevented entry as the setup failed to confirm. DeepSeek back in cash.
 
 §§Buy stop $214.50 (limit $215.50) placed day-only 6/16. 4 shares. Stop $200.00 (GTC), target $230.00 (GTC). R/R 1:1.07 — below the 1:1.5 minimum (rule violation). Thesis: NVDA printed a demand bar (94% buy) on 6/15 and buy stop above the 20d SMA ($213.98) would confirm recovery. Premarket $211.21 — $3.29 below trigger. 14 candidates screened (HAL 15%/85% sell, XOM 75% buy needs test, CVX 68% buy needs test, OXY 72% buy needs test, AAL 37%/63% sell distribution, DAL 5%/95% sell, UAL 23%/77% sell, LUV 15%/85% sell, MU 90% buy but ATR $76 extremely extended, PANW 95% buy but extended, BA 61%/39% neutral); NVDA the only candidate with a clean demand bar and SMA reclaim potential. Order expired unfilled — high on 6/16 did not reach $214.50. Back in cash.
+
+¶¶Conditional buy stop $35.25 (limit $35.50) placed day-only 6/24. 28 shares. Stop $33.50 (GTC), target $41.00 (GTC). R/R 1:2.75. Thesis: HAL printed a 100% buy demand bar on 6/22 (spring pattern) followed by a 6/23 no-supply test (down bar on low volume — sellers cannot push price lower). Two consecutive confirming bars from the VSA spring playbook. Pre-market $35.00 on 6/24 — $0.25 below trigger; conditional on follow-through. 15 candidates screened (XOM/CVX/OXY/SLB showing demand but below SMA, AAL/DAL/UAL extended at RSI 64–69, NVDA/MU/AMD mixed or distributing, BA/PANW no spring). HAL was the only clean VSA spring-and-test setup in the universe. **Outcome (6/25): Buy stop cancelled** — 6/24 bar showed 34%/66% sell on lower volume, closing $33.90 and breaking below the 6/22 spring low ($34.36). The spring pattern is invalidated; high on 6/24 was only $34.60 (never reached $35.25 trigger). Buy stop mechanism prevented entry as the setup broke down on the same day the order was placed. DeepSeek back in 100% cash.
 
 ### DeepSeek — Cumulative P/L by Trade
 
@@ -730,6 +733,21 @@ Trades considered but not taken, and what happened instead:
 | 6/24 | Semis NVDA/MU/AMD (DeepSeek) | NVDA 1%/99% sell below SMA; MU 15%/85% sell distribution pre-earnings; AMD 60% neutral | Stayed in cash |
 | 6/24 | BA (DeepSeek) | 1%/99% sell — heavy distribution; avoid | Stayed in cash |
 | 6/24 | PANW (DeepSeek) | 87% buy but extended (RSI 67.3) — no spring | Stayed in cash |
+| 6/25 | NCLH (Claude) | $21.01, 47 shares, RSI 65.3 — hit our old $22.00 target level; overbought after deal roadmap surge; would require $22+ target with only 47 shares | Not entered |
+| 6/25 | AAL (Claude) | $17.44, RSI 76.1, 97%/3% buy on 207M — massively overbought, $3.84 above our June exit ($13.60 entry); chasing prohibited | Not entered |
+| 6/25 | F (Claude) | $13.84 — below SMA; 30%/70% sell; falling knife | Not entered |
+| 6/25 | JBLU (Claude) | $5.79 — penny-stock adjacent; pass | Not entered |
+| 6/25 | VALE (Claude) | $14.84 — below SMA; 19%/81% sell; falling knife | Not entered |
+| 6/25 | HAL (DeepSeek) | 6/24 bar 34%/66% sell, broke 6/22 spring low ($34.36), closing $33.90 — spring pattern invalidated; cancelled buy stop at $35.25 (high only $34.60) | Order cancelled; spring failure saved ~$42 estimated |
+| 6/25 | XOM (DeepSeek) | 6/24: 64% buy — weak; no spring | Stayed in cash |
+| 6/25 | CVX (DeepSeek) | 6/24: 19%/81% sell — heavy distribution; avoid | Stayed in cash |
+| 6/25 | OXY (DeepSeek) | 6/24: 73% buy — demand but no spring | Stayed in cash |
+| 6/25 | SLB (DeepSeek) | 6/24: 69% buy — weak; no spring | Stayed in cash |
+| 6/25 | AAL (DeepSeek) | 6/24: 97% buy on 207M — extreme demand but RSI 76, massively overbought; no low-volume test | Stayed in cash |
+| 6/25 | DAL/UAL (DeepSeek) | 6/24: 98%/99% buy — deal roadmap reaction; RSI 72; extended without test; chasing prohibited | Stayed in cash |
+| 6/25 | LUV (DeepSeek) | 6/24: 64% buy — extended (RSI 74); no spring | Stayed in cash |
+| 6/25 | NVDA/AMD/MU (DeepSeek) | 6/24: NVDA 48%/52% sell choppy; AMD 76% buy no spring; MU 62% buy extended post-earnings gap | Stayed in cash |
+| 6/25 | PANW/SNOW/DELL (DeepSeek) | 6/24: PANW 15%/85% sell distribution; SNOW 17%/83% sell distribution; DELL 71% buy extended | Stayed in cash |
 
 ---
 
@@ -779,6 +797,7 @@ The experiment ran during the **US-Israel war on Iran** (Feb 28 – Apr 8, 2026)
 - **Fed hawkish June 17, 2026** (Warsh first decision as Chair) — held 3.50–3.75%; dot plot median year-end 3.8% (up from 3.4% in March); nine of 18 officials want at least one hike; PCE forecast raised to 3.6% (from 2.7%); easing bias removed; 60.7% Oct hike probability per CME FedWatch; S&P fell 0.6% then recovered; every travel/growth name hit with 1–99% sell bars
 - **Deal implemented June 19–22, 2026** — Strait of Hormuz reopening, oil sanctions waived, Iran exports resuming; **WTI collapsed to ~$72–73** (lowest since the war began) on supply expectations; energy sector under severe pressure while airlines lift 2–4% on lower fuel; VIX ~16 near lows; 60-day nuclear-negotiation window now running (permanent deal or "resume bombing" by mid-August)
 - **Strait re-closed June 21–22, 2026** — Iran re-closed Strait citing Israel's continued Lebanon strikes (contradicts MOU hostilities-cessation terms); only 12 vessels transited Sunday; VP Vance in Switzerland calling talks a "good foundation"; oil still falling despite re-closure (Brent $78, lowest since March 3) — market pricing eventual normalization; institutional stop-hunt across cruise sector June 23 (NCLH 95% buy from $19.01 low, CCL 91% buy from $27.00 low)
+- **Switzerland roadmap agreed June 25, 2026** — US and Iran agreed on roadmap toward final deal; communication lines established to keep Strait open; deconfliction cell for Lebanon; technical working groups formed immediately; Iran's FM: oil and petrochem exports waived, blockade lifted, some frozen assets released, reconstruction plan launched; Vance: "Can we change relations in the Middle East permanently?" — 16M barrels transited Strait in one day (record since before the war); AAL 97%/3% buy on 207M volume (largest deal-reaction bar of experiment); Day 8 of 60-day nuclear window (52 days remaining); GDP revision and PCE inflation this week
 
 ---
 
