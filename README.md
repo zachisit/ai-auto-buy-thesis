@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-07-13 | **Market context:** CHWY's Day 6 status: **-$3.76 unrealized** (current $20.91 vs $20.99 entry, stop $19.15, target $23.75 manual) — three consecutive buy bars, grinding sideways $20-21.75, not breaking out; Day 7 reassessment tomorrow, exit at market if no breakout above $21.75 to protect the experiment's +$15.79 cumulative; Claude still **19 closed, 7W/12L, +$15.79** (36.8% win rate, 1.04 profit factor), no new positions until CHWY closes; DeepSeek's **OXY** extended its run to Day 6 (**+$100.60 unrealized**, pre-market ~$54.05) approaching the $55.00 target, stop holds at $49.00 GTC; a new conditional **NVDA buy stop $212.00** (limit $213.00, day-only) was placed off a 100% buy demand bar, pending — pre-market $207.60 sits below trigger; still 4 closed, 2W/2L, **-$54.62**; oil ~$73-74, VIX ~15.5
+**Last updated:** 2026-07-15 | **Market context:** **The Claude experiment is complete.** CHWY closed at market for -$11.28 (47 shares, $20.99 → $20.75) after never breaking out of its $20-21.75 consolidation range — the 20th and final trade of the evaluation target, taking Claude to **20 closed, 7W/13L, net +$4.51** (35.0% win rate, 1.01 profit factor); best trade AAL #2 +$98.55, worst CCL -$80.24. See the final 20-trade retrospective in `claude/2026-07-15.md`. DeepSeek's **OXY** hit its $55.00 target and closed 7/14 for **+$119.60** — DeepSeek's largest win — bringing it to **5 closed, 3W/2L, net +$64.98**; DeepSeek then filled a new **NVDA** position at $211.50 (4 shares) off a textbook spring + test + confirmation sequence, stop $202.00 GTC, target $230.00 GTC, currently -$1.12 unrealized; oil ~$73-74, VIX ~15.5
 
 ---
 
@@ -13,16 +13,16 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Metric | Claude | DeepSeek |
 |---|---|---|
 | Experiment start | 2026-03-13 | 2026-04-01 |
-| Trades closed | 19 | 4 |
-| Wins / Losses | 7 / 12 | 2 / 2 |
-| Win rate | 36.8% | 50% |
-| **Net P/L** | **+$15.79** | **-$54.62** |
-| Best trade | AAL #2 +$98.55 | DVN +$22.20 |
+| Trades closed | **20 (COMPLETE)** | 5 |
+| Wins / Losses | 7 / 13 | 3 / 2 |
+| Win rate | 35.0% | 60% |
+| **Net P/L** | **+$4.51** | **+$64.98** |
+| Best trade | AAL #2 +$98.55 | OXY +$119.60 |
 | Worst trade | CCL -$80.24 | LUV -$53.82 |
-| Avg win | $66.60 | $12.30 |
-| Avg loss | -$37.53 | -$39.61 |
-| Profit factor | 1.04 | 0.31 |
-| Open / pending | CHWY open (Day 6, filled at $20.99, the final trade of the 20-trade evaluation target). Stop **$19.15 GTC**, target **$23.75 (manual)**. Current $20.91, **-$3.76 unrealized** — three consecutive buy bars, grinding sideways $20-21.75, not breaking out. **Portfolio net: +$15.79 closed + (-$3.76) open = +$12.03.** Sole open position is CHWY — no new positions until it closes; Day 7 reassessment tomorrow, exit at market if no breakout above $21.75. | OXY open (Day 6). Entry $49.02 (20 shares, buy stop filled 7/6), stop **$49.00 GTC** (tightened from $46.50, locking in a minimum profit), target **$55.00 GTC**. Current ~$54.05, **+$100.60 unrealized** — approaching the $55.00 target, VSA HOLD. New conditional **NVDA buy stop $212.00** (limit $213.00, day-only, 4 shares) placed off a 100% buy demand bar on strong volume — pre-market $207.60 is below trigger, pending. **Portfolio net: -$54.62 closed + $100.60 open = +$45.98.** |
+| Avg win | $66.60 | $48.07 |
+| Avg loss | -$35.51 | -$39.61 |
+| Profit factor | 1.01 | 1.82 |
+| Open / pending | **Experiment complete** — CHWY closed 7/15 at $20.75 (-$11.28) as the 20th and final trade of the evaluation target. Final: 20 closed, 7W/13L, **net +$4.51** (35.0% win rate, 1.01 profit factor). See `claude/2026-07-15.md` for the full 20-trade retrospective. | NVDA open (Day 1). Entry $211.50 (4 shares, limit filled 7/15), stop **$202.00 GTC**, target **$230.00 GTC**. Current ~$211.22, **-$1.12 unrealized** — spring + test + confirmation VSA sequence. **Portfolio net: +$64.98 closed + (-$1.12) open = +$63.86.** No other open positions — OXY closed 7/14 at its $55.00 target for +$119.60. |
 
 ---
 
@@ -30,29 +30,29 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 
 ```mermaid
 xychart-beta
-    title "Claude — Cumulative P&L by Trade"
-    x-axis ["Start", "After DVN", "After PANW", "After DAL #1", "After PFE", "After WHR", "After ET", "After AAL", "After LYFT", "After ET #2", "After EPD", "After HAL", "After DKNG", "After NCLH", "After AAL #2", "After SOFI", "After NCLH #2", "After RIVN", "After PATH", "After CCL"]
+    title "Claude — Cumulative P&L by Trade (FINAL)"
+    x-axis ["Start", "After DVN", "After PANW", "After DAL #1", "After PFE", "After WHR", "After ET", "After AAL", "After LYFT", "After ET #2", "After EPD", "After HAL", "After DKNG", "After NCLH", "After AAL #2", "After SOFI", "After NCLH #2", "After RIVN", "After PATH", "After CCL", "After CHWY"]
     y-axis "P&L ($)" -200 --> 110
-    line [0, 72.60, 66.30, 9.60, -50.60, -63.01, -16.90, -67.30, -108.70, -56.68, -83.68, -109.84, -176.53, -163.03, -64.48, -77.68, -87.37, 7.03, 96.03, 15.79]
+    line [0, 72.60, 66.30, 9.60, -50.60, -63.01, -16.90, -67.30, -108.70, -56.68, -83.68, -109.84, -176.53, -163.03, -64.48, -77.68, -87.37, 7.03, 96.03, 15.79, 4.51]
 ```
 
 ```mermaid
 xychart-beta
     title "Claude — Individual Trade P&L ($)"
-    x-axis ["DVN", "PANW", "DAL #1", "PFE", "WHR", "ET", "AAL", "LYFT", "ET #2", "EPD", "HAL", "DKNG", "NCLH", "AAL #2", "SOFI", "NCLH #2", "RIVN", "PATH", "CCL"]
+    x-axis ["DVN", "PANW", "DAL #1", "PFE", "WHR", "ET", "AAL", "LYFT", "ET #2", "EPD", "HAL", "DKNG", "NCLH", "AAL #2", "SOFI", "NCLH #2", "RIVN", "PATH", "CCL", "CHWY"]
     y-axis "P&L ($)" -90 --> 110
-    bar [72.60, -6.30, -56.70, -60.20, -12.41, 46.11, -50.40, -41.40, 52.02, -27.00, -26.16, -66.69, 13.50, 98.55, -13.20, -9.69, 94.40, 89.00, -80.24]
+    bar [72.60, -6.30, -56.70, -60.20, -12.41, 46.11, -50.40, -41.40, 52.02, -27.00, -26.16, -66.69, 13.50, 98.55, -13.20, -9.69, 94.40, 89.00, -80.24, -11.28]
 ```
 
 ```mermaid
-pie title Claude — Trade Outcomes (19 closed)
+pie title Claude — Trade Outcomes (20 closed, FINAL)
     "Wins" : 7
-    "Losses" : 12
+    "Losses" : 13
 ```
 
 ```mermaid
-pie title DeepSeek — Trade Outcomes (4 closed)
-    "Wins" : 2
+pie title DeepSeek — Trade Outcomes (5 closed)
+    "Wins" : 3
     "Losses" : 2
 ```
 
@@ -90,7 +90,7 @@ gantt
     CCL — LOSS           :crit, done, 2026-06-24, 2026-07-08
     RIVN — WIN           :done,    2026-06-30, 2026-07-06
     PATH — WIN           :done,    2026-07-01, 2026-07-07
-    CHWY — Open (Day 6)  :active,  2026-07-06, 2026-07-13
+    CHWY — LOSS          :crit, done, 2026-07-06, 2026-07-15
     section DeepSeek
     LUV — LOSS           :crit, done, 2026-04-01, 2026-04-02
     AAL — No fill        :done,    2026-04-06, 2026-04-10
@@ -101,7 +101,9 @@ gantt
     NVDA — No fill      :done,    2026-06-16, 2026-06-16
     HAL #3 — No fill    :done,    2026-06-24, 2026-06-25
     SLB — No fill        :done,    2026-07-01, 2026-07-02
-    OXY — Open (Day 6)   :active,  2026-07-06, 2026-07-13
+    OXY — WIN            :done,    2026-07-06, 2026-07-14
+    HAL #4 — No fill    :done,    2026-07-09, 2026-07-10
+    NVDA #2 — Open       :active,  2026-07-15, 2026-07-15
 ```
 
 ---
@@ -136,7 +138,7 @@ gantt
 | 24 | CCL | 2026-06-24 | 2026-07-08 | 11 | 34 | $29.10⊛ | $26.89 | **-$80.24** | 1:1.55 | ❌ Loss |
 | 25 | RIVN | 2026-06-30 | 2026-07-06 | 5 | 59 | $16.90⊘ | $18.50 | **+$94.40** | 1:1.68 | ✅ Win |
 | 26 | PATH | 2026-07-01 | 2026-07-07 | 5 | 89 | $11.21▣ | $12.21 | **+$89.00** | 1:1.52 | ✅ Win |
-| 27 | CHWY | 2026-07-06 | — | 5 (open) | 47 | $20.99❖ | — | -$8.46 unrl. | 1:1.5 | ⏳ Open |
+| 27 | CHWY | 2026-07-06 | 2026-07-15 | 8 | 47 | $20.99❖ | $20.75 | **-$11.28** | 1:1.5 | ❌ Loss |
 
 †Day-only buy stop at $74.25. High was $74.19 — missed by 6 cents. DAL then collapsed to $68.08 (100% sell pressure, 20.7M vol). Order expired. Saved ~$80.
 
@@ -182,7 +184,7 @@ gantt
 
 ✧Buy stop $18.15 (limit $18.30) placed day-only 6/17. 55 shares. Stop $16.65 (GTC, below 200d SMA area). R/R 1:1.5+ (minimum). Thesis: SOFI Technologies — fintech/neobank beneficiary of rate cuts; lower rates grow loan originations. Placed as Fed-filtered second position: day-only order would fill only if Warsh press conference was dovish AND SOFI confirmed by breaking above prior high $18.08. Buy stop triggered pre-2 PM at $18.16 — SOFI broke above $18.08 on positive pre-announcement momentum, rising to $18.70 intraday high. 2 PM hawkish dot plot destroyed the thesis: median rate at 3.8% (up from 3.4% in March), nine of 18 officials want at least one hike, PCE forecast raised to 3.6% from 2.7%, easing bias removed from the statement. SOFI collapsed from $18.70 high to $17.36 low with 4%/96% sell on 122.8M volume (highest volume in dataset). Exit (6/18): exited at market open ~$17.92 — -$0.24/share, **-$13.20** (55 × $0.24). Thesis was broken: rate cuts are off the table for 2026; SOFI needs lower rates to grow loan originations. Taking -$13.20 at open vs risking -$83.05 at the $16.65 stop (the DKNG lesson applied: broken thesis = exit immediately). **Fastest exit in the experiment's history (1 trading session).** Design lesson: for binary events (Fed, earnings), use NEXT-DAY buy stops above the event-day high to capture the full 24-hour reaction; same-day entries capture pre-announcement momentum but cannot anticipate the post-announcement reversal.
 
-❖Buy stop $20.90 (limit $20.90 area) placed day-only 7/6, 47 shares. Filled 7/6 at $20.99 (slippage from the trigger). Stop $19.15 (GTC), target $23.75 (manual — see broker/OCO note at ⊘). R/R 1:1.5 on actual fill. **Trade #20 — the final trade to reach the evaluation target.** Placed the same session RIVN was closed via market sell, redeploying freed capital. Day 2 (7/7): current $21.29 (+$0.30/share, +$14.10 unrealized). Five consecutive buy bars, RSI 58 — healthy start. Stop $19.15 (GTC), target $23.75 (manual). Day 3 (7/8): current $20.51 (-$0.48/share, -$22.56 unrealized). Sole open Claude position after CCL's stop-out. Stop $19.15 (GTC), target $23.75 (manual). Day 4 (7/9): current $20.39 (-$0.60/share, -$28.20 unrealized). Sell pressure easing on low volume — stabilizing above the 20d SMA. Stop $19.15 (GTC), target $23.75 (manual). Day 5 (7/10): current $20.81 (-$0.18/share, **-$8.46 unrealized**). Day 5 reassessment: **HOLD**. Two consecutive buy bars, sellers exhausting on declining volume, still above SMA, consolidating $20-21.75. Pattern supports continuation. Reassess again day 7. Day 6 (7/13): current $20.91 (-$0.08/share, **-$3.76 unrealized**). Three consecutive buy bars, still grinding sideways $20-21.75, not breaking out. Day 7 reassessment tomorrow — if no breakout above $21.75, exit at market to protect the experiment's +$15.79 cumulative.
+❖Buy stop $20.90 (limit $20.90 area) placed day-only 7/6, 47 shares. Filled 7/6 at $20.99 (slippage from the trigger). Stop $19.15 (GTC), target $23.75 (manual — see broker/OCO note at ⊘). R/R 1:1.5 on actual fill. **Trade #20 — the final trade to reach the evaluation target.** Placed the same session RIVN was closed via market sell, redeploying freed capital. Day 2 (7/7): current $21.29 (+$0.30/share, +$14.10 unrealized). Five consecutive buy bars, RSI 58 — healthy start. Stop $19.15 (GTC), target $23.75 (manual). Day 3 (7/8): current $20.51 (-$0.48/share, -$22.56 unrealized). Sole open Claude position after CCL's stop-out. Stop $19.15 (GTC), target $23.75 (manual). Day 4 (7/9): current $20.39 (-$0.60/share, -$28.20 unrealized). Sell pressure easing on low volume — stabilizing above the 20d SMA. Stop $19.15 (GTC), target $23.75 (manual). Day 5 (7/10): current $20.81 (-$0.18/share, **-$8.46 unrealized**). Day 5 reassessment: **HOLD**. Two consecutive buy bars, sellers exhausting on declining volume, still above SMA, consolidating $20-21.75. Pattern supports continuation. Reassess again day 7. Day 6 (7/13): current $20.91 (-$0.08/share, **-$3.76 unrealized**). Three consecutive buy bars, still grinding sideways $20-21.75, not breaking out. Day 7 reassessment tomorrow — if no breakout above $21.75, exit at market to protect the experiment's +$15.79 cumulative. Exit (7/15): closed at market, filled $20.75 (-$0.24/share). Final P/L: **-$11.28** (47 × -$0.24/share). 8 trading sessions. Never broke out of the $20-21.75 consolidation range; closed to protect the cumulative rather than continue drifting past the 5-day target. **This was the 20th and final trade of the evaluation target — the experiment is complete.** Final tally: 20 closed, 7W/13L, 35.0% win rate, **net +$4.51**, profit factor 1.01.
 
 ### Claude — Cumulative P/L by Trade
 
@@ -206,7 +208,8 @@ gantt
 | Trade 16 | NCLH #2 | -$9.69 | -$87.37 |
 | Trade 17 | RIVN | +$94.40 | +$7.03 |
 | Trade 18 | PATH | +$89.00 | +$96.03 |
-| Trade 19 | CCL | -$80.24 | **+$15.79** |
+| Trade 19 | CCL | -$80.24 | +$15.79 |
+| Trade 20 | CHWY | -$11.28 | **+$4.51** |
 
 ### Claude — Exit Reasons
 
@@ -231,6 +234,7 @@ gantt
 | RIVN | Closed via market sell on 7/6, confirmed fill $18.50 (reported 7/7, revised down from the initial ~$18.71 estimate) — target $19.25 had actually been hit on 7/2 (high $19.43) but no OCO/limit-sell order was live on Vanguard, which does not support OCO; only the GTC stop existed broker-side. Final P/L: **+$94.40** (59 × $1.60/share), the experiment's second-largest win behind AAL #2. 5 trading sessions. The three consecutive 92-96% buy accumulation bars fully played out — the shortfall was pure order-management (no target order placed), not a thesis failure. Triggered a permanent procedure change: GTC stop loss only, targets monitored and executed manually every session. |
 | PATH | Sold at $12.21 on 7/7, five sessions after entry — target $12.25 essentially reached; executed manually near-target given no broker-side OCO support (see ⊘). Final P/L: **+$89.00** (89 × $1.00/share). The experiment's first software/AI-automation trade closes as a win, validating diversification alongside RIVN (EV) and CCL (travel/deal-beneficiary). |
 | CCL | GTC stop $27.40 triggered 7/8 — tightened from $26.90 the prior session once the 20d SMA violation was confirmed; filled at $26.89 ($0.51 slippage). Final P/L: **-$80.24** (34 × -$2.36/share), the experiment's new worst single trade. 11 trading sessions. The 6/23 institutional stop-hunt reversal (91% buy on 40.3M volume) never produced sustained follow-through — two early sell bars foreshadowed the eventual breakdown despite an intervening 94% buy bar on 6/29; the tightened stop limited the loss once the thesis failed rather than waiting for further deterioration. |
+| CHWY | Closed at market 7/15 — filled $20.75 (-$0.24/share). Final P/L: **-$11.28** (47 × -$0.24/share). 8 trading sessions. Never broke out of the $20-21.75 consolidation range across three buy bars; closed on the day-7 reassessment rather than let it drift further past the 1-5 day target. **The 20th and final trade of the evaluation target — the experiment is now complete at 7W/13L, net +$4.51.** |
 
 ---
 
@@ -247,8 +251,9 @@ gantt
 | — | NVDA | 2026-06-16 | — | — | 4 | $214.50§§ | — | $0 | 1:1.07 | ⛔ No fill (buy stop expired) |
 | — | HAL | 2026-06-24 | — | — | 28 | $35.25¶¶ | — | $0 | 1:2.75 | ⛔ No fill (buy stop save) |
 | — | SLB | 2026-07-01 | — | — | 21 | $47.00※※ | — | $0 | 1:2.5 | ⛔ No fill (spring failed, cancelled) |
-| — | OXY | 2026-07-06 | — | 5 (open) | 20 | $49.02◊◊ | — | +$70.20 unrl. | 2.1:1 | ⏳ Open |
+| 5 | OXY | 2026-07-06 | 2026-07-14 | 6 | 20 | $49.02◊◊ | $55.00 | **+$119.60** | 2.1:1 | ✅ Win |
 | — | HAL | 2026-07-09 | — | — | 29 | $35.25●● | — | $0 | 2.1:1 | ⛔ No fill (pattern failed, order cancelled) |
+| — | NVDA | 2026-07-15 | — | 1 (open) | 4 | $211.50◎◎ | — | -$1.12 unrl. | 1.95:1 | ⏳ Open |
 
 †Buy stop placed 4/6, never triggered. Buy limit $11.30 placed and cancelled 4/8 when AAL gapped to $12.07. April 8 bar: 96% sell on 100.3M volume — distribution signal confirmed, no further entry attempted.
 
@@ -264,11 +269,11 @@ gantt
 
 ※※Conditional buy stop $47.00 (limit $47.25) placed day-only 7/1. 21 shares. Stop $45.00 (GTC), target $52.00 (GTC). R/R 1:2.5 — best R/R offered of any DeepSeek trade. Thesis: SLB printed a 94% buy demand bar on 6/25 at multi-month lows, followed by four bars of low-volume consolidation with declining sell pressure (87%→67%) — a no-supply test confirming the spring. Energy stocks crushed by the Iran deal and oil's slide to $70, but SLB's volume/pressure suggested institutional accumulation. 18 other candidates screened (HAL, XOM, CVX, OXY, MU, INTC, AMD, WDC, MRVL, NVDA, MSFT, GOOGL, TSLA, AAL, DAL, UAL, LUV, BA, SPCX) all rejected — extended, distributing, or needing a test. Premarket 7/1: $46.33, below trigger. **Outcome (7/1): buy stop expired unfilled** — high was $46.36, six cents short. **Outcome (7/2): spring invalidated** — SLB broke lower with 99%/1% sell, closing $45.09, below the 6/24 low ($45.87); order cancelled. DeepSeek back in 100% cash. A 94% buy bar does not guarantee a bottom — follow-through is essential.
 
-◊◊Conditional buy stop $49.25 (limit $49.50) placed day-only 7/6. 20 shares. Stop $46.50 (GTC), target $55.00 (GTC). R/R 2.1:1 — risk $55.00 (5.5% of $1,000). Thesis: OXY printed a 91% buy demand bar on 7/2 on strong volume, following a sequence of extreme selling (6/29: 3% buy, 6/30: 2% buy) — a textbook VSA spring (selling climax followed by demand). Entry above the 7/2 high ($48.97) captures the breakout; stop below the 7/1 low ($47.77) is the structural invalidation; target $55.00 is pre-decline resistance. 16 other candidates screened (CVX 84% buy but less extreme, BA 85% buy but less-defined low, MSFT/GOOGL moderate bounces with no spring, SLB/HAL/XOM in distribution, AAL/DAL/UAL/LUV distribution and extended, NVDA/MU/AMD distribution, TSLA heavy distribution, SPCX extremely volatile) — OXY was the only clean VSA spring in the universe. Filled 7/6 at $49.02 (between the $49.25 trigger and $49.50 limit). Day 2 (7/7): current ~$48.80 (-$0.22/share, -$4.40 unrealized). July 6 bar: low-volume 21% buy on 6.7M — no-supply consolidation, sellers not aggressive. VSA HOLD, no weakness signals. Stop $46.50 (GTC), target $55.00 (GTC). Day 3 (7/8): premarket ~$51.68 (+$2.66/share, **+$53.20 unrealized**). July 7 bar: 92% buy on strong volume (11.66M) — strong confirmation of the spring, closing at $51.68. **Stop tightened $46.50→$49.00 GTC** (just below the 7/6 low of $48.69 and above the spring low of $47.77), locking in a minimum profit of approximately $0.98/share (~$19.60) while leaving room for normal volatility. Target unchanged $55.00 (GTC). Day 4 (7/9): premarket ~$53.40 (+$4.38/share, +$87.60 unrealized). July 8 bar: churning on high volume (20.8M) with balanced pressure (46% buy / 54% sell) — profit-taking after the strong run, no weakness signal. Stop confirmed $49.00 (GTC), target $55.00 (GTC). Day 5 (7/10): premarket ~$52.53 (+$3.51/share, **+$70.20 unrealized**). July 9 bar: low-volume pullback (32% buy / 68% sell, 8.3M volume) — healthy consolidation after the strong run. Stop confirmed $49.00 (GTC), target $55.00 (GTC). Day 6 (7/13): pre-market ~$54.05 (+$5.03/share, **+$100.60 unrealized**). July 10 bar: 86% buy on lower volume (6.6M), close at $52.89 — healthy continuation. Pre-market now approaching the $55.00 target. Stop confirmed $49.00 (GTC), target $55.00 (GTC).
+◊◊Conditional buy stop $49.25 (limit $49.50) placed day-only 7/6. 20 shares. Stop $46.50 (GTC), target $55.00 (GTC). R/R 2.1:1 — risk $55.00 (5.5% of $1,000). Thesis: OXY printed a 91% buy demand bar on 7/2 on strong volume, following a sequence of extreme selling (6/29: 3% buy, 6/30: 2% buy) — a textbook VSA spring (selling climax followed by demand). Entry above the 7/2 high ($48.97) captures the breakout; stop below the 7/1 low ($47.77) is the structural invalidation; target $55.00 is pre-decline resistance. 16 other candidates screened (CVX 84% buy but less extreme, BA 85% buy but less-defined low, MSFT/GOOGL moderate bounces with no spring, SLB/HAL/XOM in distribution, AAL/DAL/UAL/LUV distribution and extended, NVDA/MU/AMD distribution, TSLA heavy distribution, SPCX extremely volatile) — OXY was the only clean VSA spring in the universe. Filled 7/6 at $49.02 (between the $49.25 trigger and $49.50 limit). Day 2 (7/7): current ~$48.80 (-$0.22/share, -$4.40 unrealized). July 6 bar: low-volume 21% buy on 6.7M — no-supply consolidation, sellers not aggressive. VSA HOLD, no weakness signals. Stop $46.50 (GTC), target $55.00 (GTC). Day 3 (7/8): premarket ~$51.68 (+$2.66/share, **+$53.20 unrealized**). July 7 bar: 92% buy on strong volume (11.66M) — strong confirmation of the spring, closing at $51.68. **Stop tightened $46.50→$49.00 GTC** (just below the 7/6 low of $48.69 and above the spring low of $47.77), locking in a minimum profit of approximately $0.98/share (~$19.60) while leaving room for normal volatility. Target unchanged $55.00 (GTC). Day 4 (7/9): premarket ~$53.40 (+$4.38/share, +$87.60 unrealized). July 8 bar: churning on high volume (20.8M) with balanced pressure (46% buy / 54% sell) — profit-taking after the strong run, no weakness signal. Stop confirmed $49.00 (GTC), target $55.00 (GTC). Day 5 (7/10): premarket ~$52.53 (+$3.51/share, **+$70.20 unrealized**). July 9 bar: low-volume pullback (32% buy / 68% sell, 8.3M volume) — healthy consolidation after the strong run. Stop confirmed $49.00 (GTC), target $55.00 (GTC). Day 6 (7/13): pre-market ~$54.05 (+$5.03/share, **+$100.60 unrealized**). July 10 bar: 86% buy on lower volume (6.6M), close at $52.89 — healthy continuation. Pre-market now approaching the $55.00 target. Stop confirmed $49.00 (GTC), target $55.00 (GTC). Exit (7/14): GTC limit sell at the $55.00 target triggered and filled at $55.00. Final P/L: **+$119.60** (20 × $5.98/share). 6 trading sessions. The spring thesis played out in full — selling climax (6/29-6/30) into a 91% buy demand bar (7/2), confirmed by a 92% buy bar (7/7), ran the full distance to the pre-decline resistance target without ever threatening the tightened $49.00 stop. DeepSeek's largest win and its first fully-realized target hit.
 
 ●●Conditional buy stop $35.25 (limit $35.50) placed day-only 7/9. 29 shares. Stop $33.00 (GTC), target $40.00 (GTC). R/R 2.1:1 — risk $65.25 (6.5% of $1,000). Thesis: HAL printed a demand bar on 7/7 (70% buy) and a confirmation bar on 7/8 (89% buy) on strong volume (17.3M), following a selling climax on 7/1-7/2 — a textbook VSA spring pattern mirroring OXY's successful setup earlier in the month. Entry above the 7/8 high ($35.11) captures the breakout; stop below the recent low is the structural invalidation; target $40.00 is pre-decline resistance. 11 other candidates screened (SLB 79% buy but less clean than HAL, NVDA 90% buy extended, DAL/UAL single demand bars needing a test, CVX/XOM 28%/72% and 32%/68% sell distribution, AAL/MSFT 51%/49% neutral, GOOGL/TSLA 40%/60% and 39%/61% weak, BA 36%/64% distribution) — HAL was the only clean VSA spring-and-confirmation setup. Pre-market $34.97 sits below the $35.25 trigger — order does not chase, remains conditional on a breakout. **Outcome (7/10): order cancelled, never triggered.** HAL did not print a follow-through breakout above $35.25; the buy stop expired unfilled and was cancelled. DeepSeek remains 100% cash outside the open OXY position.
 
-**NVDA — conditional buy stop, pending (placed 7/13).** Buy stop $212.00 (limit $213.00), day-only. 4 shares. Stop $200.00 (GTC), target $225.00 (GTC). R/R 1.08:1. Thesis: NVDA printed a 100% buy demand bar on 7/10 on strong volume (148M) — an extreme signal, though 100% bars often precede a pullback, so entry is gated on a confirmed breakout above the 7/10 high ($211.00) rather than chasing pre-market. Pre-market $207.60 sits below the trigger. Not yet resolved — will be added to the trade log once it fills or expires.
+◎◎NVDA — conditional buy stop $212.00 (limit $213.00, day-only) placed 7/13 off a 100% buy demand bar on strong volume (148M, 7/10). Pre-market $207.60 on 7/13 sat below the trigger, unfilled. Cancelled 7/15 and replaced with a limit order after the pattern confirmed further: July 13 printed a 7% buy low-volume test, and July 14 a 91% buy confirmation bar — a textbook spring + test + confirmation sequence, the cleanest setup since OXY's. Filled 7/15 at $211.50 (4 shares). Stop $202.00 (GTC, below the 7/13 test low of $203.00), target $230.00 (GTC, pre-decline resistance). Risk $38.00 (3.8% of $1,000). R/R 1.95:1. 12 other candidates screened (CVX/XOM 99%/85% buy but weak follow-through, GOOGL 91% buy needs a test, MSFT 72%/66% buy no clear spring, HAL 53%/40% weak follow-through, AAL/DAL/UAL/LUV/TSLA/BA/SLB all in distribution) — NVDA was the only clean spring in the universe. Day 1 (7/15): pre-market ~$211.22, -$0.28/share, -$1.12 unrealized.
 
 ### DeepSeek — Cumulative P/L by Trade
 
@@ -277,7 +282,8 @@ gantt
 | Trade 1 | LUV | -$53.82 | -$53.82 |
 | Trade 2 | DVN-001 | -$25.40 | -$79.22 |
 | Trade 3 | DVN-002 | +$22.20 | -$57.02 |
-| Trade 4 | HAL | +$2.40 | **-$54.62** |
+| Trade 4 | HAL | +$2.40 | -$54.62 |
+| Trade 5 | OXY | +$119.60 | **+$64.98** |
 
 ### DeepSeek — Exit Reasons
 
@@ -287,6 +293,7 @@ gantt
 | DVN-001 | Closed at market open — April 13 bar showed 75% sell pressure breaking prior low; pre-market weakness to $46.98 confirmed thesis failure; exited to preserve capital |
 | DVN-002 | Stop triggered at $48.61 on 5/6 — churning VSA signal on day 11 prompted tightening stop above entry ($47.50); oil crashed on US-Iran 14-point MoU reports, pulling DVN from $50.93 to below the tightened stop; minimum gain locked before stop-out |
 | HAL | Closed at market open 5/22 — two consecutive distribution bars (5/20: 17%/82% sell on 12.9M; 5/21: 34%/65% sell on 11.8M) failed the spring pattern; stop tightened $39.50→$41.00 after first warning, then exited at ~$41.95 (~+$2.40 breakeven); capital preserved |
+| OXY | GTC limit sell at the $55.00 target triggered 7/14 — spring (selling climax 6/29-6/30 into a 91% buy demand bar 7/2) confirmed by a 92% buy bar (7/7) ran the full distance to the pre-decline resistance target; stop trailed $46.50→$49.00 along the way but was never needed. DeepSeek's largest win and first fully-realized target. |
 
 ---
 
@@ -877,6 +884,8 @@ The experiment ran during the **US-Israel war on Iran** (Feb 28 – Apr 8, 2026)
 - **CCL's tightened stop triggers, OXY spring confirmed July 8, 2026** — CCL's GTC stop $27.40 triggered as flagged, filling at $26.89 for **-$80.24** (34 shares), closing the **experiment's 19th trade at 7W/12L, +$15.79** and making it the new worst single trade (surpassing DKNG's -$66.69); CHWY is now the sole open Claude position (Day 3, -$22.56 unrealized) — no new positions until it closes; DeepSeek's OXY confirmed its spring with a 92% buy bar on strong volume (11.66M), closing at $51.68 — stop tightened $46.50→$49.00 GTC, locking in a minimum profit (Day 3, **+$53.20 unrealized**); no new DeepSeek trades — energy majors gapping up without springs (XOM 99% buy, CVX 87% buy), tech in distribution (MSFT, GOOGL, TSLA), airlines still in freefall; WTI ~$71-72 bouncing off recent lows, VIX ~16.0
 - **CHWY stabilizes, HAL conditional order placed July 9, 2026** — CHWY holds Day 4 (**-$28.20 unrealized**, current $20.39) with sell pressure easing on low volume, still above its 20d SMA; Claude unchanged at 19 closed, 7W/12L, +$15.79, no new positions until CHWY closes; DeepSeek's OXY extended its run to Day 4 (**+$87.60 unrealized**, current ~$53.40) after a 7/8 churning bar on high volume (20.8M) — stop holds at $49.00 GTC; DeepSeek placed a conditional **HAL buy stop $35.25** off an 89% buy confirmation bar (7/8) following HAL's 7/1-7/2 selling climax, mirroring the OXY spring setup (R/R 2.1:1) — pre-market $34.97 below trigger, order pending, no chase; still 4 closed, 2W/2L, -$54.62; oil ~$72-73, VIX ~16.0
 - **CHWY's Day 5 reassessment holds, HAL order cancelled July 10, 2026** — CHWY's Day 5 reassessment came back **HOLD** (**-$8.46 unrealized**, current $20.81) on two consecutive buy bars with sellers exhausting on declining volume, still above its 20d SMA, consolidating $20-21.75; reassess again day 7; Claude unchanged at 19 closed, 7W/12L, +$15.79, no new positions until CHWY closes; DeepSeek's OXY held Day 5 (**+$70.20 unrealized**, current ~$52.53) through a low-volume pullback (32% sell, 8.3M volume) — healthy consolidation, stop holds at $49.00 GTC; the conditional **HAL buy stop $35.25** never triggered and was cancelled — pattern failed to produce a breakout; no new DeepSeek trades, still 4 closed, 2W/2L, -$54.62; PPI data due 8:30 AM ET; oil ~$72-73, VIX ~16.0
+- **OXY hits target, DeepSeek's largest win July 14, 2026** — OXY's GTC limit sell at the $55.00 target triggered, closing DeepSeek's Day 6 position for **+$119.60** — its largest win and first fully-realized target, bringing DeepSeek to **5 closed, 3W/2L, net +$64.98**; the spring thesis (selling climax 6/29-6/30 into a 91% buy demand bar 7/2, confirmed by a 92% buy bar 7/7) played out in full without the tightened $49.00 stop ever being threatened; DeepSeek back to 100% cash
+- **The experiment ends — CHWY closes, NVDA opens July 15, 2026** — CHWY closed at market for **-$11.28** (47 shares, $20.99 → $20.75), never breaking out of its $20-21.75 consolidation range — the **20th and final trade of the evaluation target**, taking **Claude's experiment to a close: 20 trades, 7W/13L, net +$4.51** (35.0% win rate, 1.01 profit factor, best AAL #2 +$98.55, worst CCL -$80.24); see `claude/2026-07-15.md` for the full 20-trade retrospective and key findings. DeepSeek, no longer bound by Claude's evaluation cap, filled a new **NVDA** position at $211.50 (4 shares) off a textbook spring (100% buy 7/10) + low-volume test (7% buy 7/13) + confirmation (91% buy 7/14) sequence — stop $202.00 GTC, target $230.00 GTC, R/R 1.95:1, currently -$1.12 unrealized; oil ~$73-74, VIX ~15.5, Doha talks ongoing
 
 ---
 
