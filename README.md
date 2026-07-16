@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-07-15 | **Market context:** **The Claude experiment is complete.** CHWY closed at market for -$11.28 (47 shares, $20.99 → $20.75) after never breaking out of its $20-21.75 consolidation range — the 20th and final trade of the evaluation target, taking Claude to **20 closed, 7W/13L, net +$4.51** (35.0% win rate, 1.01 profit factor); best trade AAL #2 +$98.55, worst CCL -$80.24. See the final 20-trade retrospective in `claude/2026-07-15.md`. DeepSeek's **OXY** hit its $55.00 target and closed 7/14 for **+$119.60** — DeepSeek's largest win — bringing it to **5 closed, 3W/2L, net +$64.98**; DeepSeek then filled a new **NVDA** position at $211.50 (4 shares) off a textbook spring + test + confirmation sequence, stop $202.00 GTC, target $230.00 GTC, currently -$1.12 unrealized; oil ~$73-74, VIX ~15.5
+**Last updated:** 2026-07-16 | **Market context:** **The Claude experiment is complete** — 20 closed, 7W/13L, net **+$4.51** (35.0% win rate, 1.01 profit factor); best trade AAL #2 +$98.55, worst CCL -$80.24. See the final 20-trade retrospective in `claude/2026-07-15.md`. DeepSeek continues alone: **NVDA** holds Day 2 at **-$7.36 unrealized** (pre-market ~$209.66, a modest pullback after the 7/15 bar closed $212.50 on 83% buy) — stop $202.00 GTC, target $230.00 GTC, VSA HOLD. No new DeepSeek trades — GOOGL (83% buy) and MSFT (73% buy) show demand but no spring, energy (CVX 79%, XOM 81%) needs a test, and airlines/TSLA/BA remain in distribution. DeepSeek stays **5 closed, 3W/2L, net +$64.98**; earnings season underway (BAC, WFC, UNH); oil ~$73-74, VIX ~15.5
 
 ---
 
@@ -22,7 +22,7 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Avg win | $66.60 | $48.07 |
 | Avg loss | -$35.51 | -$39.61 |
 | Profit factor | 1.01 | 1.82 |
-| Open / pending | **Experiment complete** — CHWY closed 7/15 at $20.75 (-$11.28) as the 20th and final trade of the evaluation target. Final: 20 closed, 7W/13L, **net +$4.51** (35.0% win rate, 1.01 profit factor). See `claude/2026-07-15.md` for the full 20-trade retrospective. | NVDA open (Day 1). Entry $211.50 (4 shares, limit filled 7/15), stop **$202.00 GTC**, target **$230.00 GTC**. Current ~$211.22, **-$1.12 unrealized** — spring + test + confirmation VSA sequence. **Portfolio net: +$64.98 closed + (-$1.12) open = +$63.86.** No other open positions — OXY closed 7/14 at its $55.00 target for +$119.60. |
+| Open / pending | **Experiment complete** — CHWY closed 7/15 at $20.75 (-$11.28) as the 20th and final trade of the evaluation target. Final: 20 closed, 7W/13L, **net +$4.51** (35.0% win rate, 1.01 profit factor). See `claude/2026-07-15.md` for the full 20-trade retrospective. | NVDA open (Day 2). Entry $211.50 (4 shares, limit filled 7/15), stop **$202.00 GTC**, target **$230.00 GTC**. Current ~$209.66, **-$7.36 unrealized** — VSA HOLD; 7/15 bar closed $212.50 on 83% buy (124.8M), pre-market pullback reads as healthy consolidation. **Portfolio net: +$64.98 closed + (-$7.36) open = +$57.62.** No other open positions — OXY closed 7/14 at its $55.00 target for +$119.60. |
 
 ---
 
@@ -103,7 +103,7 @@ gantt
     SLB — No fill        :done,    2026-07-01, 2026-07-02
     OXY — WIN            :done,    2026-07-06, 2026-07-14
     HAL #4 — No fill    :done,    2026-07-09, 2026-07-10
-    NVDA #2 — Open       :active,  2026-07-15, 2026-07-15
+    NVDA #2 — Open       :active,  2026-07-15, 2026-07-16
 ```
 
 ---
@@ -253,7 +253,7 @@ gantt
 | — | SLB | 2026-07-01 | — | — | 21 | $47.00※※ | — | $0 | 1:2.5 | ⛔ No fill (spring failed, cancelled) |
 | 5 | OXY | 2026-07-06 | 2026-07-14 | 6 | 20 | $49.02◊◊ | $55.00 | **+$119.60** | 2.1:1 | ✅ Win |
 | — | HAL | 2026-07-09 | — | — | 29 | $35.25●● | — | $0 | 2.1:1 | ⛔ No fill (pattern failed, order cancelled) |
-| — | NVDA | 2026-07-15 | — | 1 (open) | 4 | $211.50◎◎ | — | -$1.12 unrl. | 1.95:1 | ⏳ Open |
+| — | NVDA | 2026-07-15 | — | 2 (open) | 4 | $211.50◎◎ | — | -$7.36 unrl. | 1.95:1 | ⏳ Open |
 
 †Buy stop placed 4/6, never triggered. Buy limit $11.30 placed and cancelled 4/8 when AAL gapped to $12.07. April 8 bar: 96% sell on 100.3M volume — distribution signal confirmed, no further entry attempted.
 
@@ -273,7 +273,7 @@ gantt
 
 ●●Conditional buy stop $35.25 (limit $35.50) placed day-only 7/9. 29 shares. Stop $33.00 (GTC), target $40.00 (GTC). R/R 2.1:1 — risk $65.25 (6.5% of $1,000). Thesis: HAL printed a demand bar on 7/7 (70% buy) and a confirmation bar on 7/8 (89% buy) on strong volume (17.3M), following a selling climax on 7/1-7/2 — a textbook VSA spring pattern mirroring OXY's successful setup earlier in the month. Entry above the 7/8 high ($35.11) captures the breakout; stop below the recent low is the structural invalidation; target $40.00 is pre-decline resistance. 11 other candidates screened (SLB 79% buy but less clean than HAL, NVDA 90% buy extended, DAL/UAL single demand bars needing a test, CVX/XOM 28%/72% and 32%/68% sell distribution, AAL/MSFT 51%/49% neutral, GOOGL/TSLA 40%/60% and 39%/61% weak, BA 36%/64% distribution) — HAL was the only clean VSA spring-and-confirmation setup. Pre-market $34.97 sits below the $35.25 trigger — order does not chase, remains conditional on a breakout. **Outcome (7/10): order cancelled, never triggered.** HAL did not print a follow-through breakout above $35.25; the buy stop expired unfilled and was cancelled. DeepSeek remains 100% cash outside the open OXY position.
 
-◎◎NVDA — conditional buy stop $212.00 (limit $213.00, day-only) placed 7/13 off a 100% buy demand bar on strong volume (148M, 7/10). Pre-market $207.60 on 7/13 sat below the trigger, unfilled. Cancelled 7/15 and replaced with a limit order after the pattern confirmed further: July 13 printed a 7% buy low-volume test, and July 14 a 91% buy confirmation bar — a textbook spring + test + confirmation sequence, the cleanest setup since OXY's. Filled 7/15 at $211.50 (4 shares). Stop $202.00 (GTC, below the 7/13 test low of $203.00), target $230.00 (GTC, pre-decline resistance). Risk $38.00 (3.8% of $1,000). R/R 1.95:1. 12 other candidates screened (CVX/XOM 99%/85% buy but weak follow-through, GOOGL 91% buy needs a test, MSFT 72%/66% buy no clear spring, HAL 53%/40% weak follow-through, AAL/DAL/UAL/LUV/TSLA/BA/SLB all in distribution) — NVDA was the only clean spring in the universe. Day 1 (7/15): pre-market ~$211.22, -$0.28/share, -$1.12 unrealized.
+◎◎NVDA — conditional buy stop $212.00 (limit $213.00, day-only) placed 7/13 off a 100% buy demand bar on strong volume (148M, 7/10). Pre-market $207.60 on 7/13 sat below the trigger, unfilled. Cancelled 7/15 and replaced with a limit order after the pattern confirmed further: July 13 printed a 7% buy low-volume test, and July 14 a 91% buy confirmation bar — a textbook spring + test + confirmation sequence, the cleanest setup since OXY's. Filled 7/15 at $211.50 (4 shares). Stop $202.00 (GTC, below the 7/13 test low of $203.00), target $230.00 (GTC, pre-decline resistance). Risk $38.00 (3.8% of $1,000). R/R 1.95:1. 12 other candidates screened (CVX/XOM 99%/85% buy but weak follow-through, GOOGL 91% buy needs a test, MSFT 72%/66% buy no clear spring, HAL 53%/40% weak follow-through, AAL/DAL/UAL/LUV/TSLA/BA/SLB all in distribution) — NVDA was the only clean spring in the universe. Day 1 (7/15): pre-market ~$211.22, -$0.28/share, -$1.12 unrealized. Day 2 (7/16): pre-market ~$209.66 (-$1.84/share, **-$7.36 unrealized**). July 15 bar: 83% buy on decent volume (124.8M), close $212.50 — healthy continuation confirming the 7/14 bar; the pre-market pullback reads as consolidation after the run. VSA HOLD, no weakness signals. Stop confirmed $202.00 (GTC, still well below the 7/13 test low of $203.00), target $230.00 (GTC).
 
 ### DeepSeek — Cumulative P/L by Trade
 
@@ -823,6 +823,10 @@ Trades considered but not taken, and what happened instead:
 | 7/10 | NVDA/AAL/DAL/UAL/LUV (DeepSeek) | 68%/60%/68%/55%/40% buy — moderate to weak demand, no spring | Not entered |
 | 7/10 | SLB/CVX/XOM/MU/BA (DeepSeek) | SLB 47%/53% neutral, no spring; CVX 9%/91%, XOM 12%/88%, MU 9%/91%, BA 15%/85% — heavy distribution, avoid | Not entered |
 | 7/10 | SPCX (DeepSeek) | 77% buy — demand but extremely volatile, avoid | Not entered |
+| 7/16 | GOOGL/MSFT (DeepSeek) | 83%/73% buy — genuine demand but no clear spring; both need a low-volume test to confirm | Not entered |
+| 7/16 | CVX/XOM/SLB/HAL (DeepSeek) | CVX 79% and XOM 81% buy show demand but no spring or defined test; SLB 60% and HAL 62% weak | Not entered |
+| 7/16 | AAL/DAL/UAL/LUV (DeepSeek) | AAL 33%/67% sell distribution; UAL 47%/53% and DAL 58% weak; LUV 87% buy but extended with no spring | Not entered |
+| 7/16 | TSLA/BA/SPCX (DeepSeek) | TSLA 24%/76% and BA 19%/81% sell — distribution; SPCX 43%/57% weak and volatile | Not entered |
 
 ---
 
@@ -886,6 +890,7 @@ The experiment ran during the **US-Israel war on Iran** (Feb 28 – Apr 8, 2026)
 - **CHWY's Day 5 reassessment holds, HAL order cancelled July 10, 2026** — CHWY's Day 5 reassessment came back **HOLD** (**-$8.46 unrealized**, current $20.81) on two consecutive buy bars with sellers exhausting on declining volume, still above its 20d SMA, consolidating $20-21.75; reassess again day 7; Claude unchanged at 19 closed, 7W/12L, +$15.79, no new positions until CHWY closes; DeepSeek's OXY held Day 5 (**+$70.20 unrealized**, current ~$52.53) through a low-volume pullback (32% sell, 8.3M volume) — healthy consolidation, stop holds at $49.00 GTC; the conditional **HAL buy stop $35.25** never triggered and was cancelled — pattern failed to produce a breakout; no new DeepSeek trades, still 4 closed, 2W/2L, -$54.62; PPI data due 8:30 AM ET; oil ~$72-73, VIX ~16.0
 - **OXY hits target, DeepSeek's largest win July 14, 2026** — OXY's GTC limit sell at the $55.00 target triggered, closing DeepSeek's Day 6 position for **+$119.60** — its largest win and first fully-realized target, bringing DeepSeek to **5 closed, 3W/2L, net +$64.98**; the spring thesis (selling climax 6/29-6/30 into a 91% buy demand bar 7/2, confirmed by a 92% buy bar 7/7) played out in full without the tightened $49.00 stop ever being threatened; DeepSeek back to 100% cash
 - **The experiment ends — CHWY closes, NVDA opens July 15, 2026** — CHWY closed at market for **-$11.28** (47 shares, $20.99 → $20.75), never breaking out of its $20-21.75 consolidation range — the **20th and final trade of the evaluation target**, taking **Claude's experiment to a close: 20 trades, 7W/13L, net +$4.51** (35.0% win rate, 1.01 profit factor, best AAL #2 +$98.55, worst CCL -$80.24); see `claude/2026-07-15.md` for the full 20-trade retrospective and key findings. DeepSeek, no longer bound by Claude's evaluation cap, filled a new **NVDA** position at $211.50 (4 shares) off a textbook spring (100% buy 7/10) + low-volume test (7% buy 7/13) + confirmation (91% buy 7/14) sequence — stop $202.00 GTC, target $230.00 GTC, R/R 1.95:1, currently -$1.12 unrealized; oil ~$73-74, VIX ~15.5, Doha talks ongoing
+- **NVDA consolidates, no new setups July 16, 2026** — with Claude's experiment closed, DeepSeek runs alone: **NVDA** holds Day 2 at **-$7.36 unrealized** (pre-market ~$209.66) after the 7/15 bar closed $212.50 on 83% buy (124.8M) — a healthy continuation of the spring + test + confirmation sequence, so the pullback reads as consolidation rather than failure; VSA HOLD, stop $202.00 GTC (below the 7/13 test low of $203.00), target $230.00 GTC. **No new orders** — 13 candidates screened and all rejected: GOOGL (83% buy) and MSFT (73% buy) have demand but no spring, energy (CVX 79%, XOM 81%) needs a test, oil services (SLB 60%, HAL 62%) are weak, and TSLA (76% sell), BA (81% sell) and AAL (67% sell) are in distribution. DeepSeek stays **5 closed, 3W/2L, +$64.98**; earnings season underway (BAC, WFC, UNH); oil ~$73-74, VIX ~15.5 near lows, Doha talks ongoing
 
 ---
 
