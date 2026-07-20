@@ -4,7 +4,7 @@
 
 Two models are compared in parallel on the same live market data: **Claude (Anthropic)** and **DeepSeek**. Each makes fully independent decisions on trade selection, entry, stop, and target. The human only executes orders and supplies daily bar data.
 
-**Last updated:** 2026-07-17 | **Market context:** **The Claude experiment is complete** — 20 closed, 7W/13L, net **+$4.51** (35.0% win rate, 1.01 profit factor); best trade AAL #2 +$98.55, worst CCL -$80.24. See the final 20-trade retrospective in `claude/2026-07-15.md`. DeepSeek continues alone: **NVDA** holds Day 3 at **-$36.64 unrealized** and is **testing its stop** — pre-market ~$202.34 sits just $0.34 above the $202.00 GTC stop after the 7/16 bar closed $207.40 on 70% sell (123M), a weak follow-through to the 7/15 confirmation. VSA HOLD; the stop stands as the structural invalidation (~-$38.00 if hit). No new DeepSeek trades — MSFT (65% buy) and DAL (77% buy) show demand but no spring, GOOGL (91% sell) and BA (96% sell) are in heavy distribution, energy (CVX 66%, XOM 60%) needs a test, and airlines stay weak. DeepSeek stays **5 closed, 3W/2L, net +$64.98**; oil ~$73-74, VIX ~15.5
+**Last updated:** 2026-07-20 | **Market context:** **The Claude experiment is complete** — 20 closed, 7W/13L, net **+$4.51** (35.0% win rate, 1.01 profit factor); best trade AAL #2 +$98.55, worst CCL -$80.24. See the final 20-trade retrospective in `claude/2026-07-15.md`. DeepSeek: **NVDA hit its $202.00 stop on 7/20 for -$38.00** (closed at 6 total trades, 2W/4L, net +$26.98). Now **100% cash** — no valid VSA setups among current candidates. Airlines continue extreme distribution (AAL 91% sell, DAL 75% sell), energy mixed (CVX 71% buy but no spring, XOM 93% sell), tech neutral to weak (GOOGL 76% buy demand but no test, MSFT 51% sell, TSLA 57% sell). VSA discipline: stay in cash until a clear spring + test + confirmation emerges. DeepSeek: **6 closed, 2W/4L, net +$26.98**, best OXY +$119.60, worst NVDA -$38.00; oil ~$73-74, VIX ~15.5
 
 ---
 
@@ -13,16 +13,16 @@ Two models are compared in parallel on the same live market data: **Claude (Anth
 | Metric | Claude | DeepSeek |
 |---|---|---|
 | Experiment start | 2026-03-13 | 2026-04-01 |
-| Trades closed | **20 (COMPLETE)** | 5 |
-| Wins / Losses | 7 / 13 | 3 / 2 |
-| Win rate | 35.0% | 60% |
-| **Net P/L** | **+$4.51** | **+$64.98** |
+| Trades closed | **20 (COMPLETE)** | 6 |
+| Wins / Losses | 7 / 13 | 2 / 4 |
+| Win rate | 35.0% | 33.3% |
+| **Net P/L** | **+$4.51** | **+$26.98** |
 | Best trade | AAL #2 +$98.55 | OXY +$119.60 |
-| Worst trade | CCL -$80.24 | LUV -$53.82 |
-| Avg win | $66.60 | $48.07 |
-| Avg loss | -$35.51 | -$39.61 |
-| Profit factor | 1.01 | 1.82 |
-| Open / pending | **Experiment complete** — CHWY closed 7/15 at $20.75 (-$11.28) as the 20th and final trade of the evaluation target. Final: 20 closed, 7W/13L, **net +$4.51** (35.0% win rate, 1.01 profit factor). See `claude/2026-07-15.md` for the full 20-trade retrospective. | NVDA open (Day 3). Entry $211.50 (4 shares, limit filled 7/15), stop **$202.00 GTC**, target **$230.00 GTC**. Current ~$202.34, **-$36.64 unrealized** — **stop imminent**, pre-market sits $0.34 above the stop; 7/16 bar closed $207.40 on 70% sell (123M), a weak follow-through to the 7/15 confirmation bar. VSA HOLD — the stop is the structural invalidation and closes the trade at ~-$38.00 if hit; if it holds, the spring remains intact. **Portfolio net: +$64.98 closed + (-$36.64) open = +$28.34.** No other open positions — OXY closed 7/14 at its $55.00 target for +$119.60. |
+| Worst trade | CCL -$80.24 | NVDA -$38.00 |
+| Avg win | $66.60 | $60.90 |
+| Avg loss | -$35.51 | -$28.95 |
+| Profit factor | 1.01 | 2.10 |
+| Open / pending | **Experiment complete** — CHWY closed 7/15 at $20.75 (-$11.28) as the 20th and final trade of the evaluation target. Final: 20 closed, 7W/13L, **net +$4.51** (35.0% win rate, 1.01 profit factor). See `claude/2026-07-15.md` for the full 20-trade retrospective. | **6 trades closed, 100% cash.** NVDA hit its $202.00 stop on 7/20 for -$38.00 (entry $211.50, stop closed at market). Previous closed: LUV -$53.82, DVN #1 -$25.40, DVN #2 +$22.20, HAL +$2.40, OXY +$119.60. **Portfolio net: +$26.98 closed.** No open positions or pending orders — awaiting clear VSA spring + test + confirmation pattern. |
 
 ---
 
@@ -51,9 +51,9 @@ pie title Claude — Trade Outcomes (20 closed, FINAL)
 ```
 
 ```mermaid
-pie title DeepSeek — Trade Outcomes (5 closed)
-    "Wins" : 3
-    "Losses" : 2
+pie title DeepSeek — Trade Outcomes (6 closed)
+    "Wins" : 2
+    "Losses" : 4
 ```
 
 ---
@@ -103,7 +103,7 @@ gantt
     SLB — No fill        :done,    2026-07-01, 2026-07-02
     OXY — WIN            :done,    2026-07-06, 2026-07-14
     HAL #4 — No fill    :done,    2026-07-09, 2026-07-10
-    NVDA #2 — Open       :active,  2026-07-15, 2026-07-17
+    NVDA #2 — LOSS       :crit, done, 2026-07-15, 2026-07-20
 ```
 
 ---
